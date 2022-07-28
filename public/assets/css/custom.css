@@ -1,0 +1,71 @@
+#wrapper .sidebar {
+    background: #f8971c !important;
+}
+
+.sidebar .nav>li>a:hover,
+.sidebar .nav>li>a:focus,
+.sidebar .nav>li>a.active {
+    color: #fff;
+    background-color: #dc7c02;
+    border-left-color: #dc7c02;
+}
+
+.sidebar .nav>li>a {
+    color: #fff;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+.panel {
+    box-shadow: 0 2px 6px rgb(0 0 0 / 19%) !important;
+}
+
+.chart-row .pie-chart {
+    min-height: 534px;
+}
+
+.btn-dark,
+.btn.btn-primary {
+    background: #f8971c !important;
+    color: white;
+    border: 1px solid #f8971c !important;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+.btn.btn-dark:hover,
+.btn.btn-primary:hover {
+    background: #dc7c02 !important;
+    color: white;
+    border: 1px solid #dc7c02 !important;
+}
+
+@media (max-width: 768px) {
+    .chart-row .pie-chart {
+        min-height: auto;
+    }
+}
+
+.main.guest-main {
+    float: unset !important;
+    width: unset !important;
+}
+
+.approve-card {
+    background: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3rem;
+    box-shadow: 0px 0px 14px 0px rgb(35 35 35 / 10%);
+}
+
+.approve-card h5 {
+    font-size: 2rem;
+}
