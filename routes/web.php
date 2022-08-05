@@ -18,7 +18,14 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-
+Route::get('/redirect-to-delivery/{id}', function ($id){
+    $business = \App\Models\Business::find($id);
+    \Illuminate\Support\Facades\Session::put('business_id', $id);
+    \Illuminate\Support\Facades\Session::put('business_name', $business->name);
+    \Illuminate\Support\Facades\Session::put('business_type', $business->type);
+    \Illuminate\Support\Facades\Session::put('business_email', $business->email);
+    return redirect()->route('index');
+});
 Route::group(['namespace' =>'App\Http\Controllers'], function() {
 Route::get('/', [
     'uses' => 'AdminController@login',
