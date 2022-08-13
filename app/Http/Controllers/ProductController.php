@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Business;
 use Exception;
 
 use App\Models\Deal;
@@ -49,11 +50,11 @@ class ProductController extends Controller {
 
     public function productrequests() {
 
-        if(is_null($this->checkIfPaid())) {
-            return $this->redirectToPayment();
-        }
+//        if(is_null($this->checkIfPaid())) {
+//            return $this->redirectToPayment();
+//        }
 
-        $brands = Brand::where('status', 1)->select('id', 'name')->get();
+        $brands = Business::where('business_type', 'Brand')->where('approve', 1)->select('id', 'business_name')->get();
 
         $requests = ProductRequest::where('retailer_id', session('business_id'))->get();
 
@@ -112,9 +113,9 @@ class ProductController extends Controller {
 
     public function editproduct($id) {
 
-        if(is_null($this->checkIfPaid())) {
-            return $this->redirectToPayment();
-        }
+//        if(is_null($this->checkIfPaid())) {
+//            return $this->redirectToPayment();
+//        }
 
         if(is_null($this->checkIfRetailerProduct($id))) {
             return redirect()->route('products');
@@ -273,9 +274,9 @@ class ProductController extends Controller {
 
     public function create() {
 
-        if(is_null($this->checkIfPaid())) {
-            return $this->redirectToPayment();
-        }
+//        if(is_null($this->checkIfPaid())) {
+//            return $this->redirectToPayment();
+//        }
 
         $categories = Category::all();
 
@@ -296,9 +297,9 @@ class ProductController extends Controller {
 
     public function store(Request $request) {
 
-        if(is_null($this->checkIfPaid())) {
-            return $this->redirectToPayment();
-        }
+//        if(is_null($this->checkIfPaid())) {
+//            return $this->redirectToPayment();
+//        }
 
         $UUID = (string) Str::uuid();
 
@@ -414,10 +415,10 @@ class ProductController extends Controller {
 
     public function destroy($deliveryProduct)
     {
-        
-        if(is_null($this->checkIfPaid())) {
-            return $this->redirectToPayment();
-        }
+
+//        if(is_null($this->checkIfPaid())) {
+//            return $this->redirectToPayment();
+//        }
 
         if(is_null($this->checkIfRetailerProduct($deliveryProduct))) {
             return redirect()->back();
@@ -526,9 +527,9 @@ class ProductController extends Controller {
 
     public function updateproduct(Request $request) {
 
-        if(is_null($this->checkIfPaid())) {
-            return $this->redirectToPayment();
-        }
+//        if(is_null($this->checkIfPaid())) {
+//            return $this->redirectToPayment();
+//        }
 
         $UUID = (string) Str::uuid();
 

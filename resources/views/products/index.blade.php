@@ -5,8 +5,21 @@ $months = array(1 => 'Jan', 2 => 'Feb', 3 => 'Mar', 4 => 'Apr', 5 => 'May', 6 =>
 @endphp
 
     @section('content')
-
-        @if(!is_null($paid))
+        <div class="panel panel-headline">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        @php
+                            $text = DB::table('tests')->first();
+                        @endphp
+                        <h4>
+                            {{$text->del_product}}
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if(is_null($paid))
         <div class="panel panel-headline">
             <div class="panel-heading">
                 <div class="row">
