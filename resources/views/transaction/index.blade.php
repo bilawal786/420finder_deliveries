@@ -36,14 +36,16 @@
                             <th>Created At</th>
                             </thead>
                             <tbody>
-                            @if(!is_null($transaction))
-                                <tr>
-                                    <td>1</td>
-                                    <td>{{ $transaction->transaction_id }}</td>
-                                    <td>{{ $transaction->name_on_card }}</td>
-                                    <td>{{ number_format($transaction->amount, 2) }}</td>
-                                    <td>{{ $transaction->created_at->diffForHumans() }}</td>
-                                </tr>
+                            @if($transaction)
+                                @foreach($transaction as $key=>$row)
+                                    <tr>
+                                        <td>{{$key+1}}</td>
+                                        <td>{{ $row->transaction_id }}</td>
+                                        <td>{{ $row->name_on_card }}</td>
+                                        <td> $ {{ number_format($row->price, 2) }}</td>
+                                        <td>{{ $row->starting_date }}</td>
+                                    </tr>
+                                @endforeach
                             @else
                                 <tr class="text-center">
                                     <td colspan="6">No transactions found.</td>

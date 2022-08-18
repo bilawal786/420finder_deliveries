@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Business;
 use Exception;
+use Illuminate\Support\Facades\DB;
 use Image;
 
 use Carbon\Carbon;
@@ -361,6 +363,75 @@ class DealsController extends Controller {
         ])->first();
 
         return $deal;
+    }
+    public function subscription()
+    {
+        $state = DB::table('states')->get();
+        $business= Business::where('id','=',session('business_id'))->first();
+        $subPrice = DB::table('states')->where('id','=',$business->state_province)->first();
+        return view('subscription.index', [
+            'state' => $state,
+            'business'=>$business,
+            'subPrice'=>$subPrice
+        ]);
+    }
+
+    public function getSubscription(Request $request)
+    {
+        $state = DB::table('states')->where('id', '=', $request->id)->first();
+        return response()->json(['success' => $state]);
+
+    }
+
+    public function storeSubscription(Request $request)
+    {
+
+        $validated = request()->validate([
+
+            'state_id' => 'required',
+            'price' => 'required',
+            'name_on_card' => 'required|min:2',
+            'cvv' => 'required|numeric|digits:3',
+            'card_number' => 'required|numeric|digits:16',
+            'expiration_month' => 'required',
+            'expiration_year' => 'required'
+        ]);
+
+
+        $starting_date = \Illuminate\Support\Carbon::now()->format('Y-m-d');
+        $price = $request->price;
+
+        $authorizePayment = resolve(AuthorizeService::class);
+        $response = $authorizePayment->chargeCreditCard($validated, $price);
+        $tresponse = $response->getTransactionResponse();
+
+        if ($tresponse != null && $tresponse->getMessages() != null) {
+
+            DB::table('subscription_details')->insert(
+                ['retailer_id' => session('business_id'),
+                    'state_id' => $request->state_id,
+                    'price' => $request->price,
+                    'name_on_card' => $request->name_on_card,
+                    'response_code' => $tresponse->getResponseCode(),
+                    'transaction_id' => $tresponse->getTransId(),
+                    'auth_id' => $tresponse->getAuthCode(),
+                    'message_code' => $tresponse->getMessages()[0]->getCode(),
+                    'type' => 'Deliveries',
+                    'starting_date' => $starting_date,
+                    'ending_date' => Carbon::now()->addDays(30)->format('Y-m-d'),
+
+                ]
+            );
+
+            return redirect()->back()->with('info', 'Deal created.');
+
+        } else {
+
+            return redirect()->back()->with('error', 'Sorry we couldn\'t process the payment');
+
+        }
+
+
     }
 
 }

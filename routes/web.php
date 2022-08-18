@@ -347,6 +347,25 @@ Route::group(['namespace' =>'App\Http\Controllers', 'middleware' => ['checkIfAut
 
     // DETAIL CONTROLLER
     Route::resource('/detail', 'DetailController');
+    Route::get('/subscription', [
+
+        'uses' => 'DealsController@subscription',
+        'as' => 'subscription'
+
+    ]);
+    Route::post('/get/subscription', [
+
+        'uses' => 'DealsController@getSubscription',
+        'as' => 'get.subscription'
+
+    ]);
+    Route::post('/subscription/store', [
+
+        'uses' => 'DealsController@storeSubscription',
+        'as' => 'subscription.store'
+
+    ]);
+
 
 });
 

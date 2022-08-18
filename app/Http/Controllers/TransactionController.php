@@ -12,7 +12,7 @@ class TransactionController extends Controller
 
     public function __invoke()
     {
-        $transaction = RetailerMenuOrder::where('retailer_id', session('business_id'))->first();
+        $transaction = DB::table('subscription_details')->orderBy('id', 'DESC')->where('retailer_id', session('business_id'))->paginate(5);
 
         $dealTransaction =  DB::table('deal_orders')->where('deal_orders.retailer_id', session('business_id'))
         ->join('deals', 'deals.id', '=', 'deal_orders.deal_id')
