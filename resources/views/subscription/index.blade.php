@@ -88,8 +88,6 @@
                         <form action="{{ route('subscription.store') }}" method="POST" enctype="multipart/form-data"
                               id="create-deal-form">
                             @csrf
-
-
                             <div class="form-group" style="display: none">
                                 <label for="product">State</label>
                                 <select name="state_id" id="state_id" class="form-control"
@@ -99,8 +97,6 @@
                                         <option value="{{ $row->id }}" > {{ $row->name }}</option>
                                     @endforeach
                                 </select>
-
-
                             </div>
 
                             <div class="row">
