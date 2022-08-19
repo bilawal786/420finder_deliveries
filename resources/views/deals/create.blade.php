@@ -21,6 +21,7 @@ $months = array(1 => 'Jan', 2 => 'Feb', 3 => 'Mar', 4 => 'Apr', 5 => 'May', 6 =>
                 <div class="row">
                     @include('partials.success-error')
                     <div class="col-md-12">
+                        @if($subPrice)
                         <form action="{{ route('savedeal') }}" method="POST" enctype="multipart/form-data" id="create-deal-form">
                           @csrf
 
@@ -53,17 +54,32 @@ $months = array(1 => 'Jan', 2 => 'Feb', 3 => 'Mar', 4 => 'Apr', 5 => 'May', 6 =>
 
                           </div>
 
-                          <div class="form-group">
-                            <label for="deal_price">Deal Price</label>
-                            <input type="number" name="deal_price" id="deal_price" class="form-control" required value="{{ old('deal_price') }}">
-                          </div>
+                            <div class="row">
+                                <div class="form-group col-xs-12 col-sm-6 mb-3" style="display: none">
+                                    <label for="deal_price">State</label>
+                                    <select name="state_id" id="state_id" class="form-control"
+                                            style="margin-bottom: 1.2rem;display: none">
+                                        <option value="">Select State</option>
+                                        @foreach ($state as $row)
+                                            <option value="{{ $row->id }}">{{ $row->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
 
+                                <input type="hidden" name="state_id"  value="{{$subPrice->id}}">
+                                <div class="form-group col-xs-12 col-sm-6 mb-3" id="sub">
+                                    <label for="deal_price">Deal Price</label>
+                                    <input type="number" readonly name="deal_price" id="deal_price" class="form-control"
+                                           required value="{{ $subPrice->deal_price }}">
+                                </div>
+
+                            </div>
                           <div class="form-group">
                             <label for="">Description of Deal</label>
                             <textarea name="description" cols="5" rows="5" placeholder="Enter Details about deal" class="form-control" required="">{{ old('description') }}</textarea>
                           </div>
 
-                          <div class="form-group">
+                          <div class="form-group" style="display: none">
                             <label for="tier">Choose how long your Deal will be listed</label>
                             <select name="tier_id" id="tier" class="form-control" required>
                                 <option disabled selected>Choose Tier</option>
@@ -124,6 +140,11 @@ $months = array(1 => 'Jan', 2 => 'Feb', 3 => 'Mar', 4 => 'Apr', 5 => 'May', 6 =>
                             <button class="btn btn-dark btn-block" id="create-deal-btn">Create Deal</button>
                           </div>
                         </form>
+                        @else
+                            <div class="form-group col-xs-12 col-sm-12 mb-3" id="description">
+                                <h4 style="color: red;text-align: center;">Your State is Not Eligible</h4>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>

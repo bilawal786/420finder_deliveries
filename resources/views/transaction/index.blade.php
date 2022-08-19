@@ -89,7 +89,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>
-                                        <img src="{{ $deal->picture }}" alt="" height="60px" width="60px">
+                                        <img src="{{ json_decode($deal->picture)[0]}}" alt="" height="60px" width="60px">
                                     </td>
                                     <td>{{ $deal->title }}</td>
                                     <td>{{ $deal->transaction_id }}</td>

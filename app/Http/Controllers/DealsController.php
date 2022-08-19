@@ -30,9 +30,16 @@ class DealsController extends Controller {
     public function create() {
 
         $products = DeliveryProducts::where('delivery_id', session('business_id'))->get();
+        $state = DB::table('states')->get();
+        $business= Business::where('id','=',session('business_id'))->first();
+        $subPrice = DB::table('states')->where('id','=',$business->state_province)->first();
+
         return view('deals.create', [
-            'products' => $products
+            'products' => $products,
+            'state'=> $state,
+            'subPrice' => $subPrice,
         ]);
+
 
     }
 
@@ -40,7 +47,6 @@ class DealsController extends Controller {
 
         $validated = request()->validate([
             'title' => 'required',
-            'tier_id' => 'required',
             'description' => 'required',
             'deal_price' => 'required',
             'name_on_card' => 'required|min:2',
@@ -56,31 +62,32 @@ class DealsController extends Controller {
             }
         }
 
-            $tiers = [1, 2, 3];
-            $price = 0;
-            $ending_date = "";
-
-            if(!in_array($validated['tier_id'], $tiers)) {
-                return back();
-            }
-
-            if($validated['tier_id'] == 1) {
-
-                $ending_date = Carbon::now()->addDays(7)->format('Y-m-d');
-                $price = 50.00;
-
-            } elseif($validated['tier_id'] == 2) {
-
-                $ending_date = Carbon::now()->addDays(14)->format('Y-m-d');
-                $price = 80.00;
-
-            } elseif($validated['tier_id'] == 3) {
-
-                $ending_date = Carbon::now()->addDays(30)->format('Y-m-d');
-                $price = 140.00;
-
-            }
-
+//            $tiers = [1, 2, 3];
+//            $price = 0;
+//            $ending_date = "";
+//
+//            if(!in_array($validated['tier_id'], $tiers)) {
+//                return back();
+//            }
+//
+//            if($validated['tier_id'] == 1) {
+//
+//                $ending_date = Carbon::now()->addDays(7)->format('Y-m-d');
+//                $price = 50.00;
+//
+//            } elseif($validated['tier_id'] == 2) {
+//
+//                $ending_date = Carbon::now()->addDays(14)->format('Y-m-d');
+//                $price = 80.00;
+//
+//            } elseif($validated['tier_id'] == 3) {
+//
+//                $ending_date = Carbon::now()->addDays(30)->format('Y-m-d');
+//                $price = 140.00;
+//
+//            }
+        $price = $request->deal_price;
+        $ending_date = Carbon::now()->addDays(14)->format('Y-m-d');
             $starting_date = Carbon::now()->format('Y-m-d');
 
             $dealId = NULL;
@@ -120,7 +127,6 @@ class DealsController extends Controller {
                 $deal->picture = json_encode($picturePaths);
                 $deal->coupon_code = $request->coupon_code;
                 $deal->percentage = $request->percentage;
-                $deal->tier_id = $validated['tier_id'];
                 $deal->deal_price = $validated['deal_price'];
                 $deal->starting_date = $starting_date;
                 $deal->ending_date = $ending_date;
