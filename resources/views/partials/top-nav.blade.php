@@ -40,16 +40,26 @@
             $currentDate = date('Y-m-d', strtotime($currentDate));
             $startDate = date('Y-m-d', strtotime($date->starting_date ?? '12-2-2021'));
             $endDate = date('Y-m-d', strtotime($date->ending_date ?? '12-2-2021'));
+            $check = DB::table('businesses')->where('id', '=', session('business_id'))->where('latitude','=',null)->where('longitude','=',null)->first();
             ?>
             @if(($currentDate >= $startDate) && ($currentDate <= $endDate))
+                @if($check)
+                    <div class="navbar-btn">
+                        <p class="txt"><b>Please Update Your Profile. </b></p>
+                    </div>
+                @endif
             @else
                 <div class="navbar-btn">
-                    <blink>You dont have any subscription your product menu is no more available on website. <a href="{{route('subscription')}}">Please purchase a subscription</a></blink>
+                    <p class="txt"><b>You dont have any subscription your product menu is no more available on website. <a href="{{route('subscription')}}">Please purchase a subscription</a></b></p>
+                    @if($check)
+                        <p class="txt"><b>Please Update Your Profile. </b></p>
+                    @endif
                 </div>
+
             @endif
 
 
-        <div id="navbar-menu">
+            <div id="navbar-menu">
 
             <ul class="nav navbar-nav navbar-right">
 
