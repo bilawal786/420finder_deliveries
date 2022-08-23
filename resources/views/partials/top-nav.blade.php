@@ -51,6 +51,7 @@
                                 Please Update Your Profile. <a href="{{route('accountsettings')}}">Click Here</a>
                             @endif
                             @if($details)
+
                                 Please Add Details. <a href="{{route('detail.index')}}">Click Here</a>
                             @endif
                         </b>
