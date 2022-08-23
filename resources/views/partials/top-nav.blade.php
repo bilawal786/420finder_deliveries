@@ -41,6 +41,8 @@
             $startDate = date('Y-m-d', strtotime($date->starting_date ?? '12-2-2021'));
             $endDate = date('Y-m-d', strtotime($date->ending_date ?? '12-2-2021'));
             $check = DB::table('businesses')->where('id', '=', session('business_id'))->where('latitude','=',null)->where('longitude','=',null)->first();
+            $details = DB::table('details')->where('business_id', '=', session('business_id'))->where('about', '=', null)->where('introduction', '=', null)->where('customers','=',null)->where('announcement','=',null)->first();
+
             ?>
             @if(($currentDate >= $startDate) && ($currentDate <= $endDate))
 
