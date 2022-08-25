@@ -15,9 +15,19 @@ class AccountController extends Controller {
     public function index() {
 
         $business = Business::where('id', session('business_id'))->first();
-
+        $latitude = $business->latitude;
+        $longitude = $business->longitude;
+        $url = "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyCrAR67o9XfYUXH6u66iVXYhqsOzse6Uz8&latlng={$latitude},{$longitude}&sensor=false";
+        $json = @file_get_contents($url);
+        $data = json_decode($json);
+        if($data == null){
+            $location = 'Select location';
+        }else{
+            $location = $data->results[3]->formatted_address;
+        }
         return view('account.index')
-            ->with('business', $business);
+            ->with('business', $business)
+            ->with('location', $location);
 
     }
 

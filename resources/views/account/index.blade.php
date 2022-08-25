@@ -22,8 +22,12 @@
                           <h4><strong>Select Your Directions</strong></h4>
                         </div>
                         <div class="col-md-6 text-center">
-
-                          <button onclick="getLocation()" class="btn btn-info">Click to add your directions</button>
+{{--                            text-center--}}
+                            <div class="form-group">
+                                <label for="">Directions</label>
+                                <input id="searchTextField" type="text" name="address" class="form-control" value="{{$location}}">
+                            </div>
+{{--                          <button onclick="getLocation()" class="btn btn-info">Click to add your directions</button>--}}
 
                         </div>
                       </div>

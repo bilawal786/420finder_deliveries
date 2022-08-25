@@ -262,6 +262,42 @@
       });
 
     </script>
+  <script type="text/javascript"
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrAR67o9XfYUXH6u66iVXYhqsOzse6Uz8&libraries=places"></script>
+  <script>
+      function initialize() {
+          var input = document.getElementById('searchTextField');
+          var autocomplete = new google.maps.places.Autocomplete(input);
+          google.maps.event.addListener(autocomplete, 'place_changed', function () {
+              var place = autocomplete.getPlace();
+
+              var latitude = place.geometry.location.lat();
+              var longitude = place.geometry.location.lng();
+              console.log(latitude)
+
+              $.ajax({
+                  headers: {
+                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                  },
+                  url:"{{ route('savebcoordinates') }}",
+                  method:"POST",
+                  data:{latitude:latitude, longitude:longitude},
+                  success:function(data) {
+                      var response = JSON.parse(data);
+                      if (response.statuscode == 200) {
+                          toastr['info'](response.message);
+                      } else {
+                          console.log(data);
+                      }
+                  }
+
+              });
+
+          });
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+  </script>
 
     @yield('scripts')
 
