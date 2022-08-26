@@ -8,6 +8,7 @@ use App\Models\Business;
 
 use App\Models\StoreLocation;
 
+use Illuminate\Support\Facades\DB;
 use Image;
 
 class AccountController extends Controller {
@@ -15,6 +16,7 @@ class AccountController extends Controller {
     public function index() {
 
         $business = Business::where('id', session('business_id'))->first();
+        $statee = DB::table('states')->get();
         $latitude = $business->latitude;
         $longitude = $business->longitude;
         $url = "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyCrAR67o9XfYUXH6u66iVXYhqsOzse6Uz8&latlng={$latitude},{$longitude}&sensor=false";
@@ -27,7 +29,8 @@ class AccountController extends Controller {
         }
         return view('account.index')
             ->with('business', $business)
-            ->with('location', $location);
+            ->with('location', $location)
+            ->with('statee', $statee);
 
     }
 
@@ -303,6 +306,15 @@ class AccountController extends Controller {
         $location->delete();
 
         return redirect()->back()->with('info', 'Store Location Removed.');
+
+    }
+    public function updateState(Request $request)
+    {
+
+        $business = Business::find(session('business_id'));
+        $business->state_province = $request->state_province;
+        $business->update();
+        return redirect()->back()->with('info', 'State Update.');
 
     }
 

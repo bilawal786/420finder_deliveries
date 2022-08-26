@@ -440,4 +440,100 @@ class DealsController extends Controller {
 
     }
 
+    public function stateArea()
+    {
+        $business = Business::where('id', '=', session('business_id'))->first();
+
+        $area = DB::table('areas')->where('state_id', '=', $business->state_province)->get();
+
+        return view('marketing.main', compact('area', 'business'));
+    }
+
+    public function marketing($id)
+    {
+        $business = Business::where('id', '=', session('business_id'))->first();
+        $area = DB::table('areas')->find($id);
+        $position = DB::table('position_sets')->where('area_id','=',$id)->where('date','=', \Illuminate\Support\Carbon::now()->addMonth(1)->format('m, Y'))->pluck('position')->toArray();;
+
+        return view('marketing.index', compact('business', 'area','position'));
+//        $distance = DB::table('areas')->selectRaw("id,
+//                         ( 3956   * acos( cos( radians(?) ) *
+//                           cos( radians( latitude ) )
+//                           * cos( radians( longitude ) - radians(?)
+//                           ) + sin( radians(?) ) *
+//                           sin( radians( latitude ) ) )
+//                         ) AS distance", [$latitude, $longitude, $latitude])
+//            ->having("distance", "<", $radius)
+//            ->orderBy("distance", 'asc')
+//            ->first();
+
+    }
+
+    public function bookMe($id,$price,$p)
+    {
+        $area = DB::table('areas')->find($id);
+        return view('marketing.payment', compact('area','price','p'));
+
+    }
+    public function bannerPaymant(Request $request)
+    {
+        $id = request()->id;
+        $validated = request()->validate([
+            'price' => 'required',
+            'name_on_card' => 'required|min:2',
+            'cvv' => 'required|numeric|digits:3',
+            'card_number' => 'required|numeric|digits:16',
+            'expiration_month' => 'required',
+            'expiration_year' => 'required'
+        ]);
+
+
+        $starting_date = Carbon::now()->addMonth(1)->format('y-m-01');
+        $ending_date = Carbon::now()->addMonth(1)->format('Y-m-t');
+        $price = $request->price;
+
+        $authorizePayment = resolve(AuthorizeService::class);
+        $response = $authorizePayment->chargeCreditCard($validated, $price);
+        $tresponse = $response->getTransactionResponse();
+
+        if ($tresponse != null && $tresponse->getMessages() != null) {
+
+            $getid = DB::table('banner_paymants')->insertGetId(
+                ['retailer_id' => session('business_id'),
+                    'area_id' => $request->area_id,
+                    'price' => $request->price,
+                    'description' => $request->description,
+                    'name_on_card' => $request->name_on_card,
+                    'response_code' => $tresponse->getResponseCode(),
+                    'transaction_id' => $tresponse->getTransId(),
+                    'auth_id' => $tresponse->getAuthCode(),
+                    'message_code' => $tresponse->getMessages()[0]->getCode(),
+                    'starting_date' => $starting_date,
+                    'ending_date' => $ending_date,
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+
+                ]
+            );
+            DB::table('position_sets')->insert(
+                [
+                    'b_payment_id'=>$getid,
+                    'area_id' => $request->area_id,
+                    'position' => $request->position,
+                    'date' => Carbon::now()->addMonth(1)->format('m, Y'),
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                ]
+            );
+
+//            return redirect()->back()->with('info', 'Position Booked.');
+            return redirect()->route('marketing', ['id' => $id])->with('info', 'Position Booked.');
+
+        } else {
+
+            return redirect()->back()->with('error', 'Sorry we couldn\'t process the payment');
+
+        }
+
+    }
 }

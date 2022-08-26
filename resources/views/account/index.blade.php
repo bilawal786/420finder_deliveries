@@ -276,8 +276,12 @@
                       <div class="row">
                         <div class="col-md-6">
                           <h4><strong>State / Province</strong></h4>
-                          <p class="text-black-50">{{ $business->state_province }}</p>
+                            <?php $state = \Illuminate\Support\Facades\DB::table('states')->where('id','=',$business->state_province)->first(); ?>
+                            <p class="text-black-50">{{ $state->name ?? '' }}</p>
                         </div>
+                          <div class="col-md-6 text-right">
+                              <a data-toggle="modal" data-target="#stateupdate" class="cursor-pointer">Edit</a>
+                          </div>
                       </div>
                     </div>
                   </div>
@@ -668,6 +672,45 @@
       </div>
     </div>
   </div>
+                <!-- stateupdate -->
+                <div class="modal fade" id="stateupdate" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form action="{{ route('updateState') }}" method="POST">
+                                @csrf
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h4><strong>Update State / Province</strong></h4>
+                                        </div>
+                                        <div class="col-md-6 text-right pt-2 pe-3">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="row my-3">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="">State / Province</label>
+                                                <select name="state_province"  class="form-control"
+                                                        style="margin-bottom: 1.2rem;" required>
+                                                    <option value="">Select State</option>
+                                                    @foreach ($statee as $row)
+                                                        <option value="{{ $row->id }}" {{ ($row->id == $business->state_province) ? 'selected' : '' }}>{{ $row->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn btn-primary btn-block">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 
   <!-- website -->
   <div class="modal fade" id="website" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

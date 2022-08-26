@@ -97,7 +97,12 @@ Route::group(['namespace' =>'App\Http\Controllers', 'middleware' => ['checkIfAut
         'as' => 'accountsettings'
 
     ]);
+    Route::post('/updateState', [
 
+        'uses' => 'AccountController@updateState',
+        'as' => 'updateState'
+
+    ]);
     Route::post('/savefirstname', [
 
         'uses' => 'AccountController@savefirstname',
@@ -363,6 +368,30 @@ Route::group(['namespace' =>'App\Http\Controllers', 'middleware' => ['checkIfAut
 
         'uses' => 'DealsController@storeSubscription',
         'as' => 'subscription.store'
+
+    ]);
+    Route::get('/marketing/{id}', [
+
+        'uses' => 'DealsController@marketing',
+        'as' => 'marketing'
+
+    ]);
+    Route::get('/state/areas', [
+
+        'uses' => 'DealsController@stateArea',
+        'as' => 'state.areas'
+
+    ]);
+    Route::get('/bookme/{id}/{price}/{p}', [
+
+        'uses' => 'DealsController@bookMe',
+        'as' => 'bookme'
+
+    ]);
+    Route::post('/banner/payment', [
+
+        'uses' => 'DealsController@bannerPaymant',
+        'as' => 'banner.payment'
 
     ]);
 

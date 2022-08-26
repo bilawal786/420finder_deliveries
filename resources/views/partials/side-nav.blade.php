@@ -9,6 +9,9 @@
                 <li>
                     <a href="{{ route('index') }}" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a>
                 </li>
+                <li>
+                    <a href="{{ route('state.areas') }}" class=""><i class="fa fa-product-hunt" aria-hidden="true"></i>  <span>Sales & Marketing Product</span></a>
+                </li>
 
                 <li>
                     <a href="{{ route('requestproducts') }}" class=""><i class="fa fa-check-circle" aria-hidden="true"></i> <span>Request Products</span></a>
