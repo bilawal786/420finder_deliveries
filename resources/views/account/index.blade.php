@@ -302,7 +302,13 @@
                       <div class="row">
                         <div class="col-md-6">
                           <h4><strong>Opening Time</strong></h4>
-                          <p class="text-black-50">{{ date('h:i A', strtotime($business->opening_time)) }}</p>
+                            <p class="text-black-50"><span class="text-primary">Monday: </span><span>{{ date('h:i A', strtotime($business->monday_open)) }}</span></p>
+                            <p class="text-black-50"><span class="text-primary">Tuesday: </span><span>{{ date('h:i A', strtotime($business->tuesday_open)) }}</span></p>
+                            <p class="text-black-50"><span class="text-primary">Wednesday: </span><span>{{ date('h:i A', strtotime($business->wednesday_open)) }}</span></p>
+                            <p class="text-black-50"><span class="text-primary">Thursday: </span><span>{{ date('h:i A', strtotime($business->thursday_open)) }}</span></p>
+                            <p class="text-black-50"><span class="text-primary">Friday: </span><span>{{ date('h:i A', strtotime($business->friday_open)) }}</span></p>
+                            <p class="text-black-50"><span class="text-primary">Saturday: </span><span>{{ date('h:i A', strtotime($business->saturday_open)) }}</span></p>
+                            <p class="text-black-50"><span class="text-primary">Sunday: </span><span>{{ date('h:i A', strtotime($business->sunday_open)) }}</span></p>
                         </div>
                         <div class="col-md-6 text-right">
                           <a data-toggle="modal" data-target="#opening_time" class="cursor-pointer">Edit</a>
@@ -316,7 +322,13 @@
                       <div class="row">
                         <div class="col-md-6">
                           <h4><strong>Closing Time</strong></h4>
-                          <p class="text-black-50">{{ date('h:i A', strtotime($business->closing_time)) }}</p>
+                            <p class="text-black-50"><span class="text-primary">Monday: </span><span>{{ date('h:i A', strtotime($business->monday_close)) }}</span></p>
+                            <p class="text-black-50"><span class="text-primary">Tuesday: </span><span>{{ date('h:i A', strtotime($business->tuesday_close)) }}</span></p>
+                            <p class="text-black-50"><span class="text-primary">Wednesday: </span><span>{{ date('h:i A', strtotime($business->wednesday_close)) }}</span></p>
+                            <p class="text-black-50"><span class="text-primary">Thursday: </span><span>{{ date('h:i A', strtotime($business->thursday_close)) }}</span></p>
+                            <p class="text-black-50"><span class="text-primary">Friday: </span><span>{{ date('h:i A', strtotime($business->friday_close)) }}</span></p>
+                            <p class="text-black-50"><span class="text-primary">Saturday: </span><span>{{ date('h:i A', strtotime($business->saturday_close)) }}</span></p>
+                            <p class="text-black-50"><span class="text-primary">Sunday: </span><span>{{ date('h:i A', strtotime($business->sunday_close)) }}</span></p>
                         </div>
                         <div class="col-md-6 text-right">
                           <a data-toggle="modal" data-target="#closing_time" class="cursor-pointer">Edit</a>
@@ -799,14 +811,76 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               </div>
             </div>
-          <div class="row my-3">
-            <div class="col-md-12">
-                <div class="form-group">
-                  <label for="">Select Opening Time</label>
-                  <input id="editwebsite" type="time" name="opening_time" value="{{ $business->opening_time }}" class="form-control" required="">
-                </div>
-            </div>
-          </div>
+              <div class="row my-3">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="time">Monday: </label>
+                          <div class="col-sm-10">
+                              <input id="editwebsite" type="time" name="monday_open" value="{{ $business->monday_open }}" class="form-control" required="">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row my-3">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="time">Tuesday: </label>
+                          <div class="col-sm-10">
+                              <input id="editwebsite" type="time" name="tuesday_open" value="{{ $business->tuesday_open }}" class="form-control" required="">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row my-3">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="time">Wednesday: </label>
+                          <div class="col-sm-10">
+                              <input id="editwebsite" type="time" name="wednesday_open" value="{{ $business->wednesday_open }}" class="form-control" required="">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row my-3">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="time">Thursday: </label>
+                          <div class="col-sm-10">
+                              <input id="editwebsite" type="time" name="thursday_open" value="{{ $business->thursday_open }}" class="form-control" required="">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row my-3">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="time">Friday: </label>
+                          <div class="col-sm-10">
+                              <input id="editwebsite" type="time" name="friday_open" value="{{ $business->friday_open }}" class="form-control" required="">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row my-3">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="time">Saturday: </label>
+                          <div class="col-sm-10">
+                              <input id="editwebsite" type="time" name="saturday_open" value="{{ $business->saturday_open }}" class="form-control" required="">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row my-3">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="time">Sunday: </label>
+                          <div class="col-sm-10">
+                              <input id="editwebsite" type="time" name="sunday_open" value="{{ $business->sunday_open }}" class="form-control" required="">
+                          </div>
+                      </div>
+                  </div>
+              </div>
           <div class="row">
             <div class="col-md-12">
                 <button type="submit" class="btn btn-primary btn-block">
@@ -835,14 +909,76 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               </div>
             </div>
-          <div class="row my-3">
-            <div class="col-md-12">
-                <div class="form-group">
-                  <label for="">Select Closing Time</label>
-                  <input id="editwebsite" type="time" name="closing_time" value="{{ $business->closing_time }}" class="form-control" required="">
-                </div>
-            </div>
-          </div>
+              <div class="row my-3">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="time">Monday: </label>
+                          <div class="col-sm-10">
+                              <input id="editwebsite" type="time" name="monday_close" value="{{ $business->monday_close }}" class="form-control" required="">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row my-3">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="time">Tuesday: </label>
+                          <div class="col-sm-10">
+                              <input id="editwebsite" type="time" name="tuesday_close" value="{{ $business->tuesday_close }}" class="form-control" required="">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row my-3">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="time">Wednesday: </label>
+                          <div class="col-sm-10">
+                              <input id="editwebsite" type="time" name="wednesday_close" value="{{ $business->wednesday_close }}" class="form-control" required="">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row my-3">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="time">Thursday: </label>
+                          <div class="col-sm-10">
+                              <input id="editwebsite" type="time" name="thursday_close" value="{{ $business->thursday_close }}" class="form-control" required="">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row my-3">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="time">Friday: </label>
+                          <div class="col-sm-10">
+                              <input id="editwebsite" type="time" name="friday_close" value="{{ $business->friday_close }}" class="form-control" required="">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row my-3">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="time">Saturday: </label>
+                          <div class="col-sm-10">
+                              <input id="editwebsite" type="time" name="saturday_close" value="{{ $business->saturday_close }}" class="form-control" required="">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row my-3">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="time">Sunday: </label>
+                          <div class="col-sm-10">
+                              <input id="editwebsite" type="time" name="sunday_close" value="{{ $business->sunday_close }}" class="form-control" required="">
+                          </div>
+                      </div>
+                  </div>
+              </div>
           <div class="row">
             <div class="col-md-12">
                 <button type="submit" class="btn btn-primary btn-block">

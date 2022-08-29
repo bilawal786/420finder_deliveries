@@ -238,9 +238,15 @@ class AccountController extends Controller {
 
         $business = Business::find(session('business_id'));
 
-        $business->opening_time = $request->opening_time;
+        $business->monday_open = $request->monday_open;
+        $business->tuesday_open = $request->tuesday_open;
+        $business->wednesday_open = $request->wednesday_open;
+        $business->thursday_open = $request->thursday_open;
+        $business->friday_open = $request->friday_open;
+        $business->saturday_open = $request->saturday_open;
+        $business->sunday_open = $request->sunday_open;
 
-        $business->save();
+        $business->update();
 
         return redirect()->back()->with('info', 'Opening Time Updated.');
 
@@ -250,9 +256,15 @@ class AccountController extends Controller {
 
         $business = Business::find(session('business_id'));
 
-        $business->closing_time = $request->closing_time;
+        $business->monday_close = $request->monday_close;
+        $business->tuesday_close = $request->tuesday_close;
+        $business->wednesday_close = $request->wednesday_close;
+        $business->thursday_close = $request->thursday_close;
+        $business->friday_close = $request->friday_close;
+        $business->saturday_close = $request->saturday_close;
+        $business->sunday_close = $request->sunday_close;
 
-        $business->save();
+        $business->update();
 
         return redirect()->back()->with('info', 'Closing Time Updated.');
 
