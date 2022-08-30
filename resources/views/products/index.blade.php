@@ -13,7 +13,7 @@ $months = array(1 => 'Jan', 2 => 'Feb', 3 => 'Mar', 4 => 'Apr', 5 => 'May', 6 =>
                             $text = DB::table('tests')->first();
                         @endphp
                         <h4>
-                            {{$text->del_product}}
+                            {!! $text->del_product !!}
                         </h4>
                     </div>
                 </div>

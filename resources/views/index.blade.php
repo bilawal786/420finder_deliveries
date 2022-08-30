@@ -10,7 +10,7 @@
                             $text = DB::table('tests')->first();
                         @endphp
                         <h4>
-                            {{$text->del_dashboard}}
+                            {!! $text->del_dashboard !!}
                         </h4>
                     </div>
                 </div>
