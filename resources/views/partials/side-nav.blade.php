@@ -67,6 +67,9 @@
 {{--                </li>--}}
 
                 <li>
+                    <a href="{{ route('gallery.index') }}" class=""><i class="fa fa-image" aria-hidden="true"></i> <span>Gallery</span></a>
+                </li>
+                <li>
                     <a href="{{ route('accountsettings') }}" class=""><i class="fa fa-user" aria-hidden="true"></i> <span>Account Settings</span></a>
                 </li>
                 <li>

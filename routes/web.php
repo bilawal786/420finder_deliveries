@@ -90,6 +90,7 @@ Route::group(['namespace' =>'App\Http\Controllers', 'middleware' => ['checkIfAut
         'as' => 'getparentchildsc'
 
     ]);
+    Route::resource('gallery','GalleryController' );
 
     Route::get('/account-settings', [
 
