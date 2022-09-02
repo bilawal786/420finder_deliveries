@@ -9,6 +9,7 @@ use App\Models\Order;
 use App\Models\Business;
 use Illuminate\Http\Request;
 use App\Models\DeliveryProducts;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use ArielMejiaDev\LarapexCharts\LarapexChart;
 
@@ -32,6 +33,27 @@ class AdminController extends Controller {
         ->groupBy('year','month')
         ->pluck('count')
         ->toArray();
+
+        $totalDeals = Deal::where('retailer_id', session('business_id'))->count();
+        $totalOrders = Order::where('retailer_id', session('business_id'))->count();
+        $visitor = DB::table('visitors')->where('business_id', session('business_id'))->count();
+
+        $subscription = DB::table('subscription_details')->orderBy('id', 'DESC')->where('retailer_id', '=', session('business_id'))->first();
+        $currentDate = date('Y-m-d');
+        $currentDate = date('Y-m-d', strtotime($currentDate));
+        $startDate = date('Y-m-d', strtotime($subscription->starting_date ?? '12-2-2021'));
+        $endDate = date('Y-m-d', strtotime($subscription->ending_date ?? '12-2-2021'));
+
+        if ($subscription != null){
+            if(($currentDate >= $startDate) && ($currentDate <= $endDate)){
+                $sub = 'Active';
+
+            }else{
+                $sub = 'Expired';
+            }
+        }else{
+            $sub = 'Not Purchase';
+        }
 
         $sales = [];
 
@@ -73,7 +95,11 @@ class AdminController extends Controller {
             'customers' => $customers->count(),
             'products' => $products,
             'totalSales' => $totalSales,
-            'pieChart' => $pieChart
+            'pieChart' => $pieChart,
+            'totalDeals' => $totalDeals,
+            'totalOrders' => $totalOrders,
+            'visitor' => $visitor,
+            'sub' => $sub
         ]);
 
     }
