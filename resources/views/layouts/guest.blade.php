@@ -196,7 +196,7 @@
                 headers: {
                   'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                url:"{{ route('getrproducts') }}",
+                url:"{{ route('getrproducts', ['brand'=>session('business_id')]) }}",
                 method:"POST",
                 data:{brand_id:brand_id},
                 success:function(data) {

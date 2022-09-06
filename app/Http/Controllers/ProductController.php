@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Business;
+use App\Models\DispenseryProduct;
 use Exception;
 
 use App\Models\Deal;
@@ -67,6 +68,7 @@ class ProductController extends Controller {
     public function getrproducts(Request $request) {
 
         $brand_id = $request->brand_id;
+        $bran = request()->brand;
 
         $products = BrandProduct::where('brand_id', $brand_id)
             ->select('id', 'name')
@@ -78,9 +80,11 @@ class ProductController extends Controller {
 
         foreach($products as $product) {
 
-            $data .= '
-                <option value="' . $product["id"] . '">' . $product["name"] . '</option>
-            ';
+            $checkbrand = DeliveryProducts::where('delivery_id', $bran)->where('brand_product_id', $product["id"])->get();
+
+            if(count($checkbrand) == 0){
+                $data .= '<option value="' . $product["id"] . '">' . $product["name"] . '</option>';
+            }
 
         }
 
