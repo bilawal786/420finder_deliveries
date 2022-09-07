@@ -5,9 +5,15 @@
         <nav>
 
             <ul class="nav">
-
                 <li>
                     <a href="{{ route('index') }}" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a>
+                </li>
+                <li>
+                    @if(env('APP_ENV') === "local")
+                        <a href="http://127.0.0.1:8002/redirect-to-brands/{{session('business_id')}}" class=""><i class="fa fa-dashboard"></i> <span>Master Dashboard</span></a>
+                    @else
+                        <a href="https://brands.420finder.net/redirect-to-brands/{{session('business_id')}}" class=""><i class="fa fa-dashboard"></i> <span>Master Dashboard</span></a>
+                    @endif
                 </li>
                 <li>
                     <a href="{{ route('state.areas') }}" class=""><i class="fa fa-product-hunt" aria-hidden="true"></i>  <span>Sales & Marketing Product</span></a>

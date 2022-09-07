@@ -103,18 +103,37 @@
 
                     <div class="col-md-6">
 
-                        <div class="metric" style="padding: 2rem 3rem;">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="metric" style="padding: 2rem 3rem;">
 
-                            <div class="m-icon brand-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-5-7h9v2h-4v3l-5-5zm5-4V6l5 5H8V9h4z"/></svg>
+                                    <div class="m-icon brand-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-5-7h9v2h-4v3l-5-5zm5-4V6l5 5H8V9h4z"/></svg>
 
+                                    </div>
+
+                                    <p>
+                                        <span class="title">Free Deals</span>
+                                        <span class="number">{{ $freedeals->deal_wallet }}</span>
+                                    </p>
+
+                                </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="metric" style="padding: 2rem 3rem;">
 
-                            <p>
-                                <span class="title">Subscription Status</span>
-                                <span class="number">{{ $sub }}</span>
-                            </p>
+                                    <div class="m-icon brand-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-5-7h9v2h-4v3l-5-5zm5-4V6l5 5H8V9h4z"/></svg>
 
+                                    </div>
+
+                                    <p>
+                                        <span class="title">Subscription Status</span>
+                                        <span class="number">{{ $sub }}</span>
+                                    </p>
+
+                                </div>
+                            </div>
                         </div>
 
                         <div class="metric" style="padding: 2rem 3rem;">

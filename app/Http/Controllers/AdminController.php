@@ -89,6 +89,9 @@ class AdminController extends Controller {
         ->addData([count($deals), $products, $customers->count()])
         ->setLabels(['Deals', 'Products', 'Customers']);
 
+        $deal_wallet=Business::where('id', session('business_id'))->select('deal_wallet')->first();
+
+
         return view('index', [
             'deals' => $deals,
             'chart' => $chart,
@@ -99,7 +102,8 @@ class AdminController extends Controller {
             'totalDeals' => $totalDeals,
             'totalOrders' => $totalOrders,
             'visitor' => $visitor,
-            'sub' => $sub
+            'sub' => $sub,
+            'freedeals' => $deal_wallet,
         ]);
 
     }

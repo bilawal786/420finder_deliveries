@@ -41,13 +41,18 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         $header_file=$request->filedata;
-        $destinationPath = 'images/gallery';
+        $destinationPath = 'images/gallery/';
         $destinationfolder = '/images/gallery/';
         $header_originalFile = $header_file->getClientOriginalName();
         $header_filename = strtotime("now").'-'.$header_originalFile;
-        $header_file->move($destinationPath, $header_filename);
+        $avatar_img = \Intervention\Image\Facades\Image::make($header_file);
+        $avatar_img->resize(373, 373)->save(public_path($destinationPath . $header_filename));
         $serve_url = URL::to('/');
         $header_img = $serve_url.$destinationfolder.$header_filename;
+
+
+
+
 
         DB::table('business_galleries')->insert([
             'business_id'=>Session::get("business_id"),

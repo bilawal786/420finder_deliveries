@@ -21,9 +21,15 @@
                 <div class="col-md-6">
                     <h3 class="panel-title">All Deals</h3>
                 </div>
-                <div class="col-md-6 text-right">
-                    <a href="{{ route('addnewdeal') }}" class="btn btn-dark">Add New Deal</a>
-                </div>
+                @if($deal_wallet->deal_wallet <= 0)
+                    <div class="col-md-6 text-right">
+                        <a href="{{ route('addnewdeal') }}" class="btn btn-dark">Add New Deal</a>
+                    </div>
+                @else
+                    <div class="col-md-6 text-right">
+                        <a href="{{ route('freeDeal') }}" class="btn btn-dark">Add Free Deal({{$deal_wallet->deal_wallet}})</a>
+                    </div>
+                @endif
             </div>
         </div>
         <div class="panel-body">

@@ -25,7 +25,7 @@
                                 <div class="col-md-3">
                                     <div class="thumbnail">
                                         <a href="{{route('gallery.show', [$row->id])}}">
-                                            <img src="{{$row->image}}" alt="Lights" style="width:100%; height:205px">
+                                            <img src="{{$row->image}}" alt="Lights" style="width:100%;">
                                         </a>
                                     </div>
                                 </div>
