@@ -16,7 +16,10 @@
                     @endif
                 </li>
                 <li>
-                    <a href="{{ route('state.areas') }}" class=""><i class="fa fa-product-hunt" aria-hidden="true"></i>  <span>Sales & Marketing Product</span></a>
+                    <a href="{{ route('subscription') }}" class=""><i class="fa fa-product-hunt" aria-hidden="true"></i> <span>Subscription</span></a>
+                </li>
+                <li>
+                    <a href="{{ route('state.areas') }}" class=""><i class="fa fa-product-hunt" aria-hidden="true"></i>  <span>Sales&Marketing Products</span></a>
                 </li>
 
                 <li>
@@ -78,10 +81,6 @@
                 <li>
                     <a href="{{ route('accountsettings') }}" class=""><i class="fa fa-user" aria-hidden="true"></i> <span>Account Settings</span></a>
                 </li>
-                <li>
-                    <a href="{{ route('subscription') }}" class=""><i class="fa fa-product-hunt" aria-hidden="true"></i> <span>Subscription</span></a>
-                </li>
-
             </ul>
 
         </nav>

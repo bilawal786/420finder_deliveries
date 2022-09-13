@@ -6,9 +6,11 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-12">
-
+                    @php
+                        $text = DB::table('tests')->first();
+                    @endphp
                     <h4>
-                        Available Area Details
+                        {!! $text->del_sales_marketing !!}
                     </h4>
                 </div>
             </div>

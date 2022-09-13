@@ -15,7 +15,17 @@
             visibility: visible;
         }
     }
-
+    .d-box{
+        padding: 2rem;
+        box-shadow: 1px 1px 20px 0px rgb(0 0 0 / 19%);
+        border: 0px;
+        border-radius: 3px;
+        margin-bottom: 30px;
+        color: #000;
+    }
+    .d-number{
+        font-size: 14rem;
+    }
 </style>
 <nav class="navbar navbar-default navbar-fixed-top">
 

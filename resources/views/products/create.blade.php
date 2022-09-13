@@ -16,7 +16,7 @@
                         <div class="card-body pb-5">
 
                           @include('partials.success-error')
-                          
+
                           <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             {{-- <input type="hidden" name="brand_id" value="{{ $brand->id }}"> --}}
@@ -57,10 +57,10 @@
                                   <label for="">Suggested Price*</label>
                                   <input type="number" name="suggested_price" class="form-control" required="">
                                 </div>
-                                <div class="form-group pt-3">
-                                  <label for="">Gallery Images</label>
-                                  <input type="file" name="galleryimages[]" multiple="" class="form-control">
-                                </div>
+{{--                                <div class="form-group pt-3">--}}
+{{--                                  <label for="">Gallery Images</label>--}}
+{{--                                  <input type="file" name="galleryimages[]" multiple="" class="form-control">--}}
+{{--                                </div>--}}
                                 <div class="row mt-4">
                                   <div class="col-md-12">
                                     <h5><strong>Categorization</strong></h5>

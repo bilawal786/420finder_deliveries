@@ -5,7 +5,20 @@
 @endphp
 
 @section('content')
-
+    <div class="panel panel-headline">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    @php
+                        $text = DB::table('tests')->first();
+                    @endphp
+                    <h4>
+                        {!! $text->del_subscription !!}
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="panel panel-headline">
         <div class="panel-heading">
             <div class="row">
