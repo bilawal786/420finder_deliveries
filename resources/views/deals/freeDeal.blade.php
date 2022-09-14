@@ -75,7 +75,7 @@
                                            required>
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-6 mb-3" id="sub">
-                                    <label for="deal_price">Price</label>
+                                    <label for="deal_price">Deal Fee</label>
                                     <input type="number" readonly  name="price" id="deal_price" class="form-control"
                                            required value="{{ $subPrice->deal_price }}">
                                 </div>
