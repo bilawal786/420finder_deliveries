@@ -60,12 +60,32 @@
             margin-top: 25px;
             padding-top: 60px;
         }
+        .mobile-view{
+            position: fixed;
+            z-index: 5000;
+            width: 100%;
+            height: 100vh;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .main-content{
+                display: none;
+            }
+            .container-fluid{
+                display: none;
+            }
+            .mobile-view{
+                display: block !important;
+            }
+        }
+
     </style>
 
     @yield('styles')
 
 </head>
 <body>
+<img src="{{asset('images/mobile-view.jpg')}}" style="display: none" class="mobile-view">
   <div id="element" class="introLoading"></div>
     <div id="wrapper">
 

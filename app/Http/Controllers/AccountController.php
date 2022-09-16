@@ -44,7 +44,7 @@ class AccountController extends Controller {
             $filename = time() . '.' . $avatar->GetClientOriginalExtension();
 
             $avatar_img = Image::make($avatar);
-            $avatar_img->resize(770,218)->save(public_path('images/dispensery/profile/' . $filename));
+            $avatar_img->resize(500,500)->save(public_path('images/dispensery/profile/' . $filename));
 
             $business->profile_picture = asset("images/dispensery/profile/" . $filename);
 

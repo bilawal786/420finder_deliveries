@@ -12,7 +12,7 @@
             box-shadow: 0 8px 6px -6px #959595;
         }
         .login-back{
-            background-image: url({{asset('BACKGROUND.PNG')}});
+            background-image: url({{asset('03.PNG')}});
             background-color: #ecedf1 !important;
             background-repeat: no-repeat;
             background-size: 100% 100vh;
@@ -62,10 +62,10 @@
             <div class="col-md-4 text-center">
                 <div class="row mb-5">
                     <div class="col-xs-6">
-                        <img style="width: 100%;" src="{{asset('420 FINDER logo.png')}}">
+                        <img style="width: 100%;" src="{{asset('02.png')}}">
                     </div>
                     <div class="col-xs-6 vl">
-                        <img style="width: 80%;" src="{{asset('420 FINDER BIZ logo.png')}}">
+                        <img style="width: 80%;" src="{{asset('01.png')}}">
                     </div>
                 </div>
             </div>
