@@ -1,63 +1,67 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="panel panel-headline">
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-12">
-                    @php
-                        $text = DB::table('tests')->first();
-                    @endphp
-                    <h4>
-                        {!! $text->del_gallery !!}
-                    </h4>
-                </div>
-            </div>
+    <div class="dash-analytics">
+        <div class="d-box-text text-center p-4 mb-5" style="border-radius: 20px;">
+            <h1 style="font-weight: 900; font-style: italic;" class="d-size">GALLERY</h1>
         </div>
-    </div>
-    <!-- OVERVIEW -->
-    <div class="panel panel-headline">
-        <div class="panel-heading">
-            <div class="row">
-                <div class="col-md-6">
-                    <h3 class="panel-title">Gallery</h3>
-                </div>
-                <div class="col-md-6 text-right">
-                    <button type="button" data-toggle="modal" data-target="#upload" class="btn btn-primary" style="padding: 5px 10px;">Upload images</button>
-                </div>
-            </div>
-        </div>
-        <div class="panel-body">
-            <div class="row">
-
-
-                <div class="container-fluid">
-                    <div class="row">
-                        @if(count($data) > 0)
-                            @foreach($data as $row)
-                                <div class="col-md-3">
-                                    <div class="thumbnail">
-                                        <a href="{{route('gallery.show', [$row->id])}}">
-                                            <img src="{{$row->image}}" alt="Lights" style="width:100%;">
-                                        </a>
-                                    </div>
-                                </div>
-                            @endforeach
-                        @else
-                            <div class="col-md-12">
-                                <div class="thumbnail">
-                                    <img src="{{asset('images/no-images.jpg')}}" alt="Lights" style="width:100%;">
-                                </div>
-                            </div>
-                        @endif
+        <div class="panel panel-headline">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        @php
+                            $text = DB::table('tests')->first();
+                        @endphp
+                        <h4>
+                            {!! $text->del_gallery !!}
+                        </h4>
                     </div>
                 </div>
-
             </div>
         </div>
-    </div>
-    <!-- Last Name -->
-    <div class="modal fade" id="upload" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <!-- OVERVIEW -->
+        <div class="panel panel-headline">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 class="panel-title">Gallery</h3>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <button type="button" data-toggle="modal" data-target="#upload" class="btn btn-primary" style="padding: 5px 10px;">Upload images</button>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            @if(count($data) > 0)
+                                @foreach($data as $row)
+                                    <div class="col-md-3">
+                                        <div class="thumbnail">
+                                            <a href="{{route('gallery.show', [$row->id])}}">
+                                                <img src="{{$row->image}}" alt="Lights" style="width:100%;">
+                                            </a>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @else
+                                <div class="col-md-12">
+                                    <div class="thumbnail">
+                                        <img src="{{asset('images/no-images.jpg')}}" alt="Lights" style="width:100%;">
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Last Name -->
+        <div class="modal fade" id="upload" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form action="{{ route('savelastname') }}" method="POST">
@@ -88,5 +92,6 @@
                 </form>
             </div>
         </div>
+    </div>
     </div>
 @endsection

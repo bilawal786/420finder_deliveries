@@ -1,60 +1,64 @@
 @extends('layouts.admin')
 
 @section('content')
-
-    <div class="panel panel-headline">
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-12">
-                    @php
-                        $text = DB::table('tests')->first();
-                    @endphp
-                    <h4>
-                        {!! $text->del_sales_marketing !!}
-                    </h4>
-                </div>
-            </div>
+    <div class="dash-analytics">
+        <div class="d-box-text text-center p-4 mb-5" style="border-radius: 20px;">
+            <h1 style="font-weight: 900; font-style: italic;" class="d-size">SALES + MARKETING PRODUCTS</h1>
+            <h3 style="font-style: italic;" class="m-0">+TOP 10 POSITIONS &nbsp; &nbsp; &nbsp; +BRANDS &nbsp; &nbsp; &nbsp; +MORE</h3>
         </div>
-    </div>
-    @if($area)
         <div class="panel panel-headline">
-            <div class="panel-heading">
-                <?php
-                $state = DB::table('states')->find($business->state_province);
-                if($state == null){
-                    $StateName = 'No State';
-                }else{
-                    $StateName = $state->name;
-                }
-                ?>
-
-                <h3 class="panel-title" style="text-align: center">{{$StateName}} </h3>
-            </div>
             <div class="panel-body">
                 <div class="row">
-                    @foreach($area as $row)
-                        <div class="col-md-3">
-                            <div class="metric" style="display: block!important; text-align: center;padding: 10px!important;">
-                                <h4><b>{{$row->title}}</b></h4>
-                                <h5><b>{{$row->sub_title}}</b></h5>
-                                <a href="{{route('marketing',['id'=>$row->id])}}" class="btn btn-primary">Open Me</a>
+                    <div class="col-md-12">
+                        @php
+                            $text = DB::table('tests')->first();
+                        @endphp
+                        <h4>
+                            {!! $text->del_sales_marketing !!}
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if($area)
+            <div class="panel panel-headline">
+                <div class="panel-heading">
+                    <?php
+                    $state = DB::table('states')->find($business->state_province);
+                    if($state == null){
+                        $StateName = 'No State';
+                    }else{
+                        $StateName = $state->name;
+                    }
+                    ?>
+
+                    <h3 class="panel-title" style="text-align: center">{{$StateName}} </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        @foreach($area as $row)
+                            <div class="col-md-3">
+                                <div class="metric" style="display: block!important; text-align: center;padding: 10px!important;">
+                                    <h4><b>{{$row->title}}</b></h4>
+                                    <h5><b>{{$row->sub_title}}</b></h5>
+                                    <a href="{{route('marketing',['id'=>$row->id])}}" class="btn btn-primary">Open Me</a>
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+
+                    </div>
 
                 </div>
 
             </div>
-
-        </div>
-    @else
-        <div class="panel panel-headline">
-            <div class="panel-heading">
-                <h3 class="panel-title" style="text-align: center;color: red">No Available Area </h3>
+        @else
+            <div class="panel panel-headline">
+                <div class="panel-heading">
+                    <h3 class="panel-title" style="text-align: center;color: red">No Available Area </h3>
+                </div>
             </div>
-        </div>
-    @endif
-
+        @endif
+    </div>
 @endsection
 
 @section('styles')

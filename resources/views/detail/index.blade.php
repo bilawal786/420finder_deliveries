@@ -1,110 +1,114 @@
 @extends('layouts.admin')
 
     @section('content')
-        <div class="panel panel-headline">
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-12">
-                        @php
-                            $text = DB::table('tests')->first();
-                        @endphp
-                        <h4>
-                            {!! $text->del_details !!}
-                        </h4>
+        <div class="dash-analytics">
+            <div class="d-box-text text-center p-4 mb-5" style="border-radius: 20px;">
+                <h1 style="font-weight: 900; font-style: italic;" class="d-size">DETAILS</h1>
+            </div>
+            <div class="panel panel-headline">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            @php
+                                $text = DB::table('tests')->first();
+                            @endphp
+                            <h4>
+                                {!! $text->del_details !!}
+                            </h4>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="panel panel-headline">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3 class="panel-title">Detail</h3>
+            <div class="panel panel-headline">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3 class="panel-title">Detail</h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="panel-body">
-                <form action="{{ route('detail.update', session('business_id')) }}" method="POST" enctype="multipart/form-data">
+                <div class="panel-body">
+                    <form action="{{ route('detail.update', session('business_id')) }}" method="POST" enctype="multipart/form-data">
 
-                    @method('PUT')
-                    @csrf
+                        @method('PUT')
+                        @csrf
 
-                    <div class="form-group">
-                        <label for="" style="margin-bottom: 1rem;font-size: 1.7rem">Introduction</label>
-                        <textarea name="introduction" id="" rows="8" class="form-control summernote">{{ !is_null($detail) && !is_null($detail->introduction) ? $detail->introduction : '' }}</textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="" style="margin-bottom: 1rem;font-size: 1.7rem">About Us</label>
-                        <textarea name="about" id="" rows="8" class="form-control summernote">{{ !is_null($detail) && !is_null($detail->about) ? $detail->about : '' }}</textarea>
-                    </div>
-
-                    {{-- <div class="form-group">
-                        <label for="" style="margin-bottom: 1rem;font-size: 1.7rem">Amenities</label>
-                        <div>
-                            <input type="checkbox" name="brand_verified"
-                            <?php
-                            // if(isset($detail)) {
-                            //     $amenities = json_decode($detail->amenities, true);
-                            //     if($amenities['brand_verified'] == 'on') {
-                            //         echo 'checked';
-                            //     }
-                            // }
-                            ?>
-                            >
-                            <span>Brand Verified</span>
+                        <div class="form-group">
+                            <label for="" style="margin-bottom: 1rem;font-size: 1.7rem">Introduction</label>
+                            <textarea name="introduction" id="" rows="8" class="form-control summernote">{{ !is_null($detail) && !is_null($detail->introduction) ? $detail->introduction : '' }}</textarea>
                         </div>
 
-                        <div>
-                            <input type="checkbox" name="access"
-                            <?php
-                            // if(isset($detail)) {
-                            //     $amenities = json_decode($detail->amenities, true);
-                            //     if($amenities['access'] == 'on') {
-                            //         echo 'checked';
-                            //     }
-                            // }
-                            ?>
-                            > <span>Accessible</span>
+                        <div class="form-group">
+                            <label for="" style="margin-bottom: 1rem;font-size: 1.7rem">About Us</label>
+                            <textarea name="about" id="" rows="8" class="form-control summernote">{{ !is_null($detail) && !is_null($detail->about) ? $detail->about : '' }}</textarea>
                         </div>
 
-                        <div>
-                            <input type="checkbox" name="security"
-                            <?php
-                            // if(isset($detail)) {
-                            //     $amenities = json_decode($detail->amenities, true);
-                            //     if($amenities['security'] == 'on') {
-                            //         echo 'checked';
-                            //     }
-                            // }
-                            ?>
-                            > <span>Security</span>
+                        {{-- <div class="form-group">
+                            <label for="" style="margin-bottom: 1rem;font-size: 1.7rem">Amenities</label>
+                            <div>
+                                <input type="checkbox" name="brand_verified"
+                                <?php
+                                // if(isset($detail)) {
+                                //     $amenities = json_decode($detail->amenities, true);
+                                //     if($amenities['brand_verified'] == 'on') {
+                                //         echo 'checked';
+                                //     }
+                                // }
+                                ?>
+                                >
+                                <span>Brand Verified</span>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" name="access"
+                                <?php
+                                // if(isset($detail)) {
+                                //     $amenities = json_decode($detail->amenities, true);
+                                //     if($amenities['access'] == 'on') {
+                                //         echo 'checked';
+                                //     }
+                                // }
+                                ?>
+                                > <span>Accessible</span>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" name="security"
+                                <?php
+                                // if(isset($detail)) {
+                                //     $amenities = json_decode($detail->amenities, true);
+                                //     if($amenities['security'] == 'on') {
+                                //         echo 'checked';
+                                //     }
+                                // }
+                                ?>
+                                > <span>Security</span>
+                            </div>
+                        </div> --}}
+
+                        <div class="form-group">
+                            <label for="" style="margin-bottom: 1rem;font-size: 1.7rem">First-Time Customers</label>
+                            <textarea name="customers" id="" rows="8" class="form-control summernote">{{ !is_null($detail) && !is_null($detail->customers) ? $detail->customers : '' }}</textarea>
                         </div>
-                    </div> --}}
 
-                    <div class="form-group">
-                        <label for="" style="margin-bottom: 1rem;font-size: 1.7rem">First-Time Customers</label>
-                        <textarea name="customers" id="" rows="8" class="form-control summernote">{{ !is_null($detail) && !is_null($detail->customers) ? $detail->customers : '' }}</textarea>
-                    </div>
+                        <div class="form-group">
+                            <label for="" style="margin-bottom: 1rem;font-size: 1.7rem">Announcement</label>
+                            <textarea name="announcement" id="" rows="8" class="form-control summernote">{{ !is_null($detail) && !is_null($detail->announcement) ? $detail->announcement : '' }}</textarea>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="" style="margin-bottom: 1rem;font-size: 1.7rem">Announcement</label>
-                        <textarea name="announcement" id="" rows="8" class="form-control summernote">{{ !is_null($detail) && !is_null($detail->announcement) ? $detail->announcement : '' }}</textarea>
-                    </div>
+                        <div class="form-group">
+                            <label for="" style="margin-bottom: 1rem;font-size: 1.7rem">State License</label>
+                            <textarea name="license" id="" rows="8" class="form-control summernote">{{ !is_null($detail) && !is_null($detail->license) ? $detail->license : '' }}</textarea>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="" style="margin-bottom: 1rem;font-size: 1.7rem">State License</label>
-                        <textarea name="license" id="" rows="8" class="form-control summernote">{{ !is_null($detail) && !is_null($detail->license) ? $detail->license : '' }}</textarea>
-                    </div>
+                        <div class="form-group">
+                            <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+                        </div>
+                    </form>
 
-                    <div class="form-group">
-                        <input type="submit" name="submit" value="Submit" class="btn btn-primary">
-                    </div>
-                </form>
-
+                </div>
             </div>
         </div>
-
     @endsection
 
 @section('styles')

@@ -1,6 +1,6 @@
-/*	
+/*
 *	############################################################################################
-*	
+*
 *	KLOROFIL - Free Bootstrap Dashboard Template
 *	---------------------------------------------------------------------
 *
@@ -9,7 +9,7 @@
 *	Website: 	https://www.themeineed.com/
 *	Copyright: 	Copyright 2016 The Develovers
 *	License: 	Creative Common Attribution 4.0 https://creativecommons.org/licenses/by/4.0/
-*	
+*
 *	############################################################################################
 */
 /********************
@@ -1763,3 +1763,55 @@ ul.activity-timeline > li {
     border: 1px solid #CCC; }
 
 /*# sourceMappingURL=main.css.map */
+.d-box-text{
+    background-image: url("../../images/MAP MARKER LOGO.png"), linear-gradient(to right, #f58221 , #faac1d);
+    color: #ffffff;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+@media screen and (min-width: 1080px) {
+    .d-size {
+        font-size: 5rem;
+    }
+}
+@media screen and (min-width: 769px) {
+    .d-size {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) {
+    .d-size {
+        font-size: 4rem;
+    }
+}
+
+@media only screen and (max-device-width: 600px) {
+    .d-size {
+        font-size: 3rem;
+    }
+}
+.d-payment{
+    background: #f8971c;
+    padding: 2rem;
+    color: #fff;
+    border-radius: 10px;
+}
+.d-btn{
+    color: #f8971c;
+    margin: 10px;
+    padding: 20px 60px;
+    font-size: 3rem;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+}
+.d-card{
+    background-color: #FFF;
+    text-align: center;
+    padding: 5px;
+    margin-top: 20px;
+}
+.d-r-0{
+    border-radius: 0px !important;
+}

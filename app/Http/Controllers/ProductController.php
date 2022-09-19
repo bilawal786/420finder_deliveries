@@ -314,7 +314,7 @@ class ProductController extends Controller {
             'sku' => 'required',
             'suggested_price' => 'required',
             'category_id' => 'required',
-            'galleryimages' => 'required'
+
         ]);
 
         $product = new DeliveryProducts;
