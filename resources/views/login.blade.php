@@ -12,7 +12,7 @@
             box-shadow: 0 8px 6px -6px #959595;
         }
         .login-back{
-            background-image: url({{asset('03.PNG')}});
+            background-image: url({{asset('03.png')}});
             background-color: #ecedf1 !important;
             background-repeat: no-repeat;
             background-size: 100% 100vh;
@@ -45,12 +45,22 @@
         .p-d-none{
             display: none;
         }
+        .destopnone{
+            display: none;
+        }
         @media only screen and (max-width: 600px) {
             .mdn{
                 display: none;
             }
             .destopnone{
-                display: block;
+                display: block !important;
+                margin: 10px !important;
+            }
+            .card{
+                margin: 0px !important;
+            }
+            .p0{
+                padding: 10px !important;
             }
         }
     </style>
@@ -129,10 +139,13 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-4 destopnone" style="margin: 100px auto;">
+                <P class="text-center p-side">CREATE, MANAGE,<br><span style="font-size: 4rem; position: relative; bottom: 15px;">GET DISCOVERED</span></P>
+            </div>
             <div class="col-md-4 mdn" style="margin: 100px auto;">
                 <P class="text-center p-side"><span style="position: relative; bottom: 15px">THE MOST MODERN AND </span><br>
                     <span style="position: relative; bottom: 20px;">EFFICIENT WAY TO GROW</span><br>
-                    <span style="position: relative; bottom: 30px;">YOUR CONNABIS COMPANY</span>
+                    <span style="position: relative; bottom: 30px;">YOUR CANNABIS COMPANY</span>
                 </P>
             </div>
         </div>
@@ -141,7 +154,7 @@
 
             </div>
             <div class="col-md-4">
-                <img style="width:100%;padding:65px;" src="{{asset('BOTTOM ICONS.png')}}">
+                <img class="p0" style="width:100%;padding:65px;" src="{{asset('BOTTOM ICONS.png')}}">
             </div>
             <div class="col-md-4">
 

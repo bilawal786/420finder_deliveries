@@ -179,7 +179,7 @@
                 <div class="col-md-4">
                     <div class="d-box text-center">
                         <h1 class="m-0" style="font-size: 5rem">ACTIVE ORDERS</h1>
-                        <h1 class="m-0" style="font-size: 3rem">(ACCEPT, NOT COMPLETE)</h1>
+                        <h1 class="m-0" style="font-size: 3rem">(ACCEPTED, NOT COMPLETED)</h1>
                         <h1 class="m-0" style="font-size: 2rem">&nbsp;</h1>
                         <span class="d-number">{{ $acceptorders }}</span>
                     </div>
