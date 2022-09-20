@@ -3,7 +3,6 @@
     $months = array(1 => 'Jan', 2 => 'Feb', 3 => 'Mar', 4 => 'Apr', 5 => 'May', 6 => 'Jun', 7 => 'Jul', 8 => 'Aug', 9 => 'Sep', 10 => 'Oct', 11 => 'Nov', 12 => 'Dec');
 @endphp
 @section('content')
-
     <div class="panel panel-headline">
         <div class="panel-heading">
             <div class="row">
@@ -13,7 +12,7 @@
                     @elseif($p > 10 && $p <= 15)
                         <h3 class="panel-title" style="font-size: 3rem; font-weight: bold;font-style: italic;color: #f8971c;"><img src="{{asset('images/ab.png')}}" style="height: 25px">TOP BANNERS POSITION # {{$p-10}}</h3>
                     @elseif($p > 15 && $p <= 20)
-                        <h3 class="panel-title" style="font-size: 3rem; font-weight: bold;font-style: italic;color: #f8971c;"><img src="{{asset('images/ab.png')}}" style="height: 25px">TOP BANNERS POSITION # {{$p-15}}</h3>
+                        <h3 class="panel-title" style="font-size: 3rem; font-weight: bold;font-style: italic;color: #f8971c;"><img src="{{asset('images/ab.png')}}" style="height: 25px">MIDDLE BANNER POSITION # {{$p-15}}</h3>
                     @endif
                 </div>
             </div>
@@ -28,15 +27,29 @@
                         <div class="row">
                             <input type="hidden" name="area_id" value="{{$area->id}}">
                             <input type="hidden" name="position" value="{{$p}}">
-                            <div class="form-group-lg col-xs-12 col-sm-6 mb-3" id="sub">
+                            <div class="form-group-lg col-xs-12 col-sm-6 col-md-1 mb-3" id="sub">
                                 <label for="deal_price"> Price</label>
-                                <input type="number" name="price" id="price" class="form-control" required value="{{$price}}" readonly>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 mb-3">
-                                <label for="" style="margin-bottom: 1rem; margin-top: 10px;">Description</label>
-                                <textarea name="description" id="" rows="8" class="form-control"></textarea>
+                                <input type="hidden" name="price" id="price" style="  height: 80px;padding: 10px 16px;font-size: 4rem; font-style: italic" class="form-control" required value="{{$price}}" readonly>
+                                <input type="text"  style="  height: 80px;padding: 10px 16px;font-size: 4rem; font-style: italic" class="form-control" required value="${{$price}}" readonly>
                             </div>
                         </div>
+                        <div class="row">
+                            <input type="hidden" name="area_id" value="{{$area->id}}">
+                            <input type="hidden" name="position" value="{{$p}}">
+                            <div class="form-group-lg col-xs-12 col-sm-12 col-md-5 mb-3" id="sub">
+                                <label for="deal_price"> For</label>
+                                @if($p <= 10)
+                                    <input type="text" id="price" style="  height: 80px;padding: 10px 16px;font-size: 4rem; font-style: italic" class="form-control" required value="TOP BUSINESS POSITION # {{$p}}" readonly>
+                                @elseif($p > 10 && $p <= 15)
+                                    <input type="text" id="price" style="  height: 80px;padding: 10px 16px;font-size: 4rem; font-style: italic" class="form-control" required value="TOP BANNERS POSITION # {{$p-10}}" readonly>
+                                @elseif($p > 15 && $p <= 20)
+                                    <input type="text" id="price" style="  height: 80px;padding: 10px 16px;font-size: 4rem; font-style: italic" class="form-control" required value="MIDDLE BANNER POSITION # {{$p-15}}" readonly>
+                                @endif
+                            </div>
+                        </div>
+                        <p  style="font-size: 2.5rem; font-style: italic">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </p>
                         {{--                        <div class="row">--}}
                         {{--                            <div class="form-group name-on-card col-xs-12 col-sm-6 mb-3">--}}
                         {{--                                <label for="name-on-card">Name on Card</label>--}}
@@ -207,6 +220,13 @@
             </form>
         </div>
 
+
+
+
+
+
     </div>
 
 @endsection
+
+
