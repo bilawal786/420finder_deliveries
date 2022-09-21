@@ -97,7 +97,7 @@
                         <div class="col-md-12">
                             <div class="text-center py-5" style="font-style: italic; color: #f8971c;">
                                 <h1 class="m-0" style="font-weight: bold; font-size: 5rem;">ALMOST THERE.</h1>
-                                <h3 class="m-0" style="font-size: 3rem;">COMPLETE THE PAYMENT FORM BELOW TO LOCK IN YOUR SUBSCIPTION NOW.</h3>
+                                <h3 class="m-0" style="font-size: 3rem;">COMPLETE THE PAYMENT FORM BELOW TO LOCK IN YOUR SUBSCRIPTION NOW.</h3>
                                 <h3 class="m-0" style="font-size: 3rem; font-weight: bold;">PRICE: ${{$subPrice->sub_price}}</h3>
                                 <div class="mt-5" style="font-size: 1rem; color: #CCC;">
                                     <i class="fa fa-circle mx-2"></i>
