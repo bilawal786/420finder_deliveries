@@ -50,7 +50,7 @@
                             @else
                                 <div class="col-md-12">
                                     <div class="thumbnail">
-                                        <img src="https://420finder.net/images/no-images.jpg" alt="Lights" style="width:100%;">
+                                        <img src="https://420finder.net/images/no-image.jpg" alt="Lights" style="width:100%;">
                                     </div>
                                 </div>
                             @endif
