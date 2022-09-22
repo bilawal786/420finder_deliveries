@@ -13,7 +13,7 @@
                             $text = DB::table('tests')->first();
                         @endphp
                         <h4>
-                            {!! $text->del_orders !!}
+                            {!! $text->dis_orders !!}
                         </h4>
                     </div>
                 </div>

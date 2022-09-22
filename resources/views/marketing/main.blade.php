@@ -14,7 +14,7 @@
                             $text = DB::table('tests')->first();
                         @endphp
                         <h4>
-                            {!! $text->del_sales_marketing !!}
+                            {!! $text->dis_sales_marketing !!}
                         </h4>
                     </div>
                 </div>

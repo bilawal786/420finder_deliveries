@@ -13,7 +13,7 @@
                             $text = DB::table('tests')->first();
                         @endphp
                         <h4>
-                            {!! $text->del_account_settings !!}
+                            {!! $text->dis_account_settings !!}
                         </h4>
                     </div>
                 </div>

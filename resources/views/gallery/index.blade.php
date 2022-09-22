@@ -13,7 +13,7 @@
                             $text = DB::table('tests')->first();
                         @endphp
                         <h4>
-                            {!! $text->del_gallery !!}
+                            {!! $text->dis_gallery !!}
                         </h4>
                     </div>
                 </div>
