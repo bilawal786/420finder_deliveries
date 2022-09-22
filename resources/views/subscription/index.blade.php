@@ -114,7 +114,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <h1 class="m-0" style="font-weight: bold; font-size: 3rem; color: red; text-align: center; font-style: italic">STATE REGION</h1>
+                            <h1 class="m-0" style="font-weight: bold; font-size: 3rem; color: red; text-align: center; font-style: italic">STATE / REGION</h1>
                             <br>
                             <h1 class="m-0" style="font-weight: bold; font-size: 4rem; color: red; text-align: center; font-style: italic">{{$subPrice->name}}</h1>
                         </div>
