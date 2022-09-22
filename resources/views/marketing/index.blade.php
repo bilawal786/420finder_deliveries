@@ -10,6 +10,13 @@
         .mytitle{
             font-size: 20px; margin-top: 0px
         }
+        .metric .m-icon {
+            padding: 0.5rem;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            font-style: italic;
+        }
     </style>
     <div class="d-box-text text-center p-4 mb-5" style="border-radius: 20px;">
         <h1 style="font-weight: 900; font-style: italic;" class="d-size">SALES + MARKETING PRODUCTS</h1>
@@ -62,7 +69,7 @@
                                     - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:40px; text-align: center" >${{$area->p1}}</h1>
+                                <h1 style="font-size:33px; text-align: center" >${{$area->p1}}</h1>
                             </div>
                         </div>
                     </div>
@@ -92,7 +99,7 @@
                                     - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:40px; text-align: center" >${{$area->p2}}</h1>
+                                <h1 style="font-size:33px; text-align: center" >${{$area->p2}}</h1>
                             </div>
                         </div>
                     </div>
@@ -122,7 +129,7 @@
                                     - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:40px; text-align: center" >${{$area->p3}}</h1>
+                                <h1 style="font-size:33px; text-align: center" >${{$area->p3}}</h1>
                             </div>
                         </div>
                     </div>
@@ -152,7 +159,7 @@
                                     - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:40px; text-align: center" >${{$area->p4}}</h1>
+                                <h1 style="font-size:33px; text-align: center" >${{$area->p4}}</h1>
                             </div>
                         </div>
                     </div>
@@ -182,7 +189,7 @@
                                     - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:40px; text-align: center" >${{$area->p5}}</h1>
+                                <h1 style="font-size:33px; text-align: center" >${{$area->p5}}</h1>
                             </div>
                         </div>
                     </div>
@@ -212,7 +219,7 @@
                                     - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:40px; text-align: center" >${{$area->p6}}</h1>
+                                <h1 style="font-size:33px; text-align: center" >${{$area->p6}}</h1>
                             </div>
                         </div>
                     </div>
@@ -242,7 +249,7 @@
                                     - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:40px; text-align: center" >${{$area->p7}}</h1>
+                                <h1 style="font-size:33px; text-align: center" >${{$area->p7}}</h1>
                             </div>
                         </div>
                     </div>
@@ -272,7 +279,7 @@
                                     - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:40px; text-align: center" >${{$area->p8}}</h1>
+                                <h1 style="font-size:33px; text-align: center" >${{$area->p8}}</h1>
                             </div>
                         </div>
                     </div>
@@ -302,7 +309,7 @@
                                     - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:40px; text-align: center" >${{$area->p9}}</h1>
+                                <h1 style="font-size:33px; text-align: center" >${{$area->p9}}</h1>
                             </div>
                         </div>
                     </div>
@@ -332,7 +339,7 @@
                                     - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:40px; text-align: center" >${{$area->p10}}</h1>
+                                <h1 style="font-size:33px; text-align: center" >${{$area->p10}}</h1>
                             </div>
                         </div>
                     </div>
@@ -421,7 +428,7 @@
                                     - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:40px; text-align: center" >${{$area->bp1}}</h1>
+                                <h1 style="font-size:33px; text-align: center" >${{$area->bp1}}</h1>
                             </div>
                         </div>
                     </div>
@@ -451,7 +458,7 @@
                                     - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:40px; text-align: center" >${{$area->bp2}}</h1>
+                                <h1 style="font-size:33px; text-align: center" >${{$area->bp2}}</h1>
                             </div>
                         </div>
                     </div>
@@ -481,7 +488,7 @@
                                     - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:40px; text-align: center" >${{$area->bp3}}</h1>
+                                <h1 style="font-size:33px; text-align: center" >${{$area->bp3}}</h1>
                             </div>
                         </div>
                     </div>
@@ -511,7 +518,7 @@
                                     - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:40px; text-align: center" >${{$area->bp4}}</h1>
+                                <h1 style="font-size:33px; text-align: center" >${{$area->bp4}}</h1>
                             </div>
                         </div>
                     </div>
@@ -541,7 +548,7 @@
                                     - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:40px; text-align: center" >${{$area->bp5}}</h1>
+                                <h1 style="font-size:33px; text-align: center" >${{$area->bp5}}</h1>
                             </div>
                         </div>
                     </div>
@@ -584,7 +591,7 @@
                                         - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
-                                    <h1 style="font-size:40px; text-align: center" >${{$area->bp6}}</h1>
+                                    <h1 style="font-size:33px; text-align: center" >${{$area->bp6}}</h1>
                                 </div>
                             </div>
                         </div>
@@ -614,7 +621,7 @@
                                         - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
-                                    <h1 style="font-size:40px; text-align: center" >${{$area->bp7}}</h1>
+                                    <h1 style="font-size:33px; text-align: center" >${{$area->bp7}}</h1>
                                 </div>
                             </div>
                         </div>
@@ -644,7 +651,7 @@
                                         - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
-                                    <h1 style="font-size:40px; text-align: center" >${{$area->bp8}}</h1>
+                                    <h1 style="font-size:33px; text-align: center" >${{$area->bp8}}</h1>
                                 </div>
                             </div>
                         </div>
@@ -674,7 +681,7 @@
                                         - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
-                                    <h1 style="font-size:40px; text-align: center" >${{$area->bp8}}</h1>
+                                    <h1 style="font-size:33px; text-align: center" >${{$area->bp8}}</h1>
                                 </div>
                             </div>
                         </div>
