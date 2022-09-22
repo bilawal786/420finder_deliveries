@@ -8,7 +8,7 @@
             padding: 10px;
         }
         .mytitle{
-            font-size: 25px; margin-top: 0px
+            font-size: 20px; margin-top: 0px
         }
     </style>
     <div class="d-box-text text-center p-4 mb-5" style="border-radius: 20px;">
@@ -51,19 +51,15 @@
                                     </div>
                                 @else
                                     <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p1,'p'=>1])}}">CLAIM NOW</a>
+                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p1,'p'=>1])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 style="font-size:25px" >
-                                    FROM {{\Carbon\Carbon::now()->addMonth(1)->format('m')}}/1  12:00 PM
-                                </h1>
-                                <h1 class="mytitle" >
-                                    TO {{\Carbon\Carbon::now()->addMonth(2)->format('m')}}/30 11:59 PM
-                                </h1>
+                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <h1 style="font-size:40px; text-align: center" >${{$area->p1}}</h1>
@@ -85,19 +81,15 @@
                                     </div>
                                 @else
                                     <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p2,'p'=>2])}}">CLAIM NOW</a>
+                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p2,'p'=>2])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 style="font-size:25px" >
-                                    FROM {{\Carbon\Carbon::now()->addMonth(1)->format('m')}}/1  12:00 PM
-                                </h1>
-                                <h1 class="mytitle" >
-                                    TO {{\Carbon\Carbon::now()->addMonth(2)->format('m')}}/30 11:59 PM
-                                </h1>
+                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <h1 style="font-size:40px; text-align: center" >${{$area->p2}}</h1>
@@ -119,19 +111,15 @@
                                     </div>
                                 @else
                                     <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p3,'p'=>3])}}">CLAIM NOW</a>
+                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p3,'p'=>3])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 style="font-size:25px" >
-                                    FROM {{\Carbon\Carbon::now()->addMonth(1)->format('m')}}/1  12:00 PM
-                                </h1>
-                                <h1 class="mytitle" >
-                                    TO {{\Carbon\Carbon::now()->addMonth(2)->format('m')}}/30 11:59 PM
-                                </h1>
+                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <h1 style="font-size:40px; text-align: center" >${{$area->p3}}</h1>
@@ -153,19 +141,15 @@
                                     </div>
                                 @else
                                     <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p4,'p'=>4])}}">CLAIM NOW</a>
+                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p4,'p'=>4])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 style="font-size:25px" >
-                                    FROM {{\Carbon\Carbon::now()->addMonth(1)->format('m')}}/1  12:00 PM
-                                </h1>
-                                <h1 class="mytitle" >
-                                    TO {{\Carbon\Carbon::now()->addMonth(2)->format('m')}}/30 11:59 PM
-                                </h1>
+                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <h1 style="font-size:40px; text-align: center" >${{$area->p4}}</h1>
@@ -187,19 +171,15 @@
                                     </div>
                                 @else
                                     <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p5,'p'=>5])}}">CLAIM NOW</a>
+                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p5,'p'=>5])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 style="font-size:25px" >
-                                    FROM {{\Carbon\Carbon::now()->addMonth(1)->format('m')}}/1  12:00 PM
-                                </h1>
-                                <h1 class="mytitle" >
-                                    TO {{\Carbon\Carbon::now()->addMonth(2)->format('m')}}/30 11:59 PM
-                                </h1>
+                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <h1 style="font-size:40px; text-align: center" >${{$area->p5}}</h1>
@@ -221,19 +201,15 @@
                                     </div>
                                 @else
                                     <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p6,'p'=>6])}}">CLAIM NOW</a>
+                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p6,'p'=>6])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 style="font-size:25px" >
-                                    FROM {{\Carbon\Carbon::now()->addMonth(1)->format('m')}}/1  12:00 PM
-                                </h1>
-                                <h1 class="mytitle" >
-                                    TO {{\Carbon\Carbon::now()->addMonth(2)->format('m')}}/30 11:59 PM
-                                </h1>
+                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <h1 style="font-size:40px; text-align: center" >${{$area->p6}}</h1>
@@ -255,19 +231,15 @@
                                     </div>
                                 @else
                                     <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p7,'p'=>7])}}">CLAIM NOW</a>
+                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p7,'p'=>7])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 style="font-size:25px" >
-                                    FROM {{\Carbon\Carbon::now()->addMonth(1)->format('m')}}/1  12:00 PM
-                                </h1>
-                                <h1 class="mytitle" >
-                                    TO {{\Carbon\Carbon::now()->addMonth(2)->format('m')}}/30 11:59 PM
-                                </h1>
+                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <h1 style="font-size:40px; text-align: center" >${{$area->p7}}</h1>
@@ -289,19 +261,15 @@
                                     </div>
                                 @else
                                     <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p8,'p'=>8])}}">CLAIM NOW</a>
+                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p8,'p'=>8])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 style="font-size:25px" >
-                                    FROM {{\Carbon\Carbon::now()->addMonth(1)->format('m')}}/1  12:00 PM
-                                </h1>
-                                <h1 class="mytitle" >
-                                    TO {{\Carbon\Carbon::now()->addMonth(2)->format('m')}}/30 11:59 PM
-                                </h1>
+                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <h1 style="font-size:40px; text-align: center" >${{$area->p8}}</h1>
@@ -323,19 +291,15 @@
                                     </div>
                                 @else
                                     <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p9,'p'=>9])}}">CLAIM NOW</a>
+                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p9,'p'=>9])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 style="font-size:25px" >
-                                    FROM {{\Carbon\Carbon::now()->addMonth(1)->format('m')}}/1  12:00 PM
-                                </h1>
-                                <h1 class="mytitle" >
-                                    TO {{\Carbon\Carbon::now()->addMonth(2)->format('m')}}/30 11:59 PM
-                                </h1>
+                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <h1 style="font-size:40px; text-align: center" >${{$area->p9}}</h1>
@@ -357,19 +321,15 @@
                                     </div>
                                 @else
                                     <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p10,'p'=>10])}}">CLAIM NOW</a>
+                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p10,'p'=>10])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 style="font-size:25px" >
-                                    FROM {{\Carbon\Carbon::now()->addMonth(1)->format('m')}}/1  12:00 PM
-                                </h1>
-                                <h1 class="mytitle" >
-                                    TO {{\Carbon\Carbon::now()->addMonth(2)->format('m')}}/30 11:59 PM
-                                </h1>
+                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <h1 style="font-size:40px; text-align: center" >${{$area->p10}}</h1>
@@ -450,19 +410,15 @@
                                     </div>
                                 @else
                                     <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp1,'p'=>11])}}">CLAIM NOW</a>
+                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp1,'p'=>11])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 style="font-size:25px" >
-                                    FROM {{\Carbon\Carbon::now()->addMonth(1)->format('m')}}/1  12:00 PM
-                                </h1>
-                                <h1 class="mytitle" >
-                                    TO {{\Carbon\Carbon::now()->addMonth(2)->format('m')}}/30 11:59 PM
-                                </h1>
+                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <h1 style="font-size:40px; text-align: center" >${{$area->bp1}}</h1>
@@ -484,19 +440,15 @@
                                     </div>
                                 @else
                                     <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp2,'p'=>12])}}">CLAIM NOW</a>
+                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp2,'p'=>12])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 style="font-size:25px" >
-                                    FROM {{\Carbon\Carbon::now()->addMonth(1)->format('m')}}/1  12:00 PM
-                                </h1>
-                                <h1 class="mytitle" >
-                                    TO {{\Carbon\Carbon::now()->addMonth(2)->format('m')}}/30 11:59 PM
-                                </h1>
+                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <h1 style="font-size:40px; text-align: center" >${{$area->bp2}}</h1>
@@ -518,19 +470,15 @@
                                     </div>
                                 @else
                                     <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp3,'p'=>13])}}">CLAIM NOW</a>
+                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp3,'p'=>13])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 style="font-size:25px" >
-                                    FROM {{\Carbon\Carbon::now()->addMonth(1)->format('m')}}/1  12:00 PM
-                                </h1>
-                                <h1 class="mytitle" >
-                                    TO {{\Carbon\Carbon::now()->addMonth(2)->format('m')}}/30 11:59 PM
-                                </h1>
+                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <h1 style="font-size:40px; text-align: center" >${{$area->bp3}}</h1>
@@ -552,19 +500,15 @@
                                     </div>
                                 @else
                                     <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp4,'p'=>14])}}">CLAIM NOW</a>
+                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp4,'p'=>14])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 style="font-size:25px" >
-                                    FROM {{\Carbon\Carbon::now()->addMonth(1)->format('m')}}/1  12:00 PM
-                                </h1>
-                                <h1 class="mytitle" >
-                                    TO {{\Carbon\Carbon::now()->addMonth(2)->format('m')}}/30 11:59 PM
-                                </h1>
+                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <h1 style="font-size:40px; text-align: center" >${{$area->bp4}}</h1>
@@ -586,19 +530,15 @@
                                     </div>
                                 @else
                                     <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp5,'p'=>15])}}">CLAIM NOW</a>
+                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp5,'p'=>15])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 style="font-size:25px" >
-                                    FROM {{\Carbon\Carbon::now()->addMonth(1)->format('m')}}/1  12:00 PM
-                                </h1>
-                                <h1 class="mytitle" >
-                                    TO {{\Carbon\Carbon::now()->addMonth(2)->format('m')}}/30 11:59 PM
-                                </h1>
+                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <h1 style="font-size:40px; text-align: center" >${{$area->bp5}}</h1>
@@ -633,19 +573,15 @@
                                         </div>
                                     @else
                                         <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                            <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp6,'p'=>16])}}">CLAIM NOW</a>
+                                            <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp6,'p'=>16])}}">CLAIM NOW</a>
                                         </div>
                                     @endif
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-8 col-sm-8">
-                                    <h1 style="font-size:25px" >
-                                        FROM {{\Carbon\Carbon::now()->addMonth(1)->format('m')}}/1  12:00 PM
-                                    </h1>
-                                    <h1 class="mytitle" >
-                                        TO {{\Carbon\Carbon::now()->addMonth(2)->format('m')}}/30 11:59 PM
-                                    </h1>
+                                    <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                        - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <h1 style="font-size:40px; text-align: center" >${{$area->bp6}}</h1>
@@ -667,19 +603,15 @@
                                         </div>
                                     @else
                                         <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                            <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp7,'p'=>17])}}">CLAIM NOW</a>
+                                            <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp7,'p'=>17])}}">CLAIM NOW</a>
                                         </div>
                                     @endif
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-8 col-sm-8">
-                                    <h1 style="font-size:25px" >
-                                        FROM {{\Carbon\Carbon::now()->addMonth(1)->format('m')}}/1  12:00 PM
-                                    </h1>
-                                    <h1 class="mytitle" >
-                                        TO {{\Carbon\Carbon::now()->addMonth(2)->format('m')}}/30 11:59 PM
-                                    </h1>
+                                    <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                        - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <h1 style="font-size:40px; text-align: center" >${{$area->bp7}}</h1>
@@ -701,19 +633,15 @@
                                         </div>
                                     @else
                                         <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                            <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp8,'p'=>18])}}">CLAIM NOW</a>
+                                            <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp8,'p'=>18])}}">CLAIM NOW</a>
                                         </div>
                                     @endif
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-8 col-sm-8">
-                                    <h1 style="font-size:25px" >
-                                        FROM {{\Carbon\Carbon::now()->addMonth(1)->format('m')}}/1  12:00 PM
-                                    </h1>
-                                    <h1 class="mytitle" >
-                                        TO {{\Carbon\Carbon::now()->addMonth(2)->format('m')}}/30 11:59 PM
-                                    </h1>
+                                    <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                        - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <h1 style="font-size:40px; text-align: center" >${{$area->bp8}}</h1>
@@ -735,19 +663,15 @@
                                         </div>
                                     @else
                                         <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                            <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp8,'p'=>19])}}">CLAIM NOW</a>
+                                            <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp8,'p'=>19])}}">CLAIM NOW</a>
                                         </div>
                                     @endif
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-8 col-sm-8">
-                                    <h1 style="font-size:25px" >
-                                        FROM {{\Carbon\Carbon::now()->addMonth(1)->format('m')}}/1  12:00 PM
-                                    </h1>
-                                    <h1 class="mytitle" >
-                                        TO {{\Carbon\Carbon::now()->addMonth(2)->format('m')}}/30 11:59 PM
-                                    </h1>
+                                    <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                        - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <h1 style="font-size:40px; text-align: center" >${{$area->bp8}}</h1>

@@ -98,7 +98,6 @@
                             <div class="text-center py-5" style="font-style: italic; color: #f8971c;">
                                 <h1 class="m-0" style="font-weight: bold; font-size: 5rem;">ALMOST THERE.</h1>
                                 <h3 class="m-0" style="font-size: 3rem;">COMPLETE THE PAYMENT FORM BELOW TO LOCK IN YOUR SUBSCRIPTION NOW.</h3>
-                                <h3 class="m-0" style="font-size: 3rem; font-weight: bold;">PRICE: ${{$subPrice->sub_price}}</h3>
                                 <div class="mt-5" style="font-size: 1rem; color: #CCC;">
                                     <i class="fa fa-circle mx-2"></i>
                                     <i class="fa fa-circle mx-2"></i>
@@ -112,8 +111,20 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h1 class="m-0" style="font-weight: bold; font-size: 3rem; color: red; text-align: center; font-style: italic">STATE REGION</h1>
+                            <br>
+                            <h1 class="m-0" style="font-weight: bold; font-size: 4rem; color: red; text-align: center; font-style: italic">{{$subPrice->name}}</h1>
+                        </div>
+                        <div class="col-md-6">
+                            <h1 class="m-0" style="font-weight: bold; font-size: 3rem; color: red; text-align: center; font-style: italic">MONTHLY SUBSCRIPTION PRICE</h1>
+                            <br>
+                            <h1 class="m-0" style="font-weight: bold; font-size: 4rem; color: red; text-align: center; font-style: italic">${{$subPrice->sub_price}}</h1>
+                        </div>
+                    </div>
+                    <br>
                     <div class="row">
                         @include('partials.success-error')
                         <div class="col-md-12 d-payment">
