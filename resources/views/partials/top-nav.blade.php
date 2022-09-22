@@ -1,16 +1,28 @@
 <style>
-    @media (max-width: 900px) and (orientation: landscape) {
-        #w20 {
-            width: 20% !important;
+    @media (max-width: 800px) and (orientation: landscape) {
+        .w20 {
+            width: 5% !important;
         }
 
-        #w70 {
-            width: 70% !important;
+        .w70 {
+            width: 85% !important;
         }
 
         .navbar-btn {
             padding: 0px !important;
         }
+    }
+
+    .navbar-btn {
+        padding: 0px !important;
+    }
+
+    .w20 {
+        width: 5% !important;
+    }
+
+    .w70 {
+        width: 70% !important;
     }
 
     .txt {
@@ -38,18 +50,16 @@
     <div class="brand" style="padding-right: 130px !important;">
 
         <a href="{{ asset('index') }}">
-            <img  style="padding: 0px; height: 80px" src="https://420finder.net/420finder_business_logo_transparent.png"
-                  alt="Klorofil Logo" class="img-responsive logo">
+            <img style="padding: 0px; height: 80px" src="https://420finder.net/420finder_business_logo_transparent.png"
+                 alt="Klorofil Logo" class="img-responsive logo">
         </a>
 
     </div>
 
     <div class="container-fluid">
-
         @if(!request()->routeIs('approve.failed'))
-            <div class="navbar-btn" id="w20">
+            <div class="navbar-btn w20">
                 <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
-
             </div>
         @endif
         <?php  $date = DB::table('subscription_details')->orderBy('id', 'DESC')->where('retailer_id', '=', session('business_id'))->first();
@@ -63,27 +73,27 @@
 
         ?>
         @if(($currentDate >= $startDate) && ($currentDate <= $endDate))
-            <div class="navbar-btn" id="w70">
+            <div class="navbar-btn w70">
                 <p class="txt"><b>
                         @if($check )
                             Please Update Your Profile. <a href="{{route('accountsettings')}}">Click Here</a>
                         @endif
                         @if($details)
-                            Please Add Details. <a href="{{route('detail.index')}}">Click Here</a>
+                            <br>Please Add Details. <a href="{{route('detail.index')}}">Click Here</a>
                         @endif
                     </b>
                 </p>
             </div>
         @else
-            <div class="navbar-btn" id="w70">
+            <div class="navbar-btn w70">
                 <p class="txt"><b>
                         You dont have any subscription your product menu is no more available on website. <a
                             href="{{route('subscription')}}">Please purchase a subscription</a>
                         @if($check)
-                            Please Update Your Profile. <a href="{{route('accountsettings')}}">Click Here</a>
+                            <br> Please Update Your Profile. <a href="{{route('accountsettings')}}">Click Here</a>
                         @endif
                         @if($details)
-                            Please Add Details. <a href="{{route('detail.index')}}">Click Here</a>
+                            <br> Please Add Details. <a href="{{route('detail.index')}}">Click Here</a>
                         @endif
                     </b>
                 </p>
@@ -91,14 +101,14 @@
             </div>
 
         @endif
+        <div class="navbar-btn w20">
+            <div id="navbar-menu">
 
-        <div id="navbar-menu">
+                <ul class="nav navbar-nav navbar-right">
 
-            <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
 
-                <li class="dropdown">
-
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
                         <span>
 
@@ -107,34 +117,34 @@
                             @endif
 
                         </span>
-                        <i class="icon-submenu lnr lnr-chevron-down"></i>
+                            <i class="icon-submenu lnr lnr-chevron-down"></i>
 
-                    </a>
+                        </a>
 
-                    <ul class="dropdown-menu">
+                        <ul class="dropdown-menu">
 
-                        <li><a href="#"><i class="lnr lnr-user"></i> <span>My Account</span></a></li>
+                            <li><a href="#"><i class="lnr lnr-user"></i> <span>My Account</span></a></li>
 
-                        <li>
-                            <a class="dropdown-item" href="{{ route('logoutadmin') }}">
-                                <i class="lnr lnr-exit"></i> <span>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('logoutadmin') }}">
+                                    <i class="lnr lnr-exit"></i> <span>
                                 {{ __('Logout') }}
                                 </span>
-                            </a>
+                                </a>
 
-                            <form id="logout-form" action="" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </li>
+                                <form id="logout-form" action="" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </li>
 
-                    </ul>
+                        </ul>
 
-                </li>
+                    </li>
 
-            </ul>
+                </ul>
 
+            </div>
         </div>
-
     </div>
 
 </nav>

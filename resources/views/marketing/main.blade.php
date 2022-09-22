@@ -4,7 +4,7 @@
     <div class="dash-analytics">
         <div class="d-box-text text-center p-4 mb-5" style="border-radius: 20px;">
             <h1 style="font-weight: 900; font-style: italic;" class="d-size">SALES + MARKETING PRODUCTS</h1>
-            <h3 style="font-style: italic;" class="m-0">+TOP 10 POSITIONS &nbsp; &nbsp; &nbsp; +BRANDS &nbsp; &nbsp; &nbsp; +MORE</h3>
+            <h3 style="font-style: italic;" class="m-0">+TOP 10 POSITIONS &nbsp; &nbsp; &nbsp; +MARKETING BANNERS &nbsp; &nbsp; &nbsp; +MORE</h3>
         </div>
         <div class="panel panel-headline">
             <div class="panel-body">

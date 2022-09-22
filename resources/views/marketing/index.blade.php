@@ -11,6 +11,10 @@
             font-size: 25px; margin-top: 0px
         }
     </style>
+    <div class="d-box-text text-center p-4 mb-5" style="border-radius: 20px;">
+        <h1 style="font-weight: 900; font-style: italic;" class="d-size">SALES + MARKETING PRODUCTS</h1>
+        <h3 style="font-style: italic;" class="m-0">+TOP 10 POSITIONS &nbsp; &nbsp; &nbsp; +MARKETING BANNERS &nbsp; &nbsp; &nbsp; +MORE</h3>
+    </div>
     <div class="panel panel-headline">
         <div class="panel-body">
             <div class="row">
@@ -46,7 +50,7 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: deepskyblue; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
                                         <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p1,'p'=>1])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
@@ -80,7 +84,7 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: deepskyblue; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
                                         <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p2,'p'=>2])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
@@ -114,7 +118,7 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: deepskyblue; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
                                         <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p3,'p'=>3])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
@@ -148,7 +152,7 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: deepskyblue; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
                                         <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p4,'p'=>4])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
@@ -182,7 +186,7 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: deepskyblue; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
                                         <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p5,'p'=>5])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
@@ -216,7 +220,7 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: deepskyblue; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
                                         <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p6,'p'=>6])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
@@ -250,7 +254,7 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: deepskyblue; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
                                         <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p7,'p'=>7])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
@@ -284,7 +288,7 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: deepskyblue; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
                                         <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p8,'p'=>8])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
@@ -318,7 +322,7 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: deepskyblue; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
                                         <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p9,'p'=>9])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
@@ -352,7 +356,7 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: deepskyblue; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
                                         <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p10,'p'=>10])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
@@ -445,7 +449,7 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: deepskyblue; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
                                         <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp1,'p'=>11])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
@@ -479,7 +483,7 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: deepskyblue; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
                                         <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp2,'p'=>12])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
@@ -513,7 +517,7 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: deepskyblue; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
                                         <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp3,'p'=>13])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
@@ -547,7 +551,7 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: deepskyblue; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
                                         <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp4,'p'=>14])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
@@ -581,7 +585,7 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: deepskyblue; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
                                         <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp5,'p'=>15])}}">CLAIM NOW</a>
                                     </div>
                                 @endif
@@ -628,7 +632,7 @@
                                             <a href="#"> CLAIMED</a>
                                         </div>
                                     @else
-                                        <div style="background-color: deepskyblue; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
+                                        <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
                                             <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp6,'p'=>16])}}">CLAIM NOW</a>
                                         </div>
                                     @endif
@@ -662,7 +666,7 @@
                                             <a href="#"> CLAIMED</a>
                                         </div>
                                     @else
-                                        <div style="background-color: deepskyblue; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
+                                        <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
                                             <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp7,'p'=>17])}}">CLAIM NOW</a>
                                         </div>
                                     @endif
@@ -696,7 +700,7 @@
                                             <a href="#"> CLAIMED</a>
                                         </div>
                                     @else
-                                        <div style="background-color: deepskyblue; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
+                                        <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
                                             <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp8,'p'=>18])}}">CLAIM NOW</a>
                                         </div>
                                     @endif
@@ -730,7 +734,7 @@
                                             <a href="#"> CLAIMED</a>
                                         </div>
                                     @else
-                                        <div style="background-color: deepskyblue; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
+                                        <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
                                             <a style="color: white; font-size: 20px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp8,'p'=>19])}}">CLAIM NOW</a>
                                         </div>
                                     @endif

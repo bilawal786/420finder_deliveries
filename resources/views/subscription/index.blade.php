@@ -195,7 +195,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group text-center">
-                                            <button class="d-btn btn" id="create-deal-btn">Active</button>
+                                            <button class="d-btn btn" id="create-deal-btn">ACTIVATE SUBSCRIPTION</button>
                                         </div>
                                     </div>
                                 </div>
