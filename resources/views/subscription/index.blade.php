@@ -27,7 +27,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-6">
-                        <h3 class="panel-title">Purchase Subscription </h3>
+                        <h3 style="font-style: italic; font-weight: bold; color: orange" class="panel-title">Purchase Subscription </h3>
                     </div>
 
                 </div>
