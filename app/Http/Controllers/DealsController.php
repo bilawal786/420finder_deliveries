@@ -520,7 +520,7 @@ class DealsController extends Controller {
         $state = DB::table('states')->get();
         $business= Business::where('id','=',session('business_id'))->first();
         $subPrice = DB::table('states')->where('id','=',$business->state_province)->first();
-        if ($subPrice->sub_price == null){
+        if (!$subPrice){
             return  redirect()->back()->with('error', 'Your Profile is not complete, Complete your profile first!');
         }
         return view('subscription.index', [
