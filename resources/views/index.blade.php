@@ -207,7 +207,7 @@
                         @else
                             <h1 class="" style="font-size: 6rem; color: #e52222;">NOT ACTIVE</h1>
                             <h1 class="" style="font-size: 3rem; color: #e52222;">ONLINE ORDERING (DISABLED)</h1>
-                            <h1 class="" style="font-size: 3rem; color: #e52222;">MENU LIVE</h1>
+                            <h1 class="" style="font-size: 3rem; color: #e52222;">MENU HIDDEN</h1>
                         @endif
                     </div>
                 </div>

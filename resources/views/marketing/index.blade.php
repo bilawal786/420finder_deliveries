@@ -17,6 +17,9 @@
             font-weight: bold;
             font-style: italic;
         }
+        .imageclaim{
+            height: 75%; width: 85%; position: absolute; z-index: 1
+        }
     </style>
     <div class="d-box-text text-center p-4 mb-5" style="border-radius: 20px;">
         <h1 style="font-weight: 900; font-style: italic;" class="d-size">SALES + MARKETING PRODUCTS</h1>
@@ -46,6 +49,9 @@
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
+                        @if(in_array('1', $position,true))
+                        <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                        @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
                                 <h1 class="mytitle" >#1 POSITION +</h1>
@@ -76,6 +82,9 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
+                        @if(in_array('2', $position,true))
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                        @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
                                 <h1 class="mytitle" >#2 POSITION +</h1>
@@ -106,6 +115,9 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
+                        @if(in_array('3', $position,true))
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                        @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
                                 <h1 class="mytitle" >#3 POSITION +</h1>
@@ -136,6 +148,9 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
+                        @if(in_array('4', $position,true))
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                        @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
                                 <h1 class="mytitle" >#4 POSITION +</h1>
@@ -166,6 +181,9 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
+                        @if(in_array('5', $position,true))
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                        @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
                                 <h1 class="mytitle" >#5 POSITION +</h1>
@@ -196,6 +214,9 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
+                        @if(in_array('6', $position,true))
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                        @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
                                 <h1 class="mytitle" >#6 POSITION +</h1>
@@ -226,6 +247,9 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
+                        @if(in_array('7', $position,true))
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                        @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
                                 <h1 class="mytitle" >#7 POSITION +</h1>
@@ -256,6 +280,9 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
+                        @if(in_array('8', $position,true))
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                        @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
                                 <h1 class="mytitle" >#8 POSITION +</h1>
@@ -286,6 +313,9 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
+                        @if(in_array('9', $position,true))
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                        @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
                                 <h1 class="mytitle" >#9 POSITION +</h1>
@@ -316,6 +346,9 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
+                        @if(in_array('10', $position,true))
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                        @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
                                 <h1 class="mytitle" >#10 POSITION +</h1>
@@ -405,6 +438,9 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
+                        @if(in_array('11', $position,true))
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                        @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
                                 <h1 class="mytitle" >#6 POSITION</h1>
@@ -435,6 +471,9 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
+                        @if(in_array('12', $position,true))
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                        @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
                                 <h1 class="mytitle" >#7 POSITION</h1>
@@ -465,6 +504,9 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
+                        @if(in_array('13', $position,true))
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                        @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
                                 <h1 class="mytitle" >#8 POSITION</h1>
@@ -495,6 +537,9 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
+                        @if(in_array('14', $position,true))
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                        @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
                                 <h1 class="mytitle" >#9 POSITION</h1>
@@ -525,6 +570,9 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
+                        @if(in_array('15', $position,true))
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                        @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
                                 <h1 class="mytitle" >#10 POSITION</h1>
@@ -568,6 +616,9 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6">
                         <div class="metric">
+                            @if(in_array('16', $position,true))
+                                <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                            @endif
                             <div class="row">
                                 <div class="col-md-8 col-sm-8">
                                     <h1 class="mytitle" >#1 POSITION</h1>
@@ -598,6 +649,9 @@
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <div class="metric">
+                            @if(in_array('17', $position,true))
+                                <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                            @endif
                             <div class="row">
                                 <div class="col-md-8 col-sm-8">
                                     <h1 class="mytitle" >#2 POSITION</h1>
@@ -628,6 +682,9 @@
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <div class="metric">
+                            @if(in_array('18', $position,true))
+                                <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                            @endif
                             <div class="row">
                                 <div class="col-md-8 col-sm-8">
                                     <h1 class="mytitle" >#3 POSITION</h1>
@@ -658,6 +715,9 @@
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <div class="metric">
+                            @if(in_array('19', $position,true))
+                                <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                            @endif
                             <div class="row">
                                 <div class="col-md-8 col-sm-8">
                                     <h1 class="mytitle" >#4 POSITION</h1>
