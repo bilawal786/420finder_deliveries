@@ -578,7 +578,7 @@ class DealsController extends Controller {
             );
             $getbusiness = Business::where('id', session('business_id'))->first();
             DB::table('businesses')->where('id', session('business_id'))->update([
-                'deal_wallet' => $getbusiness->deal_wallet+2
+                'deal_wallet' => $getbusiness->deal_wallet+1
             ]);
 
             return redirect()->back()->with('info', 'Deal created.');

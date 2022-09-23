@@ -13,7 +13,7 @@
                             $text = DB::table('tests')->first();
                         @endphp
                         <h4>
-                            {!! $text->del_transaction !!}
+                            {!! $text->dis_transaction !!}
                         </h4>
                     </div>
                 </div>

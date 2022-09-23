@@ -15,6 +15,7 @@
 
     .navbar-btn {
         padding: 0px !important;
+        margin: 0px !important;
     }
 
     .w20 {
@@ -27,8 +28,8 @@
 
     .txt {
         font-size: 20px;
-        font-style: italic;
         text-align: center;
+        margin-top: 15px;
     }
 
     .d-box {
@@ -47,19 +48,17 @@
 </style>
 <nav class="navbar navbar-default navbar-fixed-top">
 
-    <div class="brand" style="padding-right: 130px !important;">
-
+    <div class="brand" style="padding-left: 75px !important;">
         <a href="{{ asset('index') }}">
             <img style="padding: 0px; height: 80px" src="https://420finder.net/420finder_business_logo_transparent.png"
                  alt="Klorofil Logo" class="img-responsive logo">
         </a>
-
     </div>
 
     <div class="container-fluid">
         @if(!request()->routeIs('approve.failed'))
             <div class="navbar-btn w20">
-                <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
+                <button style="margin-top: 20px" type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
             </div>
         @endif
         <?php  $date = DB::table('subscription_details')->orderBy('id', 'DESC')->where('retailer_id', '=', session('business_id'))->first();
@@ -87,13 +86,13 @@
         @else
             <div class="navbar-btn w70">
                 <p class="txt"><b>
-                        You dont have any subscription your product menu is no more available on website. <a
-                            href="{{route('subscription')}}">Please purchase a subscription</a>
+                        YOUR MONTHLY BUSINESS LISTING SUBSCRIPTION IS <b style="color: red">NOT ACTIVE YOUR MENU + LISTING IS HIDDEN</b> <a
+                            href="{{route('subscription')}}">CLICK HERE TO PURCHASE YOUR SUBSCRIPTION</a>
                         @if($check)
-                            <br> Please Update Your Profile. <a href="{{route('accountsettings')}}">Click Here</a>
+                            <br> YOUR PROFILE IS NOT COMPLETED <a href="{{route('accountsettings')}}">CLICK HERE TO COMPLETE YOUR PROFILE</a>
                         @endif
                         @if($details)
-                            <br> Please Add Details. <a href="{{route('detail.index')}}">Click Here</a>
+                            <br> PLEASE ADD YOUR BUSINESS DETAILS <a href="{{route('detail.index')}}">CLICK HERE</a>
                         @endif
                     </b>
                 </p>

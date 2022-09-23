@@ -193,11 +193,6 @@
             $('#DataTable3').DataTable();
         } );
     </script>
-    <script src="https://cdn.ckeditor.com/4.14.0/basic/ckeditor.js"></script>
-    <script>
-      CKEDITOR.replace('editor1');
-      CKEDITOR.replace('editor2');
-    </script>
     <script>
         function myFunction() {
           var x = document.getElementById("password");
