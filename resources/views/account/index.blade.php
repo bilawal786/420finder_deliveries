@@ -139,9 +139,9 @@
                                     <p class="text-black-50">{{ $business->email }}</p>
                                 </div>
 
-                                <div class="col-md-6 text-right">
-                                    <a data-toggle="modal" data-target="#email" class="cursor-pointer">Edit</a>
-                                </div>
+{{--                                <div class="col-md-6 text-right">--}}
+{{--                                    <a data-toggle="modal" data-target="#email" class="cursor-pointer">Edit</a>--}}
+{{--                                </div>--}}
 
                             </div>
                         </div>
