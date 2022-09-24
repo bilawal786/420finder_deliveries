@@ -27,9 +27,9 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-6">
-                        <h3 style="font-style: italic; font-weight: bold; color: orange" class="panel-title">Purchase Subscription </h3>
+                        <h3 style="font-style: italic; font-weight: bold; color: orange" class="panel-title">Purchase
+                            Subscription </h3>
                     </div>
-
                 </div>
             </div>
             <?php  $date = DB::table('subscription_details')->orderBy('id', 'DESC')->where('retailer_id', '=', session('business_id'))->first();
@@ -48,7 +48,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <a href="#" class="btn btn-dark btn-block">Activate Subscription</a>
+                                                <a style="background-color: green !important; color: white; font-size: 20px; font-weight: bold; font-style: italic" href="#" class="btn btn-dark btn-block">SUBSCRIPTION IS ACTIVE</a>
                                             </div>
                                         </div>
                                     </div>
@@ -64,26 +64,19 @@
                                                 <th>Price</th>
                                                 <th>Status</th>
                                                 <th>Starting Date - Expiry Date</th>
-
                                                 </thead>
-
                                                 <tbody>
                                                 <tr>
                                                     <td>{{$date->transaction_id}}</td>
                                                     <td>{{$state_name->name}}</td>
                                                     <td>$ {{$date->price}}</td>
-
                                                     <td>
                                                         <span class="btn-dark">Activate</span>
                                                     </td>
-
                                                     <td>{{date("m-d-Y", strtotime($date->starting_date)) . '- ' .date("m-d-Y", strtotime($date->ending_date)) }}</td>
-
-
                                                 </tr>
                                                 </tbody>
                                             </table>
-
                                         </div>
                                     </div>
                                 </div>
@@ -97,7 +90,8 @@
                         <div class="col-md-12">
                             <div class="text-center py-5" style="font-style: italic; color: #f8971c;">
                                 <h1 class="m-0" style="font-weight: bold; font-size: 5rem;">ALMOST THERE.</h1>
-                                <h3 class="m-0" style="font-size: 3rem;">COMPLETE THE PAYMENT FORM BELOW TO LOCK IN YOUR SUBSCRIPTION NOW.</h3>
+                                <h3 class="m-0" style="font-size: 3rem;">COMPLETE THE PAYMENT FORM BELOW TO LOCK IN YOUR
+                                    SUBSCRIPTION NOW.</h3>
                                 <div class="mt-5" style="font-size: 1rem; color: #CCC;">
                                     <i class="fa fa-circle mx-2"></i>
                                     <i class="fa fa-circle mx-2"></i>
@@ -114,14 +108,21 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <h1 class="m-0" style="font-weight: bold; font-size: 3rem; color: red; text-align: center; font-style: italic">STATE / REGION</h1>
+                            <h1 class="m-0"
+                                style="font-weight: bold; font-size: 3rem; color: red; text-align: center; font-style: italic">
+                                STATE / REGION</h1>
                             <br>
-                            <h1 class="m-0" style="font-weight: bold; font-size: 4rem; color: red; text-align: center; font-style: italic">{{$subPrice->name}}</h1>
+                            <h1 class="m-0"
+                                style="font-weight: bold; font-size: 4rem; color: red; text-align: center; font-style: italic">{{$subPrice->name}}</h1>
                         </div>
                         <div class="col-md-6">
-                            <h1 class="m-0" style="font-weight: bold; font-size: 3rem; color: red; text-align: center; font-style: italic">MONTHLY SUBSCRIPTION PRICE</h1>
+                            <h1 class="m-0"
+                                style="font-weight: bold; font-size: 3rem; color: red; text-align: center; font-style: italic">
+                                MONTHLY SUBSCRIPTION PRICE</h1>
                             <br>
-                            <h1 class="m-0" style="font-weight: bold; font-size: 4rem; color: red; text-align: center; font-style: italic">${{$subPrice->sub_price}}</h1>
+                            <h1 class="m-0"
+                                style="font-weight: bold; font-size: 4rem; color: red; text-align: center; font-style: italic">
+                                ${{$subPrice->sub_price}}</h1>
                         </div>
                     </div>
                     <br>
@@ -138,7 +139,7 @@
                                             style="margin-bottom: 1.2rem;" disabled>
                                         <option value="">Select State</option>
                                         @foreach ($state as $row)
-                                            <option value="{{ $row->id }}" > {{ $row->name }}</option>
+                                            <option value="{{ $row->id }}"> {{ $row->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -146,17 +147,20 @@
                                 <div class="row" style="display: none">
                                     @if($subPrice)
                                         <input type="hidden" name="state_id" value="{{$subPrice->id}}">
-                                        <div class="form-group col-xs-12 col-sm-6 mb-3" id="sub" >
+                                        <div class="form-group col-xs-12 col-sm-6 mb-3" id="sub">
                                             <label for="deal_price">Subscription Price</label>
-                                            <input type="number" name="price"  id="price" class="form-control" required value="{{$subPrice->sub_price}}" readonly>
+                                            <input type="number" name="price" id="price" class="form-control" required
+                                                   value="{{$subPrice->sub_price}}" readonly>
                                         </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <h2 class="mt-0" style="font-weight: 900; font-style: italic;">PAYMENT INFORMATION</h2>
+                                        <h2 class="mt-0" style="font-weight: 900; font-style: italic;">PAYMENT
+                                            INFORMATION</h2>
                                         <div class="form-group-lg name-on-card">
                                             <label for="name-on-card">Name on Card</label>
-                                            <input type="text" class="form-control d-r-0" id="name-on-card" name="name_on_card" value="{{ old('name_on_card') }}" required>
+                                            <input type="text" class="form-control d-r-0" id="name-on-card"
+                                                   name="name_on_card" value="{{ old('name_on_card') }}" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -168,7 +172,8 @@
                                 <div class="row">
                                     <div class="form-group-lg col-xs-12 mb-3 col-sm-6" id="card-number-field">
                                         <label for="cardNumber">Card Number</label>
-                                        <input type="number" class="form-control d-r-0" id="cardNumber" name="card_number"
+                                        <input type="number" class="form-control d-r-0" id="cardNumber"
+                                               name="card_number"
                                                value="{{ old('card_number') }}" required>
                                     </div>
 
@@ -206,7 +211,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group text-center">
-                                            <button class="d-btn btn" id="create-deal-btn">ACTIVATE SUBSCRIPTION</button>
+                                            <button class="d-btn btn" id="create-deal-btn">ACTIVATE SUBSCRIPTION
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -219,7 +225,10 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="text-center">
-                                            <p style="font-style: italic">By clicking <span style="font-weight: bold;">Checkout</span>, you're agreeing to 420 Finder's <span style="font-weight: bold; text-decoration: underline">User Agreement</span></p>
+                                            <p style="font-style: italic">By clicking <span style="font-weight: bold;">Checkout</span>,
+                                                you're agreeing to 420 Finder's <span
+                                                    style="font-weight: bold; text-decoration: underline">User Agreement</span>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
