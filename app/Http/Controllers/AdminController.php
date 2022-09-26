@@ -126,7 +126,7 @@ class AdminController extends Controller {
 
                 if ($business[0]['status'] == 0) {
 
-                    return back()->with('error', 'Your account is under review by our account mangement team. Please have patience until you are approched by our account management team.');
+                    return back()->with('error', 'Your account is under review by our account management team. Please have patience until you are approched by our account management team.');
 
                 } elseif ($business[0]['status'] == 1) {
 

@@ -18,9 +18,18 @@
                 <li>
                     <a href="{{ route('subscription') }}" class=""><i class="fa fa-product-hunt" aria-hidden="true"></i> <span>Subscription</span></a>
                 </li>
+                @php
+                    $response = \App\Http\SubscriptionHelper::checkSubscription(session('business_id'));
+                @endphp
+                @if($response)
                 <li>
                     <a href="{{ route('state.areas') }}" class=""><i class="fa fa-product-hunt" aria-hidden="true"></i>  <span>Sales&Marketing Products</span></a>
                 </li>
+                @else
+                <li>
+                    <a href="{{ route('subscription') }}" class=""><i class="fa fa-product-hunt" aria-hidden="true"></i>  <span>Sales&Marketing Products</span> </a>
+                </li>
+                @endif
 
                 <li>
                     <a href="{{ route('requestproducts') }}" class=""><i class="fa fa-check-circle" aria-hidden="true"></i> <span>Request Products</span></a>
@@ -29,11 +38,15 @@
                 <li>
                     <a href="{{ route('products') }}" class=""><i class="fa fa-product-hunt" aria-hidden="true"></i> <span>Products</span></a>
                 </li>
-
+                @if($response)
                 <li>
                     <a href="{{ route('deals') }}" class=""><i class="fa fa-product-hunt" aria-hidden="true"></i> <span>Deals</span></a>
                 </li>
-
+                @else
+                    <li>
+                        <a href="{{ route('subscription') }}" class=""><i class="fa fa-product-hunt" aria-hidden="true"></i>  <span>Deals</span> </a>
+                    </li>
+                @endif
                 {{-- <li>
                     <a href="{{ route('deal-product.index') }}" class=""><i class="fa fa-product-hunt" aria-hidden="true"></i> <span>Deals Product</span></a>
                 </li> --}}
