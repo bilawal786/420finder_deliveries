@@ -3,13 +3,17 @@
 @section('content')
 
     <style>
-        .metric{
-            display: block;!important;
+        .metric {
+            display: block;
+        !important;
             padding: 10px;
         }
-        .mytitle{
-            font-size: 20px; margin-top: 0px
+
+        .mytitle {
+            font-size: 20px;
+            margin-top: 0px
         }
+
         .metric .m-icon {
             padding: 0.5rem;
             border-radius: 5px;
@@ -17,13 +21,18 @@
             font-weight: bold;
             font-style: italic;
         }
-        .imageclaim{
-            height: 75%; width: 85%; position: absolute; z-index: 1
+
+        .imageclaim {
+            height: 75%;
+            width: 85%;
+            position: absolute;
+            z-index: 1
         }
     </style>
     <div class="d-box-text text-center p-4 mb-5" style="border-radius: 20px;">
         <h1 style="font-weight: 900; font-style: italic;" class="d-size">SALES + MARKETING PRODUCTS</h1>
-        <h3 style="font-style: italic;" class="m-0">+TOP 10 POSITIONS &nbsp; &nbsp; &nbsp; +MARKETING BANNERS &nbsp; &nbsp; &nbsp; +MORE</h3>
+        <h3 style="font-style: italic;" class="m-0">+TOP 10 POSITIONS &nbsp; &nbsp; &nbsp; +MARKETING BANNERS &nbsp;
+            &nbsp; &nbsp; +MORE</h3>
     </div>
     <div class="panel panel-headline">
         <div class="panel-body">
@@ -41,8 +50,9 @@
     <div class="panel panel-headline">
         <div class="panel-heading">
             <h3 style="float: right;font-size: 15px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
-                - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
-            <h2  class="panel-title" style="text-align: center; font-size: 30px">TOP 10 BUSINESS POSITIONS IN <b>{{strtoupper($area->title)}}</b> </h2>
+                - {{\Carbon\Carbon::now()->addMonth(1)->endOfMonth()->format('d M, Y')}} 11:59PM</h3>
+            <h2 class="panel-title" style="text-align: center; font-size: 30px">TOP 10 BUSINESS POSITIONS IN
+                <b>{{strtoupper($area->title)}}</b></h2>
         </div>
 
         <div class="panel-body">
@@ -50,12 +60,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
                         @if(in_array('1', $position,true))
-                        <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}"
+                                 alt="">
                         @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 class="mytitle" >#1 POSITION +</h1>
-                                <h1 class="mytitle" >#1 TOP BANNER</h1>
+                                <h1 class="mytitle">#1 POSITION +</h1>
+                                <h1 class="mytitle">#1 TOP BANNER</h1>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 @if(in_array('1', $position,true))
@@ -63,19 +74,24 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p1,'p'=>1])}}">CLAIM NOW</a>
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem"
+                                         class="m-icon sales-icon">
+                                        <a style="color: white; font-size: 18px; text-align: center"
+                                           href="{{route('bookme',['id'=>$area->id,'price'=>$area->p1,'p'=>1])}}">CLAIM
+                                            NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
-                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
+                                <h3 style="float: right;font-size: 20px;">
+                                    1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - {{\Carbon\Carbon::now()->addMonth(1)->endOfMonth()->format('d M, Y')}}
+                                    11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:33px; text-align: center" >${{$area->p1}}</h1>
+                                <h1 style="font-size:33px; text-align: center">${{$area->p1}}</h1>
                             </div>
                         </div>
                     </div>
@@ -83,12 +99,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
                         @if(in_array('2', $position,true))
-                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}"
+                                 alt="">
                         @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 class="mytitle" >#2 POSITION +</h1>
-                                <h1 class="mytitle" >#2 TOP BANNER</h1>
+                                <h1 class="mytitle">#2 POSITION +</h1>
+                                <h1 class="mytitle">#2 TOP BANNER</h1>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 @if(in_array('2', $position,true))
@@ -96,19 +113,24 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p2,'p'=>2])}}">CLAIM NOW</a>
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem"
+                                         class="m-icon sales-icon">
+                                        <a style="color: white; font-size: 18px; text-align: center"
+                                           href="{{route('bookme',['id'=>$area->id,'price'=>$area->p2,'p'=>2])}}">CLAIM
+                                            NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
-                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
+                                <h3 style="float: right;font-size: 20px;">
+                                    1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - {{\Carbon\Carbon::now()->addMonth(1)->endOfMonth()->format('d M, Y')}}
+                                    11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:33px; text-align: center" >${{$area->p2}}</h1>
+                                <h1 style="font-size:33px; text-align: center">${{$area->p2}}</h1>
                             </div>
                         </div>
                     </div>
@@ -116,12 +138,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
                         @if(in_array('3', $position,true))
-                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}"
+                                 alt="">
                         @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 class="mytitle" >#3 POSITION +</h1>
-                                <h1 class="mytitle" >#3 TOP BANNER</h1>
+                                <h1 class="mytitle">#3 POSITION +</h1>
+                                <h1 class="mytitle">#3 TOP BANNER</h1>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 @if(in_array('3', $position,true))
@@ -129,19 +152,24 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p3,'p'=>3])}}">CLAIM NOW</a>
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem"
+                                         class="m-icon sales-icon">
+                                        <a style="color: white; font-size: 18px; text-align: center"
+                                           href="{{route('bookme',['id'=>$area->id,'price'=>$area->p3,'p'=>3])}}">CLAIM
+                                            NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
-                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
+                                <h3 style="float: right;font-size: 20px;">
+                                    1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - {{\Carbon\Carbon::now()->addMonth(1)->endOfMonth()->format('d M, Y')}}
+                                    11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:33px; text-align: center" >${{$area->p3}}</h1>
+                                <h1 style="font-size:33px; text-align: center">${{$area->p3}}</h1>
                             </div>
                         </div>
                     </div>
@@ -149,12 +177,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
                         @if(in_array('4', $position,true))
-                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}"
+                                 alt="">
                         @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 class="mytitle" >#4 POSITION +</h1>
-                                <h1 class="mytitle" >#4 TOP BANNER</h1>
+                                <h1 class="mytitle">#4 POSITION +</h1>
+                                <h1 class="mytitle">#4 TOP BANNER</h1>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 @if(in_array('4', $position,true))
@@ -162,19 +191,24 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p4,'p'=>4])}}">CLAIM NOW</a>
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem"
+                                         class="m-icon sales-icon">
+                                        <a style="color: white; font-size: 18px; text-align: center"
+                                           href="{{route('bookme',['id'=>$area->id,'price'=>$area->p4,'p'=>4])}}">CLAIM
+                                            NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
-                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
+                                <h3 style="float: right;font-size: 20px;">
+                                    1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - {{\Carbon\Carbon::now()->addMonth(1)->endOfMonth()->format('d M, Y')}}
+                                    11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:33px; text-align: center" >${{$area->p4}}</h1>
+                                <h1 style="font-size:33px; text-align: center">${{$area->p4}}</h1>
                             </div>
                         </div>
                     </div>
@@ -182,12 +216,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
                         @if(in_array('5', $position,true))
-                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}"
+                                 alt="">
                         @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 class="mytitle" >#5 POSITION +</h1>
-                                <h1 class="mytitle" >#5 TOP BANNER</h1>
+                                <h1 class="mytitle">#5 POSITION +</h1>
+                                <h1 class="mytitle">#5 TOP BANNER</h1>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 @if(in_array('5', $position,true))
@@ -195,19 +230,24 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p5,'p'=>5])}}">CLAIM NOW</a>
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem"
+                                         class="m-icon sales-icon">
+                                        <a style="color: white; font-size: 18px; text-align: center"
+                                           href="{{route('bookme',['id'=>$area->id,'price'=>$area->p5,'p'=>5])}}">CLAIM
+                                            NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
-                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
+                                <h3 style="float: right;font-size: 20px;">
+                                    1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - {{\Carbon\Carbon::now()->addMonth(1)->endOfMonth()->format('d M, Y')}}
+                                    11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:33px; text-align: center" >${{$area->p5}}</h1>
+                                <h1 style="font-size:33px; text-align: center">${{$area->p5}}</h1>
                             </div>
                         </div>
                     </div>
@@ -215,12 +255,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
                         @if(in_array('6', $position,true))
-                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}"
+                                 alt="">
                         @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 class="mytitle" >#6 POSITION +</h1>
-                                <h1 class="mytitle" >NO TOP BANNER</h1>
+                                <h1 class="mytitle">#6 POSITION +</h1>
+                                <h1 class="mytitle">NO TOP BANNER</h1>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 @if(in_array('6', $position,true))
@@ -228,19 +269,24 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p6,'p'=>6])}}">CLAIM NOW</a>
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem"
+                                         class="m-icon sales-icon">
+                                        <a style="color: white; font-size: 18px; text-align: center"
+                                           href="{{route('bookme',['id'=>$area->id,'price'=>$area->p6,'p'=>6])}}">CLAIM
+                                            NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
-                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
+                                <h3 style="float: right;font-size: 20px;">
+                                    1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - {{\Carbon\Carbon::now()->addMonth(1)->endOfMonth()->format('d M, Y')}}
+                                    11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:33px; text-align: center" >${{$area->p6}}</h1>
+                                <h1 style="font-size:33px; text-align: center">${{$area->p6}}</h1>
                             </div>
                         </div>
                     </div>
@@ -248,12 +294,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
                         @if(in_array('7', $position,true))
-                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}"
+                                 alt="">
                         @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 class="mytitle" >#7 POSITION +</h1>
-                                <h1 class="mytitle" >NO TOP BANNER</h1>
+                                <h1 class="mytitle">#7 POSITION +</h1>
+                                <h1 class="mytitle">NO TOP BANNER</h1>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 @if(in_array('7', $position,true))
@@ -261,19 +308,24 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p7,'p'=>7])}}">CLAIM NOW</a>
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem"
+                                         class="m-icon sales-icon">
+                                        <a style="color: white; font-size: 18px; text-align: center"
+                                           href="{{route('bookme',['id'=>$area->id,'price'=>$area->p7,'p'=>7])}}">CLAIM
+                                            NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
-                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
+                                <h3 style="float: right;font-size: 20px;">
+                                    1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - {{\Carbon\Carbon::now()->addMonth(1)->endOfMonth()->format('d M, Y')}}
+                                    11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:33px; text-align: center" >${{$area->p7}}</h1>
+                                <h1 style="font-size:33px; text-align: center">${{$area->p7}}</h1>
                             </div>
                         </div>
                     </div>
@@ -281,12 +333,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
                         @if(in_array('8', $position,true))
-                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}"
+                                 alt="">
                         @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 class="mytitle" >#8 POSITION +</h1>
-                                <h1 class="mytitle" >NO TOP BANNER</h1>
+                                <h1 class="mytitle">#8 POSITION +</h1>
+                                <h1 class="mytitle">NO TOP BANNER</h1>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 @if(in_array('8', $position,true))
@@ -294,19 +347,24 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p8,'p'=>8])}}">CLAIM NOW</a>
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem"
+                                         class="m-icon sales-icon">
+                                        <a style="color: white; font-size: 18px; text-align: center"
+                                           href="{{route('bookme',['id'=>$area->id,'price'=>$area->p8,'p'=>8])}}">CLAIM
+                                            NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
-                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
+                                <h3 style="float: right;font-size: 20px;">
+                                    1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - {{\Carbon\Carbon::now()->addMonth(1)->endOfMonth()->format('d M, Y')}}
+                                    11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:33px; text-align: center" >${{$area->p8}}</h1>
+                                <h1 style="font-size:33px; text-align: center">${{$area->p8}}</h1>
                             </div>
                         </div>
                     </div>
@@ -314,12 +372,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
                         @if(in_array('9', $position,true))
-                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}"
+                                 alt="">
                         @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 class="mytitle" >#9 POSITION +</h1>
-                                <h1 class="mytitle" >NO TOP BANNER</h1>
+                                <h1 class="mytitle">#9 POSITION +</h1>
+                                <h1 class="mytitle">NO TOP BANNER</h1>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 @if(in_array('9', $position,true))
@@ -327,19 +386,24 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p9,'p'=>9])}}">CLAIM NOW</a>
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem"
+                                         class="m-icon sales-icon">
+                                        <a style="color: white; font-size: 18px; text-align: center"
+                                           href="{{route('bookme',['id'=>$area->id,'price'=>$area->p9,'p'=>9])}}">CLAIM
+                                            NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
-                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
+                                <h3 style="float: right;font-size: 20px;">
+                                    1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - {{\Carbon\Carbon::now()->addMonth(1)->endOfMonth()->format('d M, Y')}}
+                                    11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:33px; text-align: center" >${{$area->p9}}</h1>
+                                <h1 style="font-size:33px; text-align: center">${{$area->p9}}</h1>
                             </div>
                         </div>
                     </div>
@@ -347,12 +411,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
                         @if(in_array('10', $position,true))
-                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}"
+                                 alt="">
                         @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 class="mytitle" >#10 POSITION +</h1>
-                                <h1 class="mytitle" >NO TOP BANNER</h1>
+                                <h1 class="mytitle">#10 POSITION +</h1>
+                                <h1 class="mytitle">NO TOP BANNER</h1>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 @if(in_array('10', $position,true))
@@ -360,19 +425,24 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->p10,'p'=>10])}}">CLAIM NOW</a>
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem"
+                                         class="m-icon sales-icon">
+                                        <a style="color: white; font-size: 18px; text-align: center"
+                                           href="{{route('bookme',['id'=>$area->id,'price'=>$area->p10,'p'=>10])}}">CLAIM
+                                            NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
-                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
+                                <h3 style="float: right;font-size: 20px;">
+                                    1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - {{\Carbon\Carbon::now()->addMonth(1)->endOfMonth()->format('d M, Y')}}
+                                    11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:33px; text-align: center" >${{$area->p10}}</h1>
+                                <h1 style="font-size:33px; text-align: center">${{$area->p10}}</h1>
                             </div>
                         </div>
                     </div>
@@ -385,7 +455,8 @@
         <div class="panel-heading">
             <h3 style="float: right;font-size: 15px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
                 - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
-            <h2 class="panel-title" style="text-align: center; font-size: 30px">TOP 10 BANNER POSITIONS IN <b>{{strtoupper($area->title)}}</b> </h2>
+            <h2 class="panel-title" style="text-align: center; font-size: 30px">TOP 10 BANNER POSITIONS IN
+                <b>{{strtoupper($area->title)}}</b></h2>
             {{--            <p class="panel-subtitle">Today</p>--}}
 
         </div>
@@ -395,7 +466,8 @@
                     <div class="metric">
                         <div class="row">
                             <div class="col-md-12 col-sm-12">
-                                <h1 class="mytitle" >#1  BANNER POSITION IS INCLUDED WITH THE <BR> #1 BUSINESS POSITION ABOVE</h1>
+                                <h1 class="mytitle">#1 BANNER POSITION IS INCLUDED WITH THE <BR> #1 BUSINESS POSITION
+                                    ABOVE</h1>
                             </div>
                         </div>
                     </div>
@@ -404,7 +476,8 @@
                     <div class="metric">
                         <div class="row">
                             <div class="col-md-12 col-sm-12">
-                                <h1 class="mytitle" >#2  BANNER POSITION IS INCLUDED WITH THE <BR> #2 BUSINESS POSITION ABOVE</h1>
+                                <h1 class="mytitle">#2 BANNER POSITION IS INCLUDED WITH THE <BR> #2 BUSINESS POSITION
+                                    ABOVE</h1>
                             </div>
                         </div>
                     </div>
@@ -413,7 +486,8 @@
                     <div class="metric">
                         <div class="row">
                             <div class="col-md-12 col-sm-12">
-                                <h1 class="mytitle" >#3  BANNER POSITION IS INCLUDED WITH THE <BR> #3 BUSINESS POSITION ABOVE</h1>
+                                <h1 class="mytitle">#3 BANNER POSITION IS INCLUDED WITH THE <BR> #3 BUSINESS POSITION
+                                    ABOVE</h1>
                             </div>
                         </div>
                     </div>
@@ -422,7 +496,8 @@
                     <div class="metric">
                         <div class="row">
                             <div class="col-md-12 col-sm-12">
-                                <h1 class="mytitle" >#4  BANNER POSITION IS INCLUDED WITH THE <BR> #4 BUSINESS POSITION ABOVE</h1>
+                                <h1 class="mytitle">#4 BANNER POSITION IS INCLUDED WITH THE <BR> #4 BUSINESS POSITION
+                                    ABOVE</h1>
                             </div>
                         </div>
                     </div>
@@ -431,7 +506,8 @@
                     <div class="metric">
                         <div class="row">
                             <div class="col-md-12 col-sm-12">
-                                <h1 class="mytitle" >#5  BANNER POSITION IS INCLUDED WITH THE <BR> #5 BUSINESS POSITION ABOVE</h1>
+                                <h1 class="mytitle">#5 BANNER POSITION IS INCLUDED WITH THE <BR> #5 BUSINESS POSITION
+                                    ABOVE</h1>
                             </div>
                         </div>
                     </div>
@@ -439,12 +515,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
                         @if(in_array('11', $position,true))
-                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}"
+                                 alt="">
                         @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 class="mytitle" >#6 POSITION</h1>
-                                <h1 class="mytitle" >TOP BANNER</h1>
+                                <h1 class="mytitle">#6 POSITION</h1>
+                                <h1 class="mytitle">TOP BANNER</h1>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 @if(in_array('11', $position,true))
@@ -452,19 +529,24 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp1,'p'=>11])}}">CLAIM NOW</a>
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem"
+                                         class="m-icon sales-icon">
+                                        <a style="color: white; font-size: 18px; text-align: center"
+                                           href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp1,'p'=>11])}}">CLAIM
+                                            NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
-                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
+                                <h3 style="float: right;font-size: 20px;">
+                                    1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - {{\Carbon\Carbon::now()->addMonth(1)->endOfMonth()->format('d M, Y')}}
+                                    11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:33px; text-align: center" >${{$area->bp1}}</h1>
+                                <h1 style="font-size:33px; text-align: center">${{$area->bp1}}</h1>
                             </div>
                         </div>
                     </div>
@@ -472,12 +554,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
                         @if(in_array('12', $position,true))
-                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}"
+                                 alt="">
                         @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 class="mytitle" >#7 POSITION</h1>
-                                <h1 class="mytitle" >TOP BANNER</h1>
+                                <h1 class="mytitle">#7 POSITION</h1>
+                                <h1 class="mytitle">TOP BANNER</h1>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 @if(in_array('12', $position,true))
@@ -485,19 +568,24 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp2,'p'=>12])}}">CLAIM NOW</a>
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem"
+                                         class="m-icon sales-icon">
+                                        <a style="color: white; font-size: 18px; text-align: center"
+                                           href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp2,'p'=>12])}}">CLAIM
+                                            NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
-                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
+                                <h3 style="float: right;font-size: 20px;">
+                                    1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - {{\Carbon\Carbon::now()->addMonth(1)->endOfMonth()->format('d M, Y')}}
+                                    11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:33px; text-align: center" >${{$area->bp2}}</h1>
+                                <h1 style="font-size:33px; text-align: center">${{$area->bp2}}</h1>
                             </div>
                         </div>
                     </div>
@@ -505,12 +593,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
                         @if(in_array('13', $position,true))
-                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}"
+                                 alt="">
                         @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 class="mytitle" >#8 POSITION</h1>
-                                <h1 class="mytitle" >TOP BANNER</h1>
+                                <h1 class="mytitle">#8 POSITION</h1>
+                                <h1 class="mytitle">TOP BANNER</h1>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 @if(in_array('13', $position,true))
@@ -518,19 +607,24 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp3,'p'=>13])}}">CLAIM NOW</a>
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem"
+                                         class="m-icon sales-icon">
+                                        <a style="color: white; font-size: 18px; text-align: center"
+                                           href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp3,'p'=>13])}}">CLAIM
+                                            NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
-                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
+                                <h3 style="float: right;font-size: 20px;">
+                                    1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - {{\Carbon\Carbon::now()->addMonth(1)->endOfMonth()->format('d M, Y')}}
+                                    11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:33px; text-align: center" >${{$area->bp3}}</h1>
+                                <h1 style="font-size:33px; text-align: center">${{$area->bp3}}</h1>
                             </div>
                         </div>
                     </div>
@@ -538,12 +632,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
                         @if(in_array('14', $position,true))
-                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}"
+                                 alt="">
                         @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 class="mytitle" >#9 POSITION</h1>
-                                <h1 class="mytitle" >TOP BANNER</h1>
+                                <h1 class="mytitle">#9 POSITION</h1>
+                                <h1 class="mytitle">TOP BANNER</h1>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 @if(in_array('14', $position,true))
@@ -551,19 +646,24 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp4,'p'=>14])}}">CLAIM NOW</a>
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem"
+                                         class="m-icon sales-icon">
+                                        <a style="color: white; font-size: 18px; text-align: center"
+                                           href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp4,'p'=>14])}}">CLAIM
+                                            NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
-                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
+                                <h3 style="float: right;font-size: 20px;">
+                                    1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - {{\Carbon\Carbon::now()->addMonth(1)->endOfMonth()->format('d M, Y')}}
+                                    11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:33px; text-align: center" >${{$area->bp4}}</h1>
+                                <h1 style="font-size:33px; text-align: center">${{$area->bp4}}</h1>
                             </div>
                         </div>
                     </div>
@@ -571,12 +671,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="metric">
                         @if(in_array('15', $position,true))
-                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                            <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}"
+                                 alt="">
                         @endif
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h1 class="mytitle" >#10 POSITION</h1>
-                                <h1 class="mytitle" >TOP BANNER</h1>
+                                <h1 class="mytitle">#10 POSITION</h1>
+                                <h1 class="mytitle">TOP BANNER</h1>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 @if(in_array('15', $position,true))
@@ -584,19 +685,24 @@
                                         <a href="#"> CLAIMED</a>
                                     </div>
                                 @else
-                                    <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                        <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp5,'p'=>15])}}">CLAIM NOW</a>
+                                    <div style="background-color: green; text-align: center; padding: 0.5rem"
+                                         class="m-icon sales-icon">
+                                        <a style="color: white; font-size: 18px; text-align: center"
+                                           href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp5,'p'=>15])}}">CLAIM
+                                            NOW</a>
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
-                                    - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
+                                <h3 style="float: right;font-size: 20px;">
+                                    1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    - {{\Carbon\Carbon::now()->addMonth(1)->endOfMonth()->format('d M, Y')}}
+                                    11:59PM</h3>
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h1 style="font-size:33px; text-align: center" >${{$area->bp5}}</h1>
+                                <h1 style="font-size:33px; text-align: center">${{$area->bp5}}</h1>
                             </div>
                         </div>
                     </div>
@@ -607,9 +713,11 @@
     @if($area->status==1)
         <div class="panel panel-headline">
             <div class="panel-heading">
-                <h3 style="float: right;font-size: 15px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                <h3 style="float: right;font-size: 15px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}}
+                    12:00PM
                     - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
-                <h2  class="panel-title" style="text-align: center; font-size: 30px">MIDDLE BANNERS POSITIONS IN <b>{{strtoupper($area->title)}}</b> </h2>
+                <h2 class="panel-title" style="text-align: center; font-size: 30px">MIDDLE BANNERS POSITIONS IN
+                    <b>{{strtoupper($area->title)}}</b></h2>
 
             </div>
             <div class="panel-body">
@@ -617,12 +725,13 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="metric">
                             @if(in_array('16', $position,true))
-                                <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                                <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}"
+                                     alt="">
                             @endif
                             <div class="row">
                                 <div class="col-md-8 col-sm-8">
-                                    <h1 class="mytitle" >#1 POSITION</h1>
-                                    <h1 class="mytitle" >#1 MIDDLE BANNER</h1>
+                                    <h1 class="mytitle">#1 POSITION</h1>
+                                    <h1 class="mytitle">#1 MIDDLE BANNER</h1>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     @if(in_array('16', $position,true))
@@ -630,19 +739,23 @@
                                             <a href="#"> CLAIMED</a>
                                         </div>
                                     @else
-                                        <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                            <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp6,'p'=>16])}}">CLAIM NOW</a>
+                                        <div style="background-color: green; text-align: center; padding: 0.5rem"
+                                             class="m-icon sales-icon">
+                                            <a style="color: white; font-size: 18px; text-align: center"
+                                               href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp6,'p'=>16])}}">CLAIM
+                                                NOW</a>
                                         </div>
                                     @endif
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-8 col-sm-8">
-                                    <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    <h3 style="float: right;font-size: 20px;">
+                                        1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
                                         - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
-                                    <h1 style="font-size:33px; text-align: center" >${{$area->bp6}}</h1>
+                                    <h1 style="font-size:33px; text-align: center">${{$area->bp6}}</h1>
                                 </div>
                             </div>
                         </div>
@@ -650,12 +763,13 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="metric">
                             @if(in_array('17', $position,true))
-                                <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                                <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}"
+                                     alt="">
                             @endif
                             <div class="row">
                                 <div class="col-md-8 col-sm-8">
-                                    <h1 class="mytitle" >#2 POSITION</h1>
-                                    <h1 class="mytitle" >#2 MIDDLE BANNER</h1>
+                                    <h1 class="mytitle">#2 POSITION</h1>
+                                    <h1 class="mytitle">#2 MIDDLE BANNER</h1>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     @if(in_array('17', $position,true))
@@ -663,19 +777,23 @@
                                             <a href="#"> CLAIMED</a>
                                         </div>
                                     @else
-                                        <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                            <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp7,'p'=>17])}}">CLAIM NOW</a>
+                                        <div style="background-color: green; text-align: center; padding: 0.5rem"
+                                             class="m-icon sales-icon">
+                                            <a style="color: white; font-size: 18px; text-align: center"
+                                               href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp7,'p'=>17])}}">CLAIM
+                                                NOW</a>
                                         </div>
                                     @endif
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-8 col-sm-8">
-                                    <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    <h3 style="float: right;font-size: 20px;">
+                                        1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
                                         - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
-                                    <h1 style="font-size:33px; text-align: center" >${{$area->bp7}}</h1>
+                                    <h1 style="font-size:33px; text-align: center">${{$area->bp7}}</h1>
                                 </div>
                             </div>
                         </div>
@@ -683,12 +801,13 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="metric">
                             @if(in_array('18', $position,true))
-                                <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                                <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}"
+                                     alt="">
                             @endif
                             <div class="row">
                                 <div class="col-md-8 col-sm-8">
-                                    <h1 class="mytitle" >#3 POSITION</h1>
-                                    <h1 class="mytitle" >#3 MIDDLE BANNER</h1>
+                                    <h1 class="mytitle">#3 POSITION</h1>
+                                    <h1 class="mytitle">#3 MIDDLE BANNER</h1>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     @if(in_array('18', $position,true))
@@ -696,19 +815,23 @@
                                             <a href="#"> CLAIMED</a>
                                         </div>
                                     @else
-                                        <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                            <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp8,'p'=>18])}}">CLAIM NOW</a>
+                                        <div style="background-color: green; text-align: center; padding: 0.5rem"
+                                             class="m-icon sales-icon">
+                                            <a style="color: white; font-size: 18px; text-align: center"
+                                               href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp8,'p'=>18])}}">CLAIM
+                                                NOW</a>
                                         </div>
                                     @endif
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-8 col-sm-8">
-                                    <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    <h3 style="float: right;font-size: 20px;">
+                                        1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
                                         - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
-                                    <h1 style="font-size:33px; text-align: center" >${{$area->bp8}}</h1>
+                                    <h1 style="font-size:33px; text-align: center">${{$area->bp8}}</h1>
                                 </div>
                             </div>
                         </div>
@@ -716,12 +839,13 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="metric">
                             @if(in_array('19', $position,true))
-                                <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}" alt="">
+                                <img class="imageclaim" src="{{asset('420finder_positions_claimed_banner_only.png')}}"
+                                     alt="">
                             @endif
                             <div class="row">
                                 <div class="col-md-8 col-sm-8">
-                                    <h1 class="mytitle" >#4 POSITION</h1>
-                                    <h1 class="mytitle" >#4 MIDDLE BANNER</h1>
+                                    <h1 class="mytitle">#4 POSITION</h1>
+                                    <h1 class="mytitle">#4 MIDDLE BANNER</h1>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     @if(in_array('19', $position,true))
@@ -729,19 +853,23 @@
                                             <a href="#"> CLAIMED</a>
                                         </div>
                                     @else
-                                        <div style="background-color: green; text-align: center; padding: 0.5rem" class="m-icon sales-icon">
-                                            <a style="color: white; font-size: 18px; text-align: center" href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp8,'p'=>19])}}">CLAIM NOW</a>
+                                        <div style="background-color: green; text-align: center; padding: 0.5rem"
+                                             class="m-icon sales-icon">
+                                            <a style="color: white; font-size: 18px; text-align: center"
+                                               href="{{route('bookme',['id'=>$area->id,'price'=>$area->bp8,'p'=>19])}}">CLAIM
+                                                NOW</a>
                                         </div>
                                     @endif
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-8 col-sm-8">
-                                    <h3 style="float: right;font-size: 20px;">1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
+                                    <h3 style="float: right;font-size: 20px;">
+                                        1 {{\Carbon\Carbon::now()->addMonth(1)->format('M, Y')}} 12:00PM
                                         - 30 {{\Carbon\Carbon::now()->addMonth(2)->format('M, Y')}} 11:59PM</h3>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
-                                    <h1 style="font-size:33px; text-align: center" >${{$area->bp8}}</h1>
+                                    <h1 style="font-size:33px; text-align: center">${{$area->bp8}}</h1>
                                 </div>
                             </div>
                         </div>

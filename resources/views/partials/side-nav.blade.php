@@ -23,11 +23,11 @@
                 @endphp
                 @if($response)
                 <li>
-                    <a href="{{ route('state.areas') }}" class=""><i class="fa fa-product-hunt" aria-hidden="true"></i>  <span>Sales&Marketing Products</span></a>
+                    <a href="{{ route('state.areas') }}" class=""><i class="fa fa-product-hunt" aria-hidden="true"></i><span>Sales+Marketing Products</span></a>
                 </li>
                 @else
                 <li>
-                    <a href="{{ route('subscription') }}" class=""><i class="fa fa-product-hunt" aria-hidden="true"></i>  <span>Sales&Marketing Products</span> </a>
+                    <a href="{{ route('subscription') }}" class=""><i class="fa fa-product-hunt" aria-hidden="true"></i><span>Sales+Marketing Products</span> </a>
                 </li>
                 @endif
 

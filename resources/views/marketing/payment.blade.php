@@ -8,17 +8,27 @@
             <div class="row">
                 <div class="col-md-6">
                     @if($p <= 10)
-                        <h3 class="panel-title" style="font-size: 3rem; font-weight: bold;font-style: italic;color: #f8971c;"><img src="{{asset('images/ab.png')}}" style="height: 25px">TOP BUSINESS POSITION # {{$p}}</h3>
+                        <h3 class="panel-title"
+                            style="font-size: 3rem; font-weight: bold;font-style: italic;color: #f8971c;"><img
+                                src="{{asset('images/ab.png')}}" style="height: 25px">TOP BUSINESS POSITION # {{$p}}
+                        </h3>
                     @elseif($p > 10 && $p <= 15)
-                        <h3 class="panel-title" style="font-size: 3rem; font-weight: bold;font-style: italic;color: #f8971c;"><img src="{{asset('images/ab.png')}}" style="height: 25px">TOP BANNERS POSITION # {{$p-10}}</h3>
+                        <h3 class="panel-title"
+                            style="font-size: 3rem; font-weight: bold;font-style: italic;color: #f8971c;"><img
+                                src="{{asset('images/ab.png')}}" style="height: 25px">TOP BANNERS POSITION # {{$p-10}}
+                        </h3>
                     @elseif($p > 15 && $p <= 20)
-                        <h3 class="panel-title" style="font-size: 3rem; font-weight: bold;font-style: italic;color: #f8971c;"><img src="{{asset('images/ab.png')}}" style="height: 25px">MIDDLE BANNER POSITION # {{$p-15}}</h3>
+                        <h3 class="panel-title"
+                            style="font-size: 3rem; font-weight: bold;font-style: italic;color: #f8971c;"><img
+                                src="{{asset('images/ab.png')}}" style="height: 25px">MIDDLE BANNER POSITION # {{$p-15}}
+                        </h3>
                     @endif
                 </div>
             </div>
         </div>
         <div class="panel-body">
-            <form action="{{ route('banner.payment', ['id'=>request()->route('id')]) }}" method="POST" enctype="multipart/form-data" id="create-deal-form">
+            <form action="{{ route('banner.payment', ['id'=>request()->route('id')]) }}" method="POST"
+                  enctype="multipart/form-data" id="create-deal-form">
                 @csrf
                 <div class="row">
                     @include('partials.success-error')
@@ -27,10 +37,14 @@
                         <div class="row">
                             <input type="hidden" name="area_id" value="{{$area->id}}">
                             <input type="hidden" name="position" value="{{$p}}">
-                            <div class="form-group-lg col-xs-12 col-sm-6 col-md-1 mb-3" id="sub">
+                            <div class="form-group-lg col-xs-12 col-sm-6 col-md-3 mb-3" id="sub">
                                 <label for="deal_price"> Price</label>
-                                <input type="hidden" name="price" id="price" style="  height: 80px;padding: 10px 16px;font-size: 4rem; font-style: italic" class="form-control" required value="{{$price}}" readonly>
-                                <input type="text"  style="  height: 80px;padding: 10px 16px;font-size: 4rem; font-style: italic" class="form-control" required value="${{$price}}" readonly>
+                                <input type="hidden" name="price" id="price"
+                                       style="  height: 80px;padding: 10px 16px;font-size: 4rem; font-style: italic"
+                                       class="form-control" required value="{{$price}}" readonly>
+                                <input type="text"
+                                       style="  height: 80px;padding: 10px 16px;font-size: 4rem; font-style: italic"
+                                       class="form-control" required value="${{$price}}" readonly>
                             </div>
                         </div>
                         <div class="row">
@@ -39,16 +53,27 @@
                             <div class="form-group-lg col-xs-12 col-sm-12 col-md-5 mb-3" id="sub">
                                 <label for="deal_price"> For</label>
                                 @if($p <= 10)
-                                    <input type="text" id="price" style="  height: 80px;padding: 10px 16px;font-size: 4rem; font-style: italic" class="form-control" required value="TOP BUSINESS POSITION # {{$p}}" readonly>
+                                    <input type="text" id="price"
+                                           style="  height: 80px;padding: 10px 16px;font-size: 4rem; font-style: italic"
+                                           class="form-control" required value="TOP BUSINESS POSITION # {{$p}}"
+                                           readonly>
                                 @elseif($p > 10 && $p <= 15)
-                                    <input type="text" id="price" style="  height: 80px;padding: 10px 16px;font-size: 4rem; font-style: italic" class="form-control" required value="TOP BANNERS POSITION # {{$p-10}}" readonly>
+                                    <input type="text" id="price"
+                                           style="  height: 80px;padding: 10px 16px;font-size: 4rem; font-style: italic"
+                                           class="form-control" required value="TOP BANNERS POSITION # {{$p-10}}"
+                                           readonly>
                                 @elseif($p > 15 && $p <= 20)
-                                    <input type="text" id="price" style="  height: 80px;padding: 10px 16px;font-size: 4rem; font-style: italic" class="form-control" required value="MIDDLE BANNER POSITION # {{$p-15}}" readonly>
+                                    <input type="text" id="price"
+                                           style="  height: 80px;padding: 10px 16px;font-size: 4rem; font-style: italic"
+                                           class="form-control" required value="MIDDLE BANNER POSITION # {{$p-15}}"
+                                           readonly>
                                 @endif
                             </div>
                         </div>
-                        <p  style="font-size: 2.5rem; font-style: italic">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        <p style="font-size: 2.5rem; font-style: italic">
+                            Thank your interest in our TOP 10 POSITIONS and MARKETING BANNERS. Once you have made your
+                            purchase, contact us ASAP at SUPPORT@420FINDER.NET so we can finalize the details of your
+                            listing.
                         </p>
                         {{--                        <div class="row">--}}
                         {{--                            <div class="form-group name-on-card col-xs-12 col-sm-6 mb-3">--}}
@@ -94,10 +119,10 @@
                         {{--                        </div>--}}
 
 
-
                         <div class="text-center py-5" style="font-style: italic; color: #f8971c;">
                             <h1 class="m-0" style="font-weight: bold; font-size: 5rem;">ALMOST THERE.</h1>
-                            <h3 class="m-0" style="font-size: 3rem;">COMPLETE THE PAYMENT FORM BELOW TO LOCK IN YOUR POSITION.</h3>
+                            <h3 class="m-0" style="font-size: 3rem;">COMPLETE THE PAYMENT FORM BELOW TO LOCK IN YOUR
+                                POSITION.</h3>
                             <h3 class="m-0" style="font-size: 3rem; font-weight: bold;">PRICE: ${{$price}}</h3>
                             <div class="mt-5" style="font-size: 1rem; color: #CCC;">
                                 <i class="fa fa-circle mx-2"></i>
@@ -142,7 +167,8 @@
                                 <h2 class="mt-0" style="font-weight: 900; font-style: italic;">PAYMENT INFORMATION</h2>
                                 <div class="form-group-lg name-on-card">
                                     <label for="name-on-card">Name on Card</label>
-                                    <input type="text" class="form-control d-r-0" id="name-on-card" name="name_on_card" value="{{ old('name_on_card') }}" required>
+                                    <input type="text" class="form-control d-r-0" id="name-on-card" name="name_on_card"
+                                           value="{{ old('name_on_card') }}" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -205,7 +231,11 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="text-center">
-                                    <p style="font-style: italic">By clicking <span style="font-weight: bold;">Checkout</span>, you're agreeing to 420 Finder's <span style="font-weight: bold; text-decoration: underline">User Agreement</span></p>
+                                    <p style="font-style: italic">By clicking <span
+                                            style="font-weight: bold;">Checkout</span>, you're agreeing to 420 Finder's
+                                        <span
+                                            style="font-weight: bold; text-decoration: underline">User Agreement</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -219,10 +249,6 @@
                 </div>
             </form>
         </div>
-
-
-
-
 
 
     </div>
