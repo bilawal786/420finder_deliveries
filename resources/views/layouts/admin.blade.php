@@ -45,7 +45,7 @@
             font-weight: bold !important;
         }
         .sidebar .nav > li > a {
-            padding: 18px 25px;
+            padding: 18px 20px;
         }
         .dropzone {
             background-color: #ccc;
