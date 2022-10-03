@@ -300,116 +300,60 @@ class ProductController extends Controller {
     */
 
     public function store(Request $request) {
-
-//        if(is_null($this->checkIfPaid())) {
-//            return $this->redirectToPayment();
-//        }
-
-        $UUID = (string) Str::uuid();
-
+        $UUID = (string)Str::uuid();
         $validated = $request->validate([
             'name' => 'required',
             'description' => 'required',
             'image' => 'required|image',
             'sku' => 'required',
-            'suggested_price' => 'required',
             'category_id' => 'required',
-
         ]);
 
         $product = new DeliveryProducts;
-
         $product->delivery_id = session('business_id');
-
         $product->name = $request->name;
-
         $product->slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $request->name)));
-
         $product->description = $request->description;
-
-        if($request->hasFile('image')) {
-
+        if ($request->hasFile('image')) {
             $avatar = $request->file('image');
             $filename = time() . '.' . $avatar->GetClientOriginalExtension();
-
             $avatar_img = Image::make($avatar);
-            $avatar_img->resize(274,274)->save(public_path('images/brands/products/' . $filename));
-
+            $avatar_img->resize(274, 274)->save(public_path('images/brands/products/' . $filename));
             $product->image = asset("images/brands/products/" . $filename);
-
         }
-
+        if (!$request->suggested_price){
+            $product->flower_price_name = "yes";
+            $product->fp1 = $request->fp1;
+            $product->fp2 = $request->fp2;
+            $product->fp3 = $request->fp3;
+            $product->fp4 = $request->fp4;
+            $product->fp5 = $request->fp5;
+        }else{
+            $product->price = $request->suggested_price;
+        }
         $product->sku = $request->sku;
-        $product->price = $request->suggested_price;
         $product->category_id = $request->category_id;
-
-        // $idsArray = array();
-        // $subcategoriesArray = array();
-        // $search = "type_";
-        // $search_length = strlen($search);
-
-        // foreach ($_POST as $key => $value) {
-        //     if (substr($key, 0, $search_length) == $search) {
-        //         array_push($subcategoriesArray, substr($key, 5));
-        //         array_push($idsArray, $value);
-        //     }
-        // }
-
-        // $subcategoryids = implode(", ", $idsArray);
         $subcategoryids = NULL;
-
-        // $subcategorynames = implode(", ", $subcategoriesArray);
         $subcategorynames = NULL;
-
         $product->subcategory_ids = $subcategoryids;
         $product->subcategory_names = $subcategorynames;
-
         $product->strain_id = $request->strain_id;
         $product->genetic_id = $request->genetic_id;
         $product->thc_percentage = $request->thc_percentage;
         $product->cbd_percentage = $request->cbd_percentage;
         $product->brand_product = 0;
         $product->brand_product_id = 0;
+        $product->brand_id = 0;
         if ($request->is_featured == 'on') {
-
             $product->is_featured = 1;
-
         } else {
-
             $product->is_featured = 0;
-
         }
-
-        // $product->status = $request->status;
-
         if ($product->save()) {
-
-            if ($request->hasFile('galleryimages')) {
-
-                foreach($request->file('galleryimages') as $image) {
-
-                    $name = $image->getClientOriginalName();
-                    $name = $UUID . '-' . $name;
-                    $image->move(public_path('images/delivery/products/gallery'), $name);
-
-                    $dpg = new DeliveryProductGallery;
-
-                    $dpg->delivery_product_id = $product->id;
-                    $dpg->image = asset("images/delivery/products/gallery/" . $name);
-                    $dpg->save();
-
-                }
-
-            }
-
             return redirect()->route('products')->with('info', 'Product Created.');
-
         } else {
-
             return redirect()->route('products')->with('error', 'Problem occured while creating product.');
-
         }
-
     }
 
     /*

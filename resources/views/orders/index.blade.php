@@ -216,7 +216,7 @@
                                                     <img src="{{ $product->image }}" alt="Product Image" height="80px" width="80px">
                                                 </td>
                                                 <td>
-                                                    {{ $product->name }}
+                                                    {{ $product->name }} @if($product->flower_price_name) ( {{ $product->flower_price_name }} )@endif
                                                 </td>
                                                 <td>
                                                     {{ $product->qty }}
