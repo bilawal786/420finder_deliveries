@@ -36,12 +36,12 @@
                         <div class="card p-3 mt-3 shadow-sm">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h4><strong>Select Your Directions</strong></h4>
+                                    <h4><strong>SELECT MAP ICON EXACT LOCATION</strong></h4>
                                 </div>
                                 <div class="col-md-6">
                                     {{--                            text-center--}}
                                     <div class="form-group">
-                                        <label for="">Directions</label>
+                                        <label for="">EXACT ADDRESS OF MAP ICONS</label>
                                         @if($location == "Select location")
                                             <input id="searchTextField" type="text" name="address" class="form-control"
                                                    value="{{$location}}">
@@ -139,9 +139,9 @@
                                     <p class="text-black-50">{{ $business->email }}</p>
                                 </div>
 
-{{--                                <div class="col-md-6 text-right">--}}
-{{--                                    <a data-toggle="modal" data-target="#email" class="cursor-pointer">Edit</a>--}}
-{{--                                </div>--}}
+                                {{--                                <div class="col-md-6 text-right">--}}
+                                {{--                                    <a data-toggle="modal" data-target="#email" class="cursor-pointer">Edit</a>--}}
+                                {{--                                </div>--}}
 
                             </div>
                         </div>
