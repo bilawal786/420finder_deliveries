@@ -1,8 +1,9 @@
 @extends('layouts.admin')
 @section('content')
     <style>
-        .text-1{
-            text-align: right; font-size: 25px;
+        .text-1 {
+            text-align: right;
+            font-size: 25px;
             font-weight: bold;
         }
     </style>
@@ -29,7 +30,8 @@
                                     <label for="" class="pb-2">Avatar image</label>
                                     <img src="{{ asset('dummy.png') }}" alt="" class="w-100 img-thumbnail">
                                     <div class="form-group mt-3">
-                                        <input type="file" name="image" class="form-control" required="">
+                                        <input type="file" name="image" class="form-control" required=""
+                                               accept="image/png, image/jpg, image/jpeg">
                                     </div>
                                 </div>
                                 <div class="col-md-10">
@@ -101,7 +103,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <p class="text-1">28g or  1oz :</p>
+                                                    <p class="text-1">28g or 1oz :</p>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <input type="number" name="fp5" class="form-control">
@@ -214,10 +216,10 @@
             var category_id = $(this).val();
             var maincat = $(this).attr('rel');
             console.log(category_id);
-            if (category_id == "4"){
+            if (category_id == "4") {
                 $("#flowerId").show();
                 $("#suggestPrice").hide();
-            }else {
+            } else {
                 $("#flowerId").hide();
                 $("#suggestPrice").show();
             }
