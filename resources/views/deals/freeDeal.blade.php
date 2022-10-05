@@ -5,7 +5,9 @@
 @endphp
 
 @section('content')
-
+    <div class="d-box-text text-center p-4 mb-5" style="border-radius: 20px;">
+        <h1 style="font-weight: 900; font-style: italic;" class="d-size">CREATE DEAL</h1>
+    </div>
     <div class="panel panel-headline">
         <div class="panel-heading">
             <div class="row">
@@ -74,7 +76,7 @@
                                     <input type="number" name="deal_price" id="deal_price" class="form-control"
                                            required>
                                 </div>
-                                <div class="form-group col-xs-12 col-sm-6 mb-3" id="sub">
+                                <div class="form-group col-xs-12 col-sm-6 mb-3" id="sub" style="display: none">
                                     <label for="deal_price">Deal Fee</label>
                                     <input type="number" readonly  name="price" id="deal_price" class="form-control"
                                            required value="{{ $subPrice->deal_price }}">
@@ -111,10 +113,9 @@
                                            class="form-control">
                                 </div>
                             </div>
-
-                            <div class="form-group">
-                                <button class="btn btn-dark btn-block" id="create-deal-btn">Create Deal</button>
-                            </div>
+                            <button style="padding: 15px; font-size: 30px; font-weight: bold"
+                                    class="btn btn-dark btn-block" id="create-deal-btn">CREATE FREE DEAL
+                            </button>
                         </form>
                     @else
                         <div class="form-group col-xs-12 col-sm-12 mb-3" id="description">

@@ -5,6 +5,9 @@
 @endphp
 
 @section('content')
+    <div class="d-box-text text-center p-4 mb-5" style="border-radius: 20px;">
+        <h1 style="font-weight: 900; font-style: italic;" class="d-size">CREATE DEAL</h1>
+    </div>
     <div class="panel panel-headline">
         <div class="panel-heading">
             <div class="row">
