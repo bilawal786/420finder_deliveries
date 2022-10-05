@@ -27,7 +27,7 @@
     }
 
     .txt {
-        font-size: 20px;
+        font-size: 16px;
         text-align: center;
         margin-top: 15px;
     }
