@@ -449,11 +449,12 @@ class DealsController extends Controller
     public function stateArea()
     {
         $business = Business::where('id', '=', session('business_id'))->first();
-        $area = DB::table('areas')->where('state_id', '=', $business->state_province)->get();
+        $area = DB::table('areas')->where('state_id', '=', $business->state_province)->where('ex1', 'enable')->get();
         return view('marketing.main', compact('area', 'business'));
     }
-    public function marketing($id)
+    public function marketing($iD)
     {
+        $id =  base64_decode($iD);
         $business = Business::where('id', '=', session('business_id'))->first();
         $area = DB::table('areas')->find($id);
         $position = DB::table('position_sets')->where('area_id', '=', $id)->where('date', '=', \Illuminate\Support\Carbon::now()->addMonth(1)->format('m, Y'))->pluck('position')->toArray();;

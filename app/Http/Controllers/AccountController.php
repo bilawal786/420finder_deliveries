@@ -1,10 +1,13 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Models\Business;
 use App\Models\StoreLocation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Image;
+
 class AccountController extends Controller
 {
     public function index()
@@ -26,6 +29,7 @@ class AccountController extends Controller
             ->with('location', $location)
             ->with('statee', $statee);
     }
+
     public function updateprofilepicture(Request $request)
     {
         $business = Business::find(session('business_id'));
@@ -39,6 +43,7 @@ class AccountController extends Controller
             return redirect()->back()->with('info', 'Profile Picture Updated.');
         }
     }
+
     public function savefirstname(Request $request)
     {
         $firstname = Business::find(session('business_id'));
@@ -46,6 +51,7 @@ class AccountController extends Controller
         $firstname->save();
         return redirect()->back()->with('info', 'First Name Updated.');
     }
+
     public function savelastname(Request $request)
     {
         $lastname = Business::find(session('business_id'));
@@ -53,6 +59,7 @@ class AccountController extends Controller
         $lastname->save();
         return redirect()->back()->with('info', 'Last Name Updated.');
     }
+
     public function updateEmail(Request $request)
     {
         $validated = $request->validate([
@@ -71,6 +78,7 @@ class AccountController extends Controller
             return redirect()->back()->with('error', 'Sorry something went wrong.');
         }
     }
+
     public function savephonenumber(Request $request)
     {
         $phone_number = Business::find(session('business_id'));
@@ -78,6 +86,7 @@ class AccountController extends Controller
         $phone_number->save();
         return redirect()->back()->with('info', 'Phone Number Updated.');
     }
+
     public function updatebusinessname(Request $request)
     {
         $business_name = Business::find(session('business_id'));
@@ -85,6 +94,7 @@ class AccountController extends Controller
         $business_name->save();
         return redirect()->back()->with('info', 'Business Name Updated.');
     }
+
     public function updateBusinessPhone(Request $request)
     {
         $validated = $request->validate([
@@ -99,6 +109,7 @@ class AccountController extends Controller
             return redirect()->back()->with('error', 'Sorry something went wrong.');
         }
     }
+
     public function updateaddressone(Request $request)
     {
         $address_line_1 = Business::find(session('business_id'));
@@ -106,6 +117,7 @@ class AccountController extends Controller
         $address_line_1->save();
         return redirect()->back()->with('info', 'Address One Updated.');
     }
+
     public function updateaddresstwo(Request $request)
     {
         $address_line_2 = Business::find(session('business_id'));
@@ -113,6 +125,7 @@ class AccountController extends Controller
         $address_line_2->save();
         return redirect()->back()->with('info', 'Address Two Updated.');
     }
+
     public function updatewebsiteurl(Request $request)
     {
         $website = Business::find(session('business_id'));
@@ -120,6 +133,7 @@ class AccountController extends Controller
         $website->save();
         return redirect()->back()->with('info', 'Website URL Updated.');
     }
+
     public function updateinstagramurl(Request $request)
     {
         $instagram = Business::find(session('business_id'));
@@ -127,6 +141,7 @@ class AccountController extends Controller
         $instagram->save();
         return redirect()->back()->with('info', 'Instagram URL Updated.');
     }
+
     public function updateordermethod(Request $request)
     {
         $order_method = $request->order_method;
@@ -147,6 +162,7 @@ class AccountController extends Controller
         }
         return redirect()->back()->with('info', 'Order Method Updated.');
     }
+
     public function updateopeningtime(Request $request)
     {
         $business = Business::find(session('business_id'));
@@ -160,6 +176,7 @@ class AccountController extends Controller
         $business->update();
         return redirect()->back()->with('info', 'Opening Time Updated.');
     }
+
     public function updateclosingtime(Request $request)
     {
         $business = Business::find(session('business_id'));
@@ -173,6 +190,7 @@ class AccountController extends Controller
         $business->update();
         return redirect()->back()->with('info', 'Closing Time Updated.');
     }
+
     public function savebcoordinates(Request $request)
     {
         $business = Business::find(session('business_id'));
@@ -182,12 +200,14 @@ class AccountController extends Controller
         $response = ['statuscode' => 200, 'message' => 'Business Direction Updated.'];
         echo json_encode($response);
     }
+
     public function otherlocations()
     {
         $locations = StoreLocation::all();
         return view('account.otherlocations')
             ->with('locations', $locations);
     }
+
     public function storelocation(Request $request)
     {
         $location = new StoreLocation;
@@ -199,12 +219,14 @@ class AccountController extends Controller
         $location->save();
         return redirect()->back()->with('info', 'Store with location added.');
     }
+
     public function deletelocation($id)
     {
         $location = StoreLocation::find($id);
         $location->delete();
         return redirect()->back()->with('info', 'Store Location Removed.');
     }
+
     public function updateState(Request $request)
     {
         $business = Business::find(session('business_id'));

@@ -35,39 +35,33 @@ class GalleryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $header_file=$request->filedata;
+        $header_file = $request->filedata;
         $destinationPath = 'images/gallery/';
         $destinationfolder = '/images/gallery/';
         $header_originalFile = $header_file->getClientOriginalName();
-        $header_filename = strtotime("now").'-'.$header_originalFile;
+        $header_filename = strtotime("now") . '-' . $header_originalFile;
         $avatar_img = \Intervention\Image\Facades\Image::make($header_file);
         $avatar_img->resize(373, 373)->save(public_path($destinationPath . $header_filename));
         $serve_url = URL::to('/');
-        $header_img = $serve_url.$destinationfolder.$header_filename;
-
-
-
-
-
+        $header_img = $serve_url . $destinationfolder . $header_filename;
         DB::table('business_galleries')->insert([
-            'business_id'=>Session::get("business_id"),
-            'image'=>$header_img,
-            'created_at'=>Carbon::now(),
-            'updated_at'=>Carbon::now()
+            'business_id' => Session::get("business_id"),
+            'image' => $header_img,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ]);
-
         return response()->json($header_img);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -79,7 +73,7 @@ class GalleryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -90,8 +84,8 @@ class GalleryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -102,7 +96,7 @@ class GalleryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -110,11 +104,9 @@ class GalleryController extends Controller
         $image = DB::table('business_galleries')->find($id);
         $serve_url = URL::to('/');
         $length = strlen($serve_url);
-        $path = substr($image->image, $length+1);
+        $path = substr($image->image, $length + 1);
         File::delete($path);
-
         DB::table('business_galleries')->delete($id);
-
         return redirect()->route('gallery.index');
     }
 }

@@ -1,10 +1,10 @@
 @extends('layouts.admin')
-
 @section('content')
     <div class="dash-analytics">
         <div class="d-box-text text-center p-4 mb-5" style="border-radius: 20px;">
             <h1 style="font-weight: 900; font-style: italic;" class="d-size">SALES + MARKETING PRODUCTS</h1>
-            <h3 style="font-style: italic;" class="m-0">+TOP 10 POSITIONS &nbsp; &nbsp; &nbsp; +MARKETING BANNERS &nbsp; &nbsp; &nbsp; +MORE</h3>
+            <h3 style="font-style: italic;" class="m-0">+TOP 10 POSITIONS &nbsp; &nbsp; &nbsp; +MARKETING BANNERS &nbsp;
+                &nbsp; &nbsp; +MORE</h3>
         </div>
         <div class="panel panel-headline">
             <div class="panel-body">
@@ -25,31 +25,29 @@
                 <div class="panel-heading">
                     <?php
                     $state = DB::table('states')->find($business->state_province);
-                    if($state == null){
+                    if ($state == null) {
                         $StateName = 'No State';
-                    }else{
+                    } else {
                         $StateName = $state->name;
                     }
                     ?>
-
                     <h3 class="panel-title" style="text-align: center">{{$StateName}} </h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         @foreach($area as $row)
                             <div class="col-md-3">
-                                <div class="metric" style="display: block!important; text-align: center;padding: 10px!important;">
+                                <div class="metric"
+                                     style="display: block!important; text-align: center;padding: 10px!important;">
                                     <h4><b>{{$row->title}}</b></h4>
                                     <h5><b>{{$row->sub_title}}</b></h5>
-                                    <a href="{{route('marketing',['id'=>$row->id])}}" class="btn btn-primary">Open Me</a>
+                                    <a href="{{route('marketing',['id'=>base64_encode($row->id)])}}" class="btn btn-primary">Open
+                                        Me</a>
                                 </div>
                             </div>
                         @endforeach
-
                     </div>
-
                 </div>
-
             </div>
         @else
             <div class="panel panel-headline">
@@ -60,10 +58,8 @@
         @endif
     </div>
 @endsection
-
 @section('styles')
     <style>
-
         .metric {
             display: flex;
             justify-content: space-between;
@@ -71,48 +67,37 @@
             box-shadow: 1px 1px 20px 0px rgb(0 0 0 / 19%);
             border: 0px;
         }
-
         .metric .m-icon {
             padding: 1.5rem;
             border-radius: 5px;
         }
-
         .metric .number {
             font-weight: 500;
         }
-
         .metric .m-icon.customer-icon {
             background-color: rgba(247, 184, 75, .18);
         }
-
         .metric .m-icon.customer-icon svg {
             fill: #f7b84be0;
         }
-
         .metric .m-icon.brand-icon {
             background-color: rgba(41, 156, 219, .18);
         }
-
         .metric .m-icon.brand-icon svg {
             fill: #299cdb;
         }
-
         .metric .m-icon.deal-icon {
             background-color: rgba(64, 81, 137, .18);
         }
-
         .metric .m-icon.deal-icon svg {
             fill: #405189;;
         }
-
         .metric .m-icon.sales-icon {
             background-color: rgba(10, 179, 156, .18)
         }
-
         .metric .m-icon.sales-icon svg {
             fill: #0ab39c;
         }
-
         .chart-row .line-chart,
         .chart-row .pie-chart {
             padding: 1rem;
@@ -120,10 +105,8 @@
             margin: 1rem 0;
             box-shadow: 1px 1px 13px 1px rgb(0 0 0 / 19%);
         }
-
         .apexcharts-title-text {
             font-size: 2rem;
         }
     </style>
 @endsection
-
