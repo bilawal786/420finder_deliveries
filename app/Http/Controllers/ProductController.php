@@ -245,16 +245,8 @@ class ProductController extends Controller
             $avatar_img->resize(274, 274)->save(public_path('images/brands/products/' . $filename));
             $product->image = asset("images/brands/products/" . $filename);
         }
-        if (!$request->suggested_price) {
-            $product->flower_price_name = "yes";
-            $product->fp1 = $request->fp1;
-            $product->fp2 = $request->fp2;
-            $product->fp3 = $request->fp3;
-            $product->fp4 = $request->fp4;
-            $product->fp5 = $request->fp5;
-        } else {
-            $product->price = $request->suggested_price;
-        }
+        $product->fp1 = $request->fp1;
+        $product->price = $request->suggested_price;
         $product->sku = $request->sku;
         $product->category_id = $request->category_id;
         $subcategoryids = NULL;
@@ -393,10 +385,6 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->off = 0;
         $product->fp1 = $request->fp1;
-        $product->fp2 = $request->fp2;
-        $product->fp3 = $request->fp3;
-        $product->fp4 = $request->fp4;
-        $product->fp5 = $request->fp5;
         if ($request->is_featured == 'on') {
             $product->is_featured = 1;
         } else {

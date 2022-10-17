@@ -80,11 +80,7 @@
                                                     ?>
                                                     {{ $category }}
                                                 </td>
-                                                @if($product->category_id == 4)
-                                                    <td>Flower Product</td>
-                                                @else
-                                                    <td>${{ $product->price }}</td>
-                                                @endif
+                                                <td>${{ $product->price }}</td>
                                                 <td>
                                                     @if($product->status == 0)
                                                         No

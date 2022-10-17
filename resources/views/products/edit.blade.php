@@ -1,7 +1,5 @@
 @extends('layouts.admin')
-
 @section('content')
-
     <div class="panel panel-headline">
         <div class="panel-heading">
             <div class="row">
@@ -16,9 +14,7 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-12">
-
                     @include('partials.success-error')
-
                     <form action="{{ route('updateproduct') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="product_id" value="{{ $product->id }}">
@@ -29,7 +25,6 @@
                                 <div class="form-group mt-3">
                                     <input type="file" name="image" class="form-control">
                                 </div>
-
                                 <div class="mt-3">
                                     <div class="form-group">
                                         <label for="">Status</label>
@@ -47,7 +42,6 @@
                                         </select>
                                     </div>
                                 </div>
-
                             </div>
                             <div class="col-md-10">
                                 <div class="form-group pb-4">
@@ -64,82 +58,57 @@
                                     <label for="">External ID</label>
                                     <input type="text" name="sku" value="{{ $product->sku }}" class="form-control">
                                 </div>
-                                @if($product->category_id == '4')
-                                    <label for="">Prices</label>
+                                @if($product->category_id == 4)
+                                    <label for="">Select Gram</label>
                                     <div class="row">
-                                        <div class="col-md-9" id="flowerId">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <p class="text-1">1 gram :</p>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <input type="number" value="{{$product->fp1}}" name="fp1"
-                                                           class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <p class="text-1">3.5 or 1/8oz :</p>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <input type="number" value="{{$product->fp2}}" name="fp2"
-                                                           class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <p class="text-1">7g or 1/4oz :</p>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <input type="number" value="{{$product->fp3}}" name="fp3"
-                                                           class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <p class="text-1">14 g or 1/2oz :</p>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <input type="number" value="{{$product->fp4}}" name="fp4"
-                                                           class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <p class="text-1">28g or 1oz :</p>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <input type="number" value="{{$product->fp5}}" name="fp5"
-                                                           class="form-control">
-                                                </div>
-                                            </div>
+                                        <div class="col-md-12">
+                                            <select name="fp1" id="" class="form-control">
+                                                <option {{$product->fp1 == "1 gram" ? "selected" : ""}} value="1 gram">1
+                                                    gram
+                                                </option>
+                                                <option
+                                                    {{$product->fp1 == "3.5 or 1/8oz" ? "selected" : ""}} value="3.5 or 1/8oz">
+                                                    3.5 or 1/8oz
+                                                </option>
+                                                <option
+                                                    {{$product->fp1 == "7g or 1/4oz" ? "selected" : ""}} value="7g or 1/4oz">
+                                                    7g or 1/4oz
+                                                </option>
+                                                <option
+                                                    {{$product->fp1 == "14 g or 1/2oz" ? "selected" : ""}} value="14 g or 1/2oz">
+                                                    14 g or 1/2oz
+                                                </option>
+                                                <option
+                                                    {{$product->fp1 == "28g or 1oz" ? "selected" : ""}} value="28g or 1oz">
+                                                    28g or 1oz
+                                                </option>
+                                            </select>
                                         </div>
                                     </div>
-                                @else
-                                    <div class="form-group pt-3">
-                                        <label for="">Price*</label>
-                                        <input type="number" name="price" value="{{ $product->price }}"
-                                               class="form-control"
-                                               required="">
-                                    </div>
                                 @endif
-{{--                                <div class="form-group pt-3">--}}
-{{--                                    <label for="">Gallery Images</label>--}}
-{{--                                    <div class="row">--}}
-{{--                                        @if($gallery->count() > 0)--}}
-{{--                                            @foreach($gallery as $single)--}}
-{{--                                                <div class="col-md-1 py-3">--}}
-{{--                                                    <a href="{{ route('removegalleryimage', ['id' => $single->id]) }}"--}}
-{{--                                                       onclick="return confirm('Are you sure you want to delete this image?');">--}}
-{{--                                                        <img src="{{ $single->image }}" alt="{{ $product->name }}"--}}
-{{--                                                             class="w-100 img-thumbnail">--}}
-{{--                                                    </a>--}}
-{{--                                                </div>--}}
-{{--                                            @endforeach--}}
-{{--                                        @endif--}}
-{{--                                    </div>--}}
-{{--                                    <input type="file" name="galleryimages[]" multiple="" class="form-control">--}}
-{{--                                </div>--}}
+                                <div class="form-group pt-3">
+                                    <label for="">Price*</label>
+                                    <input type="number" name="price" value="{{ $product->price }}"
+                                           class="form-control"
+                                           required="">
+                                </div>
+                                {{--                                <div class="form-group pt-3">--}}
+                                {{--                                    <label for="">Gallery Images</label>--}}
+                                {{--                                    <div class="row">--}}
+                                {{--                                        @if($gallery->count() > 0)--}}
+                                {{--                                            @foreach($gallery as $single)--}}
+                                {{--                                                <div class="col-md-1 py-3">--}}
+                                {{--                                                    <a href="{{ route('removegalleryimage', ['id' => $single->id]) }}"--}}
+                                {{--                                                       onclick="return confirm('Are you sure you want to delete this image?');">--}}
+                                {{--                                                        <img src="{{ $single->image }}" alt="{{ $product->name }}"--}}
+                                {{--                                                             class="w-100 img-thumbnail">--}}
+                                {{--                                                    </a>--}}
+                                {{--                                                </div>--}}
+                                {{--                                            @endforeach--}}
+                                {{--                                        @endif--}}
+                                {{--                                    </div>--}}
+                                {{--                                    <input type="file" name="galleryimages[]" multiple="" class="form-control">--}}
+                                {{--                                </div>--}}
                                 <div class="form-group pt-4">
                                     <div class="row">
                                         <div class="col-md-12">
@@ -163,7 +132,6 @@
                                         <div class="col-md-12">
                                             @if($strains->count() >0)
                                                 <select name="strain_id" class="select2 form-control">
-
                                                     @foreach($strains as $strain)
                                                         <option value="">Select an option</option>
                                                         @if($product->strain_id == $strain->id)
@@ -173,7 +141,6 @@
                                                             <option
                                                                 value="{{ $strain->id }}">{{ $strain->name }}</option>
                                                         @endif
-
                                                     @endforeach
                                                 </select>
                                             @endif
@@ -187,7 +154,6 @@
                                         </div>
                                         <div class="row">
                                             @if($genetics->count() >0)
-
                                                 <div class="col-md-2 mb-3">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="genetic_id"
@@ -201,7 +167,6 @@
                                                         </label>
                                                     </div>
                                                 </div>
-
                                                 @foreach($genetics as $genetic)
                                                     <div class="col-md-2 mb-3">
                                                         <div class="form-check">
@@ -257,5 +222,4 @@
             </div>
         </div>
     </div>
-
 @endsection
