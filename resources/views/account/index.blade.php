@@ -139,9 +139,9 @@
                                     <p class="text-black-50">{{ $business->email }}</p>
                                 </div>
 
-                                {{--                                <div class="col-md-6 text-right">--}}
-                                {{--                                    <a data-toggle="modal" data-target="#email" class="cursor-pointer">Edit</a>--}}
-                                {{--                                </div>--}}
+                                {{--                            <div class="col-md-6 text-right">--}}
+                                {{--                                <a data-toggle="modal" data-target="#email" class="cursor-pointer">Edit</a>--}}
+                                {{--                            </div>--}}
 
                             </div>
                         </div>
@@ -311,18 +311,29 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-md-6">
                         <div class="card p-3 mt-3 shadow-sm bg-light">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h4><strong>Postal Code</strong></h4>
-                                    <p class="text-black-50">{{ $business->postal_code }}</p>
+                                    @if(!$business->timezone)
+                                        <form action="{{route('update-timezone')}}" method="POST">
+                                            @csrf
+                                            <h4><strong>Time Zone</strong></h4>
+                                            <select required class="form-control" name="timezone" id="timezone">
+                                                <option value=""> Select Timezone</option>
+                                            </select>
+                                            <br>
+                                            <button type="submit" class="btn btn-primary">Update</button>
+                                        </form>
+                                    @else
+                                        <h4><strong>Time Zone</strong></h4>
+                                        <p class="text-black-50"><span
+                                                class="text-primary">{{$business->timezone}}
+                                    @endif
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-md-6">
                         <div class="card p-3 mt-3 shadow-sm bg-light">
                             <div class="row">
@@ -390,7 +401,16 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="col-md-6">
+                        <div class="card p-3 mt-3 shadow-sm bg-light">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4><strong>Postal Code</strong></h4>
+                                    <p class="text-black-50">{{ $business->postal_code }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-md-6">
                         <div class="card p-3 mt-3 shadow-sm">
                             <div class="row">
@@ -812,7 +832,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- website -->
                 <div class="modal fade" id="website" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                      aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -853,7 +872,7 @@
                     </div>
                 </div>
 
-                <!-- instagram -->
+                <!-- website -->
                 <div class="modal fade" id="instagram" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                      aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -899,7 +918,7 @@
                      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <form action="{{ route('updateopeningtime') }}" method="POST">
+                            <form class="form-horizontal" action="{{ route('updateopeningtime') }}" method="POST">
                                 @csrf
                                 <div class="modal-body">
                                     <div class="row">
@@ -1126,18 +1145,14 @@
         </div>
     </div>
 @endsection
-
 @section('scripts')
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.13/moment-timezone-with-data.js"></script>
     <script>
-        $(function () {
-            $('#businessPhoneNumber').on('change', function () {
-                let phoneNumber = $('#businessPhoneNumber').val();
-                let x = phoneNumber.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
-                phoneNumber = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
-
-                $('#businessPhoneNumber').val(phoneNumber);
-            });
-        });
+        var timezone = moment.tz.names();
+        for (const timezon of timezone) {
+            $('#timezone').append("<option value='"+timezon+"'>" + timezon + "</option>");
+            console.log(timezon)
+        }
     </script>
 @endsection

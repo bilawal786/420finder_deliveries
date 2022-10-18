@@ -29,6 +29,16 @@
                     <div class="row">
                         <div class="col-md-6">
                             <h3 class="panel-title">Products</h3>
+                            <?php
+                            $categories = \App\Models\Category::all();
+                            ?>
+                            <select onchange="location = this.value;" name="" id="">
+                                <option value="">Filter Products</option>
+                                <option value="{{route('product.filter', ['id' => 0])}}">All</option>
+                                @foreach($categories as $category)
+                                    <option {{request()->id == $category->id ? "selected" : ""}} value="{{route('product.filter', ['id' => $category->id])}}">{{$category->name}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="col-md-6 text-right">
                             <a href="{{ route('product.create') }}" class="btn btn-primary">Add Product</a>
@@ -43,6 +53,7 @@
                                     <thead>
                                     <th>#</th>
                                     <th>Product Name</th>
+                                    <th>Image</th>
                                     <th>Status</th>
                                     <th>Category</th>
                                     <th>Price</th>
@@ -56,13 +67,17 @@
                                             <tr>
                                                 <td>{{ $index + 1 }}</td>
                                                 <td>
-                                                    <img src="{{ $product->image }}" alt=""
-                                                         style="width: 25px;height: 25px;">
                                                     <strong>{{ $product->name }}</strong>
                                                     @if($product->off > 0)
                                                         <br>
                                                         &nbsp;&nbsp;&nbsp;<span class="label label-warning">{{ $product->off }}% off</span>
                                                     @endif
+                                                </td>
+                                                <td>
+                                                <td>
+                                                    <img src="{{ $product->image }}" alt=""
+                                                         style="width: 80px;height: 80px;">
+                                                </td>
                                                 </td>
                                                 <td>
                                                     @if ($product->brand_product)

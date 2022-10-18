@@ -66,6 +66,7 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' => ['checkIfAu
         'as' => 'getparentchildsc'
     ]);
     Route::resource('gallery', 'GalleryController');
+    Route::post('update-timezone', 'AccountController@timezone')->name('update-timezone');
     Route::get('/account-settings', [
         'uses' => 'AccountController@index',
         'as' => 'accountsettings'
@@ -114,6 +115,7 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' => ['checkIfAu
         'uses' => 'AccountController@updateinstagramurl',
         'as' => 'updateinstagramurl'
     ]);
+    Route::get('product/filter/{id}', 'ProductController@filters')->name('product.filter');
     Route::get('/request-products', [
         'uses' => 'ProductController@productrequests',
         'as' => 'requestproducts'

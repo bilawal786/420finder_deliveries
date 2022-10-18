@@ -234,4 +234,11 @@ class AccountController extends Controller
         $business->update();
         return redirect()->back()->with('info', 'State Update.');
     }
+    public function timezone(Request $request)
+    {
+        $business = Business::find(session('business_id'));
+        $business->timezone = $request->timezone;
+        $business->update();
+        return redirect()->back()->with('info', 'Time Zone Update Successfully!');
+    }
 }

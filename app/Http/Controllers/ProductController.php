@@ -533,4 +533,15 @@ class ProductController extends Controller
             ->with('products', $products)
             ->with('paid', $paid);
     }
+    public function filters($id){
+        if ($id == 0){
+            $products = DeliveryProducts::where('delivery_id', session('business_id'))->latest()->get();
+        }else{
+            $products = DeliveryProducts::where('delivery_id', session('business_id'))->where('category_id', $id)->latest()->get();
+        }
+        $paid = RetailerMenuOrder::where('retailer_id', session('business_id'))->first();
+        return view('products.index')
+            ->with('products', $products)
+            ->with('paid', $paid);
+    }
 }
