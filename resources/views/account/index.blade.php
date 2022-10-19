@@ -300,7 +300,7 @@
                                 <div class="col-md-6">
                                     <h4><strong>State / Province</strong></h4>
                                     <?php $state = \Illuminate\Support\Facades\DB::table('states')->where('id', '=', $business->state_province)->first(); ?>
-                                    <p class="text-black-50">{{ $state->name ?? '' }}</p>
+{{--                                    <p class="text-black-50">{{ $state->name ?? '' }}</p>--}}
                                 </div>
                                 @if($business->state_province == null)
                                     <div class="col-md-6 text-right">
@@ -315,7 +315,7 @@
                         <div class="card p-3 mt-3 shadow-sm bg-light">
                             <div class="row">
                                 <div class="col-md-6">
-                                    @if(!$business->timezone)
+{{--                                    @if(!$business->timezone)--}}
                                         <form action="{{route('update-timezone')}}" method="POST">
                                             @csrf
                                             <h4><strong>Time Zone</strong></h4>
@@ -325,11 +325,11 @@
                                             <br>
                                             <button type="submit" class="btn btn-primary">Update</button>
                                         </form>
-                                    @else
-                                        <h4><strong>Time Zone</strong></h4>
-                                        <p class="text-black-50"><span
-                                                class="text-primary">{{$business->timezone}}
-                                    @endif
+{{--                                    @else--}}
+{{--                                        <h4><strong>Time Zone</strong></h4>--}}
+{{--                                        <p class="text-black-50"><span--}}
+{{--                                                class="text-primary">{{$business->timezone}}--}}
+{{--                                    @endif--}}
                                 </div>
                             </div>
                         </div>
