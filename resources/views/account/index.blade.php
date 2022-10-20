@@ -319,8 +319,13 @@
                                         <form action="{{route('update-timezone')}}" method="POST">
                                             @csrf
                                             <h4><strong>Time Zone</strong></h4>
-                                            <select required class="form-control" name="timezone" id="timezone">
+                                            <select required class="form-control" name="timezone">
                                                 <option value=""> Select Timezone</option>
+                                                <option {{$business->timezone == "America/New_York" ? "selected" : ""}} value="America/New_York">America / New York - Eastern</option>
+                                                <option {{$business->timezone == "America/Chicago" ? "selected" : ""}} value="America/Chicago">America / Chicago - Central</option>
+                                                <option {{$business->timezone == "America/Denver" ? "selected" : ""}} value="America/Denver">America / Denver - Mountain</option>
+                                                <option {{$business->timezone == "America/Phoenix" ? "selected" : ""}} value="America/Phoenix">America / Phoenix - Arizona (state)</option>
+                                                <option {{$business->timezone == "America/Anchorage" ? "selected" : ""}} value="America/Anchorage">America / Anchorage - Alaska (state)</option>
                                             </select>
                                             <br>
                                             <button type="submit" class="btn btn-primary">Update</button>
