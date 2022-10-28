@@ -94,6 +94,9 @@
                 <li>
                     <a href="{{ route('accountsettings') }}" class=""><i class="fa fa-user" aria-hidden="true"></i> <span>Account Settings</span></a>
                 </li>
+{{--                <li>--}}
+{{--                    <a href="{{ route('seo') }}" class=""><i class="fa fa-adjust" aria-hidden="true"></i> <span>SEO</span></a>--}}
+{{--                </li>--}}
             </ul>
 
         </nav>

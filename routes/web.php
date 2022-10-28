@@ -169,6 +169,8 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' => ['checkIfAu
         'uses' => 'AccountController@updateordermethod',
         'as' => 'updateordermethod'
     ]);
+    Route::get('/seo', 'AccountController@seo')->name('seo');
+    Route::post('/update/seo', 'AccountController@seoUpdate')->name('update.seo');
     Route::post('/account-settings/profile/update/opening-time', [
         'uses' => 'AccountController@updateopeningtime',
         'as' => 'updateopeningtime'

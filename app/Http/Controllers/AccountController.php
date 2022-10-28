@@ -241,4 +241,15 @@ class AccountController extends Controller
         $business->update();
         return redirect()->back()->with('info', 'Time Zone Update Successfully!');
     }
+    public function seo()
+    {
+        $business = Business::find(session('business_id'));
+        return view('account.seo',compact('business'));
+    }
+    public function seoUpdate(Request $request){
+        $business = Business::find(session('business_id'));
+        $business->seo = $request->text;
+        $business->update();
+        return redirect()->back()->with('info', 'Seo Update.');
+    }
 }
