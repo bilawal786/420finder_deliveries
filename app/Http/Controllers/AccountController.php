@@ -246,10 +246,18 @@ class AccountController extends Controller
         $business = Business::find(session('business_id'));
         return view('account.seo',compact('business'));
     }
-    public function seoUpdate(Request $request){
+    public function seoUpdate(Request $request)
+    {
         $business = Business::find(session('business_id'));
         $business->seo = $request->text;
         $business->update();
         return redirect()->back()->with('info', 'Seo Update.');
+    }
+    public function addStrain(Request $request)
+    {
+        DB::table('strains')->insert([
+            'name' => $request->strain
+        ]);
+        return redirect()->back()->with('info', 'Strain Added Successfully.');
     }
 }

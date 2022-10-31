@@ -103,11 +103,11 @@
                                     <div class="form-group pt-4">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <h5><strong>Strain (optional)</strong></h5>
+                                                <h5><strong>Strain (optional)</strong> Not available? <a data-toggle="modal" data-target="#instagram" >Click here to add</a></h5>
                                             </div>
                                             <div class="col-md-12">
                                                 @if($strains->count() >0)
-                                                    <select name="strain_id" class="select2 form-control">
+                                                    <select name="strain_id" class="selectPlugin form-control">
                                                         <option value="">No Strain Selected</option>
                                                         @foreach($strains as $strain)
                                                             <option
@@ -175,6 +175,45 @@
                         </form>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="instagram" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+         aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="{{ route('add.strain') }}" method="POST">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4><strong>Add New Strain</strong></h4>
+                            </div>
+                            <div class="col-md-6 text-right pt-2 pe-3">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span></button>
+                            </div>
+                        </div>
+                        <div class="row my-3">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="">Strain Name</label>
+                                    <input type="text" name="strain"
+                                           value=""
+                                           placeholder="Strain Name" class="form-control"
+                                           required="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
