@@ -11,6 +11,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use App\Http\TrackHistory;
 
 class AdminController extends Controller
 {
@@ -79,6 +80,7 @@ class AdminController extends Controller
             ->addData([count($deals), $products, $customers->count()])
             ->setLabels(['Deals', 'Products', 'Customers']);
         $deal_wallet = Business::where('id', session('business_id'))->select('deal_wallet')->first();
+        TrackHistory::track_history('index',"View index page");
         return view('index', [
             'deals' => $deals,
             'chart' => $chart,
@@ -114,6 +116,7 @@ class AdminController extends Controller
                     if (Session::has("prevUrl")) {
                         return redirect()->to(Session::get('prevUrl'));
                     } else {
+                        TrackHistory::track_history('Login',"User Logged in");
                         return redirect()->route('index');
                     }
                 } elseif ($business[0]['status'] == 2) {
@@ -129,6 +132,7 @@ class AdminController extends Controller
 
     public function logoutadmin()
     {
+        TrackHistory::track_history('Logout',"User Logged out");
         session()->forget('business_id');
         session()->forget('business_name');
         return redirect()->route('login');

@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use App\Http\TrackHistory;
 use App\Models\Business;
 use App\Models\Deal;
 use App\Models\DealOrder;
@@ -224,6 +225,7 @@ class DealsController extends Controller
                         'product_id' => $request->product_id_2
                     ]);
                 }
+                TrackHistory::track_history('Deals',"Add Deals");
                 return redirect()->back()->with('info', 'Deal created.');
             } else {
                 return redirect()->back()->with('error', 'Sorry we couldn\'t process the payment');
@@ -263,6 +265,7 @@ class DealsController extends Controller
         $state = DB::table('states')->get();
         $business = Business::where('id', '=', session('business_id'))->first();
         $subPrice = DB::table('states')->where('id', '=', $business->state_province)->first();
+        TrackHistory::track_history('Deals',"Create Deals");
         return view('deals.create', [
             'products' => $products,
             'state' => $state,
@@ -331,6 +334,7 @@ class DealsController extends Controller
                 'product_id' => $request->product_id_2
             ]);
         }
+        TrackHistory::track_history('Deals',"Update Deals");
         return redirect()->back()->with('info', 'Deal updated.');
     }
     private function checkIfRetailerDeal($dealId)
@@ -381,6 +385,7 @@ class DealsController extends Controller
                     }
                 }
             }
+            TrackHistory::track_history('Deals',"Delete Deals");
             return redirect()->back()->with('info', 'Deal Deleted Successfully.');
         } else {
             return redirect()->back()->with('error', 'Sorry something went wrong.');
@@ -394,6 +399,7 @@ class DealsController extends Controller
         if (!$subPrice) {
             return redirect()->back()->with('error', 'Your Profile is not complete, Complete your profile first!');
         }
+        TrackHistory::track_history('Subscription',"View Subscription");
         return view('subscription.index', [
             'state' => $state,
             'business' => $business,
@@ -403,6 +409,7 @@ class DealsController extends Controller
     public function getSubscription(Request $request)
     {
         $state = DB::table('states')->where('id', '=', $request->id)->first();
+        TrackHistory::track_history('Subscription',"Get Subscription");
         return response()->json(['success' => $state]);
     }
     public function storeSubscription(Request $request)
@@ -441,6 +448,7 @@ class DealsController extends Controller
             DB::table('businesses')->where('id', session('business_id'))->update([
                 'deal_wallet' => $getbusiness->deal_wallet + 1
             ]);
+            TrackHistory::track_history('Subscription',"Success Subscription");
             return redirect()->back()->with('info', 'Deal created.');
         } else {
             return redirect()->back()->with('error', 'Sorry we couldn\'t process the payment');
@@ -473,6 +481,7 @@ class DealsController extends Controller
     public function bookMe($id, $price, $p)
     {
         $area = DB::table('areas')->find($id);
+        TrackHistory::track_history('Banner',"Banner Booking Request");
         return view('marketing.payment', compact('area', 'price', 'p'));
     }
     public function bannerPaymant(Request $request)
@@ -521,6 +530,7 @@ class DealsController extends Controller
                 ]
             );
 //            return redirect()->back()->with('info', 'Position Booked.');
+            TrackHistory::track_history('Banner',"Banner Position Booked");
             return redirect()->route('marketing', ['id' => $id])->with('info', 'Position Booked.');
         } else {
             return redirect()->back()->with('error', 'Sorry we couldn\'t process the payment');

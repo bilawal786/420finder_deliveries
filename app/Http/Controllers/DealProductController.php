@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\TrackHistory;
 use App\Models\Deal;
 use App\Models\DealProduct;
 use App\Models\DeliveryProducts;
@@ -19,6 +20,7 @@ class DealProductController extends Controller
             ->join('deal_products', 'deal_products.deal_id', '=', 'deals.id')
             ->get();
         $deals = $deals->groupBy('deal_id');
+        TrackHistory::track_history('Deals',"View Deals Product");
         return view('deal-products.index', [
             'deals' => $deals
         ]);
@@ -56,6 +58,7 @@ class DealProductController extends Controller
                 'product_id' => $productId
             ]);
             if ($created) {
+                TrackHistory::track_history('Deals',"Add Deals Prodcut");
                 return redirect()->route('deal-product.index')->with('success', 'Product added to deal');
             } else {
                 return back()->with('error', 'Sorry something went wrong');
@@ -92,6 +95,7 @@ class DealProductController extends Controller
             $deals = DealProduct::where('deal_id', $dealId)
                 ->join('deals', 'deal_products.deal_id', '=', 'deals.id')
                 ->get();
+            TrackHistory::track_history('Deals',"Edit Deals Product");
             return view('deal-products.edit', [
                 'deals' => $deals
             ]);
@@ -128,6 +132,7 @@ class DealProductController extends Controller
                 ['product_id', $productId]
             ])->delete();
             if ($deleted) {
+                TrackHistory::track_history('Deals',"Delete Deals Product");
                 return back()->with('success', 'Product removed successfully!');
             } else {
                 return back()->with('error', 'Sorry something went wrong');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\TrackHistory;
 use App\Mail\OrderStatus;
 use App\Models\Business;
 use App\Models\Order;
@@ -19,6 +20,7 @@ class OrderController extends Controller
         Order::where('retailer_id', session('business_id'))->update([
             'read' => 0
         ]);
+        TrackHistory::track_history('Orders',"View Orders Page");
         return view('orders.index', [
             'orders' => $orders
         ]);
@@ -66,6 +68,7 @@ class OrderController extends Controller
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);
+            TrackHistory::track_history('Order',"Order Status Update");
             return back()->with('success', 'Order status is changed');
         } else {
             return back()->with('error', 'Sorry Something went wrong');
@@ -80,6 +83,7 @@ class OrderController extends Controller
         ]);
         $updated = Order::where('id', $validated['order_id'])->update(['rating' => $validated['rating']]);
         if ($updated) {
+            TrackHistory::track_history('Orders',"Review Orders");
             return back()->with('success', 'Review is added');
         } else {
             return back()->with('error', 'Sorry something went wrong');

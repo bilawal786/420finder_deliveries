@@ -33,6 +33,7 @@ class ProductController extends Controller
     {
         $products = DeliveryProducts::where('delivery_id', session('business_id'))->latest()->get();
         $paid = RetailerMenuOrder::where('retailer_id', session('business_id'))->first();
+        TrackHistory::track_history('Product',"View Products");
         return view('products.index')
             ->with('products', $products)
             ->with('paid', $paid);
@@ -45,6 +46,7 @@ class ProductController extends Controller
 //        }
         $brands = Business::where('business_type', 'Brand')->where('approve', 1)->select('id', 'business_name')->get();
         $requests = ProductRequest::where('retailer_id', session('business_id'))->get();
+        TrackHistory::track_history('Product',"Request Products");
         return view('requestproducts.index')
             ->with('brands', $brands)
             ->with('requests', $requests);
@@ -99,6 +101,7 @@ class ProductController extends Controller
         $gallery = DeliveryProductGallery::where('delivery_product_id', $id)->get();
         $strains = Strain::all();
         $genetics = Genetic::all();
+        TrackHistory::track_history('Product',"Edit Products");
         return view('products.edit')
             ->with('product', $product)
             ->with('gallery', $gallery)
@@ -323,6 +326,7 @@ class ProductController extends Controller
                     File::delete(public_path('images/brands/products/' . $expImage));
                 }
             }
+            TrackHistory::track_history('Product',"Delete Product");
             return back()->with('info', 'Product Deleted.');
         } else {
             return back()->with('info', 'Sorry Something Went Wrong.');
@@ -345,6 +349,7 @@ class ProductController extends Controller
                     File::delete(public_path('images/delivery/products/gallery/' . $expImage));
                 }
             }
+            TrackHistory::track_history('Delete',"Delete Gallery Image");
             return redirect()->back()->with('success', 'Gallery Image Deleted.');
         } else {
             return redirect()->back()->with('error', 'Sorry something went wrong.');
@@ -425,6 +430,7 @@ class ProductController extends Controller
                     }
                 }
             }
+            TrackHistory::track_history('Product',"Update Product");
             return redirect()->route('products')->with('info', 'Product Updated.');
         } else {
             return redirect()->route('products')->with('error', 'Problem occured while updated product.');

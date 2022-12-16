@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\TrackHistory;
 use App\Models\Detail;
 use Illuminate\Http\Request;
 
@@ -98,6 +99,7 @@ class DetailController extends Controller
                 'license' => $request->license,
             ]);
             if ($updated) {
+                TrackHistory::track_history('Details',"Details Update");
                 return back()->with(
                     ['info' => 'Detail Updated Successfully.'],
                     ['detail' => $updated]

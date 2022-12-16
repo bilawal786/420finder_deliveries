@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\TrackHistory;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,6 +20,7 @@ class GalleryController extends Controller
     public function index()
     {
         $data = DB::table('business_galleries')->where('business_id', Session::get("business_id"))->get();
+        TrackHistory::track_history('Gallery',"View Gallery");
         return view('gallery.index', compact('data'));
     }
 
@@ -55,6 +57,7 @@ class GalleryController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
+        TrackHistory::track_history('Gallery',"Add Gallery");
         return response()->json($header_img);
     }
 
@@ -107,6 +110,7 @@ class GalleryController extends Controller
         $path = substr($image->image, $length + 1);
         File::delete($path);
         DB::table('business_galleries')->delete($id);
+        TrackHistory::track_history('Gallery',"Delete Gallery");
         return redirect()->route('gallery.index');
     }
 }
